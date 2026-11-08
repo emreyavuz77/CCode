@@ -7,11 +7,28 @@
 `index.html` dosyasını herhangi bir modern tarayıcıda açın (iPhone / iPad dahil). Kurulum yok.
 
 ### Modlar
-- **⛰ Macera Modu** — dizinin olay sırasına göre 15 seviye (Kitap 1: Su → Korra Efsanesi). Her seviye bir sonrakini açar; can durumuna göre 1-3 yıldız. Son seviye: Avatar Durumu'ndaki Korra.
+- **⛰ Macera Modu** — dizinin olay sırasına göre 15 seviye; **her seviyeden önce ara sahne** (diyaloglu hikâye), sonunda final sahnesi. Can durumuna göre 1-3 yıldız.
 - **⚔ Hızlı Dövüş** — bilgisayara karşı, 3 zorluk.
-- **👥 Çok Oyunculu** — aynı ekranda 2 kişi: klavye (WASD / oklar), **telefonda bölünmüş dokunmatik ekran** (sol yarı 1P, sağ yarı 2P) veya **2 oyun kolu** (PS / Xbox / MFi).
-- **♾ Sonsuz Mod** — dalga dalga gelen, giderek güçlenen rakipler. Dalgalar arası %30 can yenilenir; rekor kaydedilir.
+- **🌐 Çevrimiçi** — **iki farklı telefondan aynı maç**: biri "Oda Kur" ile 4 haneli kod alır, diğeri kodu girip katılır. (claude.ai'deki `room` yeteneğini kullanır; arkadaşın oyunu açabilmesi için Paylaş menüsünden paylaşılmalı.)
+- **👥 Aynı Ekran** — 2 kişi tek cihazda: klavye, bölünmüş dokunmatik ekran veya 2 oyun kolu.
+- **♾ Sonsuz Mod** — giderek güçlenen rakip dalgaları, rekor kaydı.
+- **🥋 Antrenman** — sınırsız süre/can/chi, hasar ve kombo sayacı, kukla davranışı (durgun / blok / zıplar / karşılık verir), hareket listesi.
 - **👁 İzle** — bilgisayar vs bilgisayar.
+
+### Kombolar
+- **↑ + saldırı:** Yükselen Darbe (elemente göre: ateş/su/kaya/hava sütunu veya silah)
+- **↓ + saldırı (yerde):** Süpürme — rakibi devirir
+- **↓ + saldırı (havada):** Dalış — yere çarpınca şok dalgası
+- **Art arda vuruşlar:** 3+ vuruşta kombo bonusu (+%40'a kadar hasar), ekranda "N VURUŞ"
+
+### Arena olayları (açılıp kapatılabilir)
+Hava Tapınağı: rüzgar akımı · Kuzey Su Kabilesi: dolunay (su bükücüler +%30) · Ba Sing Se: toprak treni · Ateş Ulusu: kuyrukluyıldız yağmuru · Cumhuriyet Şehri: Eşitlikçi elektrik ağları.
+
+### Kıyafetler
+Her karakterin kıyafetleri seviye atladıkça açılır: örn. **Mavi Ruh Zuko**, **Ateş Lordu Zuko**, Aang **Ateş Ulusu Okulu**, Katara **Kış Parkası**, Iroh **Beyaz Lotus**, Azula **Kyoshi Kılığı**, Korra **Fire Ferrets**, Toph **Metal Polis Şefi**… ve herkes için **Gölge** (Lv 7) ile **Altın Usta** (Lv 10).
+
+### Başarımlar ve günlük görevler
+22 başarım (İlk Zafer, Dört Ulus, Kombo Ustası, Batı'nın Ejderhası, Benim Lahanalarım!…) ve her gün değişen 3 günlük görev — hepsi XP kazandırır.
 
 ### Seviye atlama
 Her maçta XP kazanılır (hasar, galibiyet, seviye/dalga). Oyuncu seviyesi ve rütbesi ana menüde görünür:
@@ -40,7 +57,7 @@ Telefonu yan çevirince oyun dünyası ekranın en-boy oranına göre genişler 
 - **Arena eşyaları:** Yasemin Çayı (can), Lahana (chi + ulti), Momo (hız).
 - **Arenalar:** Güney Hava Tapınağı, Kuzey Su Kabilesi (dolunay + kutup ışıkları), Ba Sing Se, Ateş Ulusu Sarayı (volkan), Cumhuriyet Şehri (yağmur).
 
-## Karakterler ve araştırma özeti
+## Karakterler ve araştırma özeti (25 karakter)
 
 | Karakter | Ulus / Element | Kanondaki özellikler | Oyundaki yetenekler (Temel · Özel · **Ulti**) / Pasif |
 |---|---|---|---|
@@ -58,6 +75,16 @@ Telefonu yan çevirince oyun dünyası ekranın en-boy oranına göre genişler 
 | **Kral Bumi** | Omashu · Toprak | Aang'in 112 yaşındaki “deli dahi” arkadaşı; Omashu'yu tek başına kurtardı | Dev Kaya · Toprak Dalgası · **Dağ Devirme**. Pasif: 120 can |
 | **Korra** | Güney Su Kabilesi · Avatar | Aang'den sonraki Avatar; pro-bending; havayı en son öğrendi; Amon, Zaheer, Kuvira'ya karşı | Element Kombosu (ateş→su→toprak→hava) · Toprak Sütunu · **Avatar Durumu: Hortum** |
 | **Amon** | Eşitlikçiler · Kan bükme (gizli) | Maskeli lider; aslında kan bükücü Noatak; bükücülüğü kalıcı alabilir | Kesin Darbe · Kan Bükme Tutuşu · **Bükücülüğü Al**. Pasif: kan bükme + chi engellemeye bağışık |
+| **Mako** | Cumhuriyet Şehri · Ateş | Fire Ferrets kaptanı, santralde şimşek üretti, kırmızı atkı, sonra dedektif | Seri Ateş Yumrukları · Şimşek Darbesi · **Şimşek Fırtınası** |
+| **Bolin** | Cumhuriyet Şehri · Toprak | Mako'nun kardeşi, lav bükücü, Pabu, "Nuktuk" film yıldızı | Disk Atışı · Lav Havuzu · **Lav Seli** |
+| **Asami Sato** | Cumhuriyet Şehri · Bükücü değil | Future Industries mühendisi, elektrikli eldiven, usta sürücü | Elektrikli Eldiven · Bola · **Satomobil** |
+| **Tenzin** | Hava Göçebeleri · Hava | Aang ile Katara'nın oğlu, Korra'nın hava hocası | Hava Dalgası · Hava Kalkanı · **Büyük Rüzgar** |
+| **Lin Beifong** | Cumhuriyet Şehri Polisi · Toprak (metal) | Toph'un kızı, metal bükücü polis şefi, yanağında yara izleri | Metal Kablo · Metal Zırh · **Kablo Hapsi** |
+| **Kuvira** | Toprak İmparatorluğu · Toprak (metal) | "Büyük Birleştirici", metal şeritler, ruh enerjisi topu | Metal Şeritler · Şerit Kırbacı · **Ruh Enerjisi Topu** (yönlendirilemez) |
+| **Jet** | Özgürlük Savaşçıları · Bükücü değil | Kancalı kılıçlar, ağzında saman çöpü, intikamcı lider | Kancalı Kılıçlar · Kanca Atılışı · **Özgürlük Savaşçıları** (ok yağmuru) |
+| **Patlama Adam** | Ateş Ulusu suikastçısı · Ateş (yanma bükme) | Üçüncü göz dövmesi, metal protezler, "Sparky Sparky Boom Man" | Patlama Işını · Uzak Patlama · **Dev Patlama** |
+| **Hama** | Güney Su Kabilesi · Su (kan) | Kan bükmeyi keşfeden kişi, nemden su çeker | Nem Hançerleri · Bitki Özü · **Dolunay Kan Bükmesi** |
+| **Usta Pakku** | Kuzey Su Kabilesi · Su | Kuzey'in su ustası, Kanna ile evlendi, Beyaz Lotus | Üçlü Kırbaç · Su Kalkanı · **Buz Dalgası** |
 | **Zaheer** | Kızıl Lotus · Hava | Anarşist; Harmonik Yakınsama ile hava bükücü oldu; Laghima'dan beri uçan ilk kişi; boğma | Hava Bıçağı · Uçuş · **Havasız Bırakma** |
 
 Yardımcılar: **Appa** (Sokka'nın ultisi), **Momo**, **Lahana Satıcısı**, **Yasemin Çayı**.

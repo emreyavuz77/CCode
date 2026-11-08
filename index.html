@@ -30,7 +30,7 @@ h2{margin:6px 0 4px;font-size:28px;letter-spacing:8px;color:#f3dcae;font-weight:
 .btn.small{min-width:0;padding:8px 16px;font-size:16px;margin:3px}
 .btn.sel{background:linear-gradient(#c88a2a,#8a5a15);color:#fff}
 .btn.go{background:linear-gradient(#c8401c,#7a1d0c);font-size:26px;min-width:220px}
-.menuGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;width:860px;margin-top:6px}
+.menuGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 14px;width:1080px;margin-top:6px}
 .menuGrid .btn{min-width:0;margin:0;width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left}
 .menuGrid .btn.hero{background:linear-gradient(#a8521c,#6a2a0c)}
 #profile{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:7px 20px;font-size:16px;margin:4px 0 8px}
@@ -52,10 +52,10 @@ h2{margin:6px 0 4px;font-size:28px;letter-spacing:8px;color:#f3dcae;font-weight:
 .slot b{display:block;font-size:18px}.slot small{color:var(--muted)}
 .vs{font-size:30px;font-weight:bold;color:#ff8a3a;font-family:Georgia,serif}
 .selBody{display:flex;gap:18px;padding:6px 22px;width:100%;flex:1;min-height:0;justify-content:center}
-#grid{display:grid;grid-template-columns:repeat(5,128px);grid-auto-rows:146px;gap:10px;align-content:start}
+#grid{display:grid;grid-template-columns:repeat(7,104px);grid-auto-rows:118px;gap:8px;align-content:start}
 .card{border:2px solid var(--line);border-radius:10px;background:linear-gradient(#2c1c10,#1a1009);cursor:pointer;display:flex;flex-direction:column;align-items:center;overflow:hidden;position:relative;transition:transform .08s}
-.card canvas{width:124px;height:110px}
-.card .nm{font-size:15px;font-weight:bold;margin-top:2px;white-space:nowrap;max-width:122px;overflow:hidden;text-overflow:ellipsis}
+.card canvas{width:100px;height:88px}
+.card .nm{font-size:13px;font-weight:bold;margin-top:2px;white-space:nowrap;max-width:100px;overflow:hidden;text-overflow:ellipsis}
 .card .tag{position:absolute;top:4px;right:6px;font-size:16px}
 .card.p1{box-shadow:inset 0 0 0 3px #3fa9f5}.card.p2{box-shadow:inset 0 0 0 3px #ff5a3a}
 .card.p1.p2{box-shadow:inset 0 0 0 3px #3fa9f5,0 0 0 3px #ff5a3a}
@@ -126,20 +126,20 @@ kbd{background:#3a2a1a;border:1px solid #8a6a3a;border-bottom-width:3px;border-r
 .tonly{display:none}
 body.touch .tonly{display:revert}
 body.touch .desk{display:none!important}
-body.touch h1{font-size:100px;margin-top:20px}
+body.touch h1{font-size:84px;margin-top:14px}
 body.touch h2{font-size:32px}
 body.touch .sub{display:none}
 body.touch #profile{font-size:22px}
-body.touch .menuGrid{width:1040px;gap:12px 18px}
+body.touch .menuGrid{width:1200px;gap:10px 14px}
 body.touch .btn{font-size:30px;padding:12px 28px;min-width:440px;margin:6px}
-body.touch .menuGrid .btn{font-size:28px;min-width:0;margin:0}
+body.touch .menuGrid .btn{font-size:25px;min-width:0;margin:0;padding:12px 20px}
 body.touch .btn.small{font-size:25px;padding:10px 18px;min-width:0;margin:3px}
 body.touch .btn.go{font-size:34px;min-width:230px}
 body.touch #resBtns .btn{min-width:300px}
 body.touch .topbar h3{font-size:32px}
 body.touch .topbar h3 small{font-size:20px}
 body.touch .slot b{font-size:24px}body.touch .slot small{font-size:17px}
-body.touch .card .nm{font-size:17px;letter-spacing:-.3px}
+body.touch .card .nm{font-size:15px;letter-spacing:-.3px}
 body.touch #info{font-size:20px}
 body.touch #info h4{font-size:34px}
 body.touch .badge{font-size:17px}
@@ -153,12 +153,50 @@ body.touch .gcard h4{font-size:32px}
 body.touch .gcard canvas{width:170px;height:170px}
 body.touch .ctrl{font-size:23px}
 body.touch #xpGain{font-size:34px}body.touch #xpInfo{font-size:21px}
+#online .topbar,#ach .topbar{flex:none}
+.olBody{display:flex;gap:30px;align-items:flex-start;justify-content:center;width:100%;padding:20px 40px;flex:1}
+#olMe{display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:240px}
+#olMe canvas{width:150px;height:150px;border-radius:12px}
+#olMe small{color:var(--muted);display:block;text-align:center}#olMe b{display:block;font-size:24px;text-align:center;margin-bottom:6px}
+#olMain{flex:1;max-width:660px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 26px;text-align:center;font-size:17px}
+.olCodeBig{font-family:Georgia,serif;font-size:84px;letter-spacing:18px;color:var(--gold);text-shadow:0 0 24px rgba(255,190,80,.4);line-height:1.1}
+.olOr{color:var(--muted);margin:16px 0}
+.olJoin{display:flex;gap:10px;justify-content:center;align-items:center}
+#olCode{font-size:40px;width:210px;text-align:center;letter-spacing:10px;text-transform:uppercase;background:#2a1a0e;color:#fff;border:2px solid var(--gold);border-radius:10px;padding:6px;font-family:Georgia,serif;user-select:text;-webkit-user-select:text}
+.olStatus{color:#e8d8b8;font-size:19px}.olWarn{color:#ffb090;font-size:19px;line-height:1.6}
+.olHelp{color:var(--muted);font-size:14px;max-width:1040px;text-align:center;padding:0 30px 16px}
+#achBody{width:100%;flex:1;overflow:auto;padding:6px 30px 24px;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+.qrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+.quest{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.quest.done{border-color:#7cc25a}
+.quest b{display:block;margin-bottom:6px}.quest .xpbar{width:100%}
+.achGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ach{background:rgba(22,15,10,.94);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px;opacity:.68}
+.ach.on{opacity:1;border-color:#ffd56a}.ach b{display:block;color:#ffe9b0}
+.secT{font-family:Georgia,serif;color:var(--gold);font-size:22px;margin:10px 0 8px}
+#scene{background:transparent;justify-content:flex-end;cursor:pointer}
+.dlg{width:min(1000px,88%);margin:0 0 26px;background:rgba(14,9,5,.9);border:2px solid var(--gold);border-radius:16px;padding:14px 24px 10px;min-height:140px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.dlg b{font-family:Georgia,serif;font-size:26px}.dlg p{font-size:22px;margin:6px 0 4px;line-height:1.4;min-height:62px}.dlg small{color:var(--muted)}
+#scene .skip{position:absolute;top:14px;right:calc(16px + var(--insR))}
+#toast{position:absolute;left:50%;top:14px;transform:translate(-50%,-160%);background:linear-gradient(#3a2410,#1e1208);border:2px solid #ffd56a;border-radius:14px;padding:10px 22px;z-index:9;transition:transform .35s ease;text-align:center;min-width:380px;box-shadow:0 8px 30px rgba(0,0,0,.6);pointer-events:none}
+#toast.on{transform:translate(-50%,0)}#toast b{display:block;color:#ffe27a;font-size:19px}#toast span{font-size:15px;color:#e8dcc0}
+.skins{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+.skins canvas{width:64px;height:64px;border-radius:8px;border:1px solid var(--line)}
+.sk{font-size:13px;padding:4px 10px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);cursor:pointer;font-family:inherit}
+.sk.on{background:#c88a2a;color:#fff;border-color:#ffd56a}.sk.lock{opacity:.45;cursor:default}
+#pauseExtra{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:1000px;margin:10px 0}
+#moveList{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 18px;margin-top:12px;max-width:1000px;font-size:15px;line-height:1.5;text-align:center}
+#moveList span{color:var(--muted)}
+body.touch .dlg p{font-size:28px}body.touch .dlg b{font-size:32px}
+body.touch #olMain{font-size:22px}body.touch .ach{font-size:18px}body.touch .quest{font-size:20px}body.touch .sk{font-size:18px;padding:6px 14px}
+body.touch #moveList{font-size:20px}body.touch .olHelp{font-size:18px}body.touch #toast b{font-size:24px}body.touch #toast span{font-size:19px}
 </style>
 </head>
 <body>
 <div id="wrap"><div id="game">
 <canvas id="c"></canvas>
 <button id="muteBtn" title="Ses (M)">🔊</button>
+<div id="toast"></div>
 
 <div id="title" class="screen on">
   <h1>DÖRT ULUS</h1>
@@ -166,14 +204,18 @@ body.touch #xpGain{font-size:34px}body.touch #xpInfo{font-size:21px}
   <div class="sub">Su · Toprak · Ateş · Hava — Avatar evreninden esinlenen 2D hayran dövüş oyunu</div>
   <div id="profile"></div>
   <div class="menuGrid">
-    <button class="btn hero" data-act="campaign">⛰ Macera Modu <small>15 seviye</small></button>
-    <button class="btn hero" data-act="cpu">⚔ Hızlı Dövüş <small>CPU'ya karşı</small></button>
-    <button class="btn" data-act="2p">👥 Çok Oyunculu <small>aynı ekran</small></button>
-    <button class="btn" data-act="endless">♾ Sonsuz Mod <small>dalgalar</small></button>
-    <button class="btn" data-act="demo">👁 İzle <small>CPU vs CPU</small></button>
-    <button class="btn" data-act="guide">📜 Karakter Rehberi</button>
+    <button class="btn hero" data-act="campaign">⛰ Macera <small>15 seviye</small></button>
+    <button class="btn hero" data-act="cpu">⚔ Hızlı Dövüş <small>CPU</small></button>
+    <button class="btn hero" data-act="online">🌐 Çevrimiçi <small>2 telefon</small></button>
+    <button class="btn" data-act="2p">👥 Aynı Ekran <small>2 oyuncu</small></button>
+    <button class="btn" data-act="endless">♾ Sonsuz Mod</button>
+    <button class="btn" data-act="training">🥋 Antrenman</button>
+    <button class="btn" data-act="ach">🏆 Başarımlar <small id="dailyBadge"></small></button>
+    <button class="btn" data-act="guide">📜 Rehber</button>
+    <button class="btn" data-act="demo">👁 İzle</button>
     <button class="btn" data-act="controls">🎮 Kontroller</button>
     <button class="btn" data-act="sound" id="soundBtn">🔊 Ses + Müzik</button>
+    <button class="btn" data-act="hazards" id="hazBtn">⚡ Arena Olayları</button>
   </div>
 </div>
 
@@ -226,6 +268,7 @@ body.touch #xpGain{font-size:34px}body.touch #xpInfo{font-size:21px}
       <tr><td>Temel saldırı</td><td><kbd>F</kbd></td><td><kbd>K</kbd> <kbd>,</kbd> <kbd>Num1</kbd></td><td>X (□)</td></tr>
       <tr><td>Özel yetenek</td><td><kbd>G</kbd></td><td><kbd>L</kbd> <kbd>.</kbd> <kbd>Num2</kbd></td><td>Y (△)</td></tr>
       <tr><td>Ulti</td><td><kbd>H</kbd></td><td><kbd>;</kbd> <kbd>/</kbd> <kbd>Num3</kbd></td><td>RB / RT</td></tr>
+      <tr><td>Kombolar</td><td colspan="3">↑ + saldırı: Yükselen Darbe · ↓ + saldırı: Süpürme · havada ↓ + saldırı: Dalış · art arda 3+ vuruş: kombo bonusu</td></tr>
       <tr><td>Duraklat</td><td colspan="2"><kbd>Esc</kbd> / <kbd>P</kbd> · Ses: <kbd>M</kbd></td><td>Start</td></tr>
     </table>
     <p style="font-size:15px;color:var(--muted);max-width:900px">Oyun kolları (PS / Xbox / MFi) iPhone'da da çalışır: Bluetooth ile bağla, 1. kol 1. oyuncuyu, 2. kol 2. oyuncuyu yönetir.<br>
@@ -233,11 +276,27 @@ body.touch #xpGain{font-size:34px}body.touch #xpInfo{font-size:21px}
   </div>
 </div>
 
+<div id="online" class="screen">
+  <div class="topbar"><h3>Çevrimiçi Maç<small>İki farklı telefondan aynı maça bağlanın</small></h3><button class="btn small" data-act="netback">← Geri</button></div>
+  <div class="olBody"><div id="olMe"></div><div id="olMain"></div></div>
+  <div class="olHelp">Nasıl çalışır: Biriniz <b>Oda Kur</b>'a basıp çıkan 4 haneli kodu söyler, diğeri aynı oyun linkini kendi telefonunda açıp <b>Katıl</b> kısmına kodu yazar. Arkadaşının linki açabilmesi için oyunu claude.ai'deki <b>Paylaş</b> menüsünden onunla paylaşman gerekir. Maçı kurucunun telefonu yönetir; iki tarafın da internete bağlı olması yeterli.</div>
+</div>
+
+<div id="ach" class="screen">
+  <div class="topbar"><h3>Başarımlar ve Günlük Görevler</h3><button class="btn small" data-act="back">← Geri</button></div>
+  <div id="achBody"></div>
+</div>
+
+<div id="scene" class="screen">
+  <button class="btn small skip" data-act="skip">Atla ⏭</button>
+  <div class="dlg"><b id="dlgName"></b><p id="dlgText"></p><small>Devam etmek için dokun ▸</small></div>
+</div>
+
 <div id="pause" class="screen trans">
-  <h1 style="margin-top:170px">DURAKLATILDI</h1>
-  <button class="btn" data-act="resume">Devam Et</button>
-  <button class="btn" data-act="toselect">Karakter Seçimi</button>
-  <button class="btn" data-act="menu">Ana Menü</button>
+  <h1 style="margin-top:50px">DURAKLATILDI</h1>
+  <div id="pauseExtra"></div>
+  <div><button class="btn" data-act="resume">Devam Et</button><button class="btn" data-act="toselect" id="pSel">Karakter Seçimi</button><button class="btn" data-act="menu" id="pMenu">Ana Menü</button></div>
+  <div id="moveList"></div>
 </div>
 
 <div id="result" class="screen trans">
@@ -362,6 +421,7 @@ function T(o){
   sndOut(g, o); os.start(t); os.stop(t + o.dur + .05);
 }
 function sfx(k, x){
+  if (NET.role === 'host' && game.mode === 'online') netEv(['s', k, Math.round(x ?? sndX ?? W / 2)]);
   if (!profile.sound || !audio()) return;
   const now = performance.now(); if (lastSfx[k] && now - lastSfx[k] < 40) return; lastSfx[k] = now;
   const px = x ?? sndX; const pan = px == null ? 0 : (px / W * 2 - 1) * .6;
@@ -409,6 +469,7 @@ function sfx(k, x){
       T(L({ wave:'sawtooth', f0:55, f1:48, vol:.07, dur:1.2, a:.2, lp:400, rev:.5 }));
       N(L({ type:'bandpass', f0:300, q:9, vol:.12, dur:1, a:.3 }));
       break;
+    case 'boom': T(L({ f0:95, f1:30, vol:.8, dur:.6 })); N(L({ type:'lowpass', f0:1500, f1:80, vol:.6, dur:.7, rev:.3 })); N(L({ type:'bandpass', f0:3000, q:1, vol:.25, dur:.12 })); break;
     case 'swing': N(L({ type:'bandpass', f0:2600, f1:700, q:1.4, vol:.24, dur:.13 })); break;
     case 'hit':
       T(L({ f0:170, f1:48, vol:.55, dur:.15 }));
@@ -983,6 +1044,216 @@ const CHARS = [
       game.fx.push({ type:'suffocate', b:o, life:150 }); floatText(o.x, o.y - 140, 'Nefes alamıyor!', '#cff');
   }},
 },
+{
+  id:'mako', name:'Mako', nation:'Cumhuriyet Şehri', element:'fire',
+  hp:100, speed:5.5, jump:14.5, jumps:1,
+  look:{ skin:'#efd2b4', hair:'mako', hc:'#121010', top:'#3a2e2e', bottom:'#24201f', belt:'#5a4a3a', shoe:'#151010', scarf:'#b81c1c' },
+  bio:'Cumhuriyet Şehri sokaklarında kardeşi Bolin ile büyüyen yetim ateş bükücü; anne-babası gözlerinin önünde bir ateş bükücü soyguncu tarafından öldürüldü. Pro-bending takımı Fire Ferrets\'in kaptanı. Geçimini sağlamak için elektrik santralinde şimşek üreterek çalıştı. Sonra polis dedektifi ve Prens Wu\'nun koruması oldu. Boynundaki kırmızı atkı babasından kalma.',
+  facts:['Şimşek üretme ustası (santralde çalıştı)','Pro-bending: Fire Ferrets kaptanı','Kırmızı atkı — babasının hatırası','Cumhuriyet Şehri polis dedektifi'],
+  passive:'Pro-bender: temel saldırısı çok seri; şimşek üretebilir.',
+  ai:{ pref:300, atk:600, sp:900, ult:1300 },
+  a:{ name:'Seri Ateş Yumrukları', desc:'Pro-bending tarzı hızlı, küçük ateş darbeleri.', cd:11, chi:5, fn(f){
+      proj(f, { type:'fire', sp:15, r:9, dmg:4.5, burn:40, kbx:3, dy:(f.combo++ % 2) ? -6 : 4 }); sfx('fire');
+  }},
+  b:{ name:'Şimşek Darbesi', desc:'Kısa bir hazırlıktan sonra anında şimşek. (Iroh yönlendirebilir.)', cd:120, chi:26, fn(f){
+      f.channel = 18; game.fx.push({ type:'charge', f, life:18 }); sfx('zap');
+      after(18, () => beam(f, other(f), { dmg:14, stun:40, kbx:6, kby:4, color:'#bfe9ff' }));
+  }},
+  c:{ name:'Şimşek Fırtınası', desc:'Santraldeki gibi art arda üç şimşek.', fn(f){
+      f.channel = 72; sfx('ult');
+      for (let i = 0; i < 3; i++) after(14 + i * 22, () => { if (f.hp > 0) { game.fx.push({ type:'charge', f, life:10 }); beam(f, other(f), { dmg:11, stun:30, kbx:5, kby:3, color:'#d8f4ff' }); } });
+  }},
+},
+{
+  id:'bolin', name:'Bolin', nation:'Cumhuriyet Şehri', element:'earth',
+  hp:110, speed:5, jump:14, jumps:1, kbRes:.7,
+  look:{ skin:'#e8c49c', hair:'bolin', hc:'#151010', top:'#3e7a3a', bottom:'#5a4a3a', belt:'#c9a24a', shoe:'#2a1a10' },
+  bio:'Mako\'nun neşeli ve iyi kalpli küçük kardeşi, Fire Ferrets\'in toprak bükücüsü. Ateş gelinciği Pabu\'nun sahibi. Bir süre "Nuktuk: Güneyin Kahramanı" filmleriyle yıldız oldu. Kuvira\'nın ordusundan ayrıldıktan sonra çok nadir görülen lav bükme yeteneğini keşfederek arkadaşlarını kurtardı.',
+  facts:['Lav bükme (nadir bir toprak alt dalı)','Pro-bending: Fire Ferrets','Ateş gelinciği Pabu','Film yıldızı "Nuktuk"'],
+  passive:'Sağlam yapı: 110 can, savrulma direnci. Lav bükücü.',
+  ai:{ pref:280, atk:560, sp:500, ult:900 },
+  a:{ name:'Disk Atışı', desc:'Pro-bending\'deki gibi hızlı toprak diskleri.', cd:17, chi:6, fn(f){
+      proj(f, { type:'rock', sp:15, r:11, dmg:6, kbx:6, kby:2 }); sfx('earth');
+  }},
+  b:{ name:'Lav Havuzu', desc:'Yere yayılan lav: üstündeki rakibi yakar ve yavaşlatır.', cd:130, chi:24, fn(f){
+      game.projs.push(mkProj(f, { type:'lava', x:f.x + f.facing * 50, y:GROUND - 12, vx:5 * f.facing, vy:0, r:34, dmg:3, multi:14, burn:90, slow:60, kbx:1, kby:3, stun:10, life:130, pierce:true, clash:false, reflectable:false }));
+      sfx('fire'); sfx('earth');
+  }},
+  c:{ name:'Lav Seli', desc:'Toprağı eritir ve dev bir lav dalgası gönderir.', fn(f){
+      sfx('ult'); game.shake = 16; game.tint = { c:'rgba(255,90,20,', life:120 };
+      game.projs.push(mkProj(f, { type:'lava', big:true, x:f.x + f.facing * 60, y:GROUND - 22, vx:6.5 * f.facing, vy:0, r:62, dmg:4.5, multi:9, burn:150, slow:90, kbx:2, kby:6, stun:14, life:160, pierce:true, clash:false, reflectable:false }));
+  }},
+},
+{
+  id:'asami', name:'Asami Sato', nation:'Cumhuriyet Şehri', element:'none',
+  hp:100, speed:5.6, jump:14.5, jumps:1, chiImmune:true, chiRegen:.3,
+  look:{ skin:'#f2d6c2', hair:'asami', hc:'#120c0e', top:'#8a1c24', bottom:'#2a2224', belt:'#d9a637', shoe:'#1a1010', lips:true },
+  bio:'Zengin mucit Hiroshi Sato\'nun kızı ve Future Industries\'in başına geçen dahi mühendis. Bükücü değil; ama Eşitlikçilerin elektrikli eldiveni, dövüş eğitimi ve usta sürücülüğüyle ekibin vazgeçilmezi. Babasının Eşitlikçilerle çalıştığını öğrenince Korra\'nın yanında durdu. Dizinin sonunda Korra ile birlikte ruh dünyasına gitti.',
+  facts:['Elektrikli eldiven (Eşitlikçi teknolojisi)','Usta sürücü ve pilot — Satomobil','Future Industries CEO\'su','Bükücü değil — chi engellemeye bağışık'],
+  passive:'Mühendis: chi engellemeye bağışık; eldiven vuruşları sersemletir.',
+  ai:{ pref:80, atk:100, sp:450, ult:2000 },
+  a:{ name:'Elektrikli Eldiven', desc:'Elektrik yüklü yumruk; kısa süre sersemletir.', cd:16, chi:5, fn(f){
+      proj(f, { type:'slash', follow:true, ox:36, oy:-74, r:30, dmg:5, stun:32, kbx:2, kby:1, life:8, color:'#9ff', clash:false, reflectable:false }); sfx('zap');
+  }},
+  b:{ name:'Bola', desc:'Rakibin bacaklarına dolanan bola fırlatır (1.3 sn hareketsiz).', cd:95, chi:18, fn(f){
+      proj(f, { type:'bola', sp:14, vy:-2, grav:.12, r:13, dmg:4, stun:80, kbx:0, kby:0, onHit(p, t){ floatText(t.x, t.y - 150, 'DOLANDI!', '#ddd'); t.vx = 0; } }); sfx('swing');
+  }},
+  c:{ name:'Satomobil', desc:'Son model Satomobil ile arenadan tam gaz geçer.', fn(f){
+      sfx('ult'); floatText(f.x, f.y - 150, 'Kemerlerinizi bağlayın!', '#fff');
+      const sx = f.facing > 0 ? -200 : W + 200;
+      game.projs.push(mkProj(f, { type:'car', x:sx, y:GROUND - 34, vx:17 * f.facing, vy:0, r:62, dmg:18, kbx:14, kby:12, stun:40, life:150, pierce:true, clash:false, reflectable:false }));
+  }},
+},
+{
+  id:'tenzin', name:'Tenzin', nation:'Hava Göçebeleri', element:'air',
+  hp:105, speed:5, jump:15, jumps:2, glide:true,
+  look:{ skin:'#e8c49c', hair:'tenzin', hc:'#5a4030', top:'#e8a030', bottom:'#c8641e', belt:'#a84a1a', shoe:'#6a3a1a', cape:'#d8701e' },
+  bio:'Aang ile Katara\'nın en küçük oğlu, Hava Göçebeleri\'nin ustası ve Korra\'nın hava bükme öğretmeni. Ciddi, disiplinli ve geleneklere bağlı ama ailesine çok düşkün. Pema ile evli; Jinora, Ikki, Meelo ve Rohan\'ın babası. Harmonik Yakınsama\'dan sonra yeni hava bükücülerle Hava Ulusu\'nu yeniden kurdu.',
+  facts:['Babası gibi ok dövmeli hava ustası','Korra\'ya sabrı ve hava bükmeyi öğretti','Uçan bizonu: Oogi','Hava Tapınağı Adası\'nda yaşar'],
+  passive:'Hava ustası: süzülme, çift zıplama; Hava Kalkanı mermileri dağıtır.',
+  ai:{ pref:300, atk:560, sp:0, ult:1400, bOnThreat:true },
+  a:{ name:'Hava Dalgası', desc:'Geniş ve güçlü bir hava dalgası.', cd:22, chi:7, fn(f){
+      proj(f, { type:'air', sp:12, r:22, dmg:6, kbx:13, kby:3, life:60 }); sfx('air');
+  }},
+  b:{ name:'Hava Kalkanı', desc:'Etrafında dönen hava küresi: gelen mermileri dağıtır.', cd:140, chi:20, fn(f){
+      f.shield = 70; sfx('air'); burst(f.x, f.y - 60, 16, ['#eef','#cdf'], 5);
+  }},
+  c:{ name:'Büyük Rüzgar', desc:'Arenayı süpüren fırtına: rakibi duvara kadar savurur.', fn(f, o){
+      sfx('ult'); game.shake = 10; const dir = Math.sign(o.x - f.x) || f.facing;
+      game.fx.push({ type:'wind', dir, life:90 });
+      for (let i = 0; i < 90; i++) after(i, () => { if (o.hp > 0 && game.roundOver <= 0) o.vx += dir * 1.1; });
+      for (let i = 0; i < 3; i++) after(10 + i * 25, () => { hit(f, o, 5, { kbx:7, kby:3, stun:30, dir, unblockable:true }); sfx('air'); });
+  }},
+},
+{
+  id:'lin', name:'Lin Beifong', nation:'Cumhuriyet Şehri Polisi', element:'earth',
+  hp:110, speed:5, jump:14, jumps:1, kbRes:.6,
+  look:{ skin:'#e8c8a8', hair:'lin', hc:'#9a9a9a', top:'#6a7078', bottom:'#3a3f44', belt:'#c9a24a', shoe:'#222' },
+  bio:'Toph Beifong\'un kızı ve Cumhuriyet Şehri\'nin metal bükücü polis şefi. Sert ve kuralcı ama son derece onurlu. Amon bükücülüğünü aldı, Korra tarafından geri verildi. Yanağındaki iki yara izi gençliğinde kardeşi Suyin ile kavgasından kaldı. Zırhındaki metal kablolarla binalar arasında sallanır ve rakiplerini bağlar.',
+  facts:['Metal kablolu zırh','Cumhuriyet Şehri polis şefi','Toph\'un kızı, Suyin\'in ablası','Yanağında iki yara izi'],
+  passive:'Metal zırh: savrulma direnci; kabloları rakibi kendine çeker.',
+  ai:{ pref:250, atk:420, sp:2000, ult:650 },
+  a:{ name:'Metal Kablo', desc:'Bileğinden fırlayan kablo: vurursa rakibi kendine çeker.', cd:24, chi:8, fn(f){
+      proj(f, { type:'cable', sp:19, r:10, dmg:6, kbx:0, kby:1, stun:22, life:24, clash:false, reflectable:false, onHit(p, t){ t.vx = Math.sign(f.x - t.x) * 11; p.life = 0; } }); sfx('swing');
+  }},
+  b:{ name:'Metal Zırh', desc:'Zırhını sıkılaştırır: 4 sn boyunca yarı hasar alır.', cd:220, chi:24, fn(f){
+      f.armor = 240; sfx('block'); floatText(f.x, f.y - 150, 'ZIRH!', '#cde');
+  }},
+  c:{ name:'Kablo Hapsi', desc:'Kablolarla rakibi sarıp sıkar: uzun süre hareketsiz.', fn(f, o){
+      sfx('ult');
+      if (Math.abs(o.x - f.x) > 700) { floatText(f.x, f.y - 130, 'Menzil dışı!', '#aaa'); f.ult = 60; return; }
+      o.stun = Math.max(o.stun, 110); o.dash = null; o.fly = 0;
+      game.fx.push({ type:'wrap', a:f, b:o, life:100 });
+      after(20, () => hit(f, o, 8, { unblockable:true, kbx:0, kby:0, stun:90 }));
+      after(80, () => hit(f, o, 10, { unblockable:true, kbx:4, kby:6, stun:30 }));
+  }},
+},
+{
+  id:'kuvira', name:'Kuvira', nation:'Toprak İmparatorluğu', element:'earth',
+  hp:105, speed:5.4, jump:14.5, jumps:1,
+  look:{ skin:'#e2bf9a', hair:'kuvira', hc:'#1a1210', top:'#3e5a3a', bottom:'#2a3a2a', belt:'#9aa0a8', shoe:'#1a1a1a', armor:true },
+  bio:'Zaofu\'da Suyin Beifong tarafından yetiştirilen yetenekli metal bükücü. Dünya Kraliçesi\'nin ölümünden sonra kaosa düşen Toprak Krallığı\'nı "Büyük Birleştirici" olarak toparladı ama diktatörleşip Toprak İmparatorluğu\'nu kurdu. Ruh asmalarından enerji çeken bir ruh topu ve dev bir robot zırhla Cumhuriyet Şehri\'ne saldırdı. Sonunda Korra ile yüzleşip teslim oldu.',
+  facts:['Çok hızlı metal şerit bükmesi','"Büyük Birleştirici"','Ruh enerjisi topu ve dev mecha','Zaofu\'da Suyin tarafından yetiştirildi'],
+  passive:'Disiplinli: metal şeritleri çok hızlı. Ruh enerjisi yönlendirilemez.',
+  ai:{ pref:340, atk:640, sp:300, ult:1300 },
+  a:{ name:'Metal Şeritler', desc:'Kollarındaki metal şeritleri iki ayrı yönden fırlatır.', cd:15, chi:6, fn(f){
+      proj(f, { type:'strip', sp:18, r:8, dmg:3.5, kbx:3, dy:-8 }); proj(f, { type:'strip', sp:17, r:8, dmg:3.5, kbx:3, dy:6 }); sfx('swing');
+  }},
+  b:{ name:'Şerit Kırbacı', desc:'Uzun menzilli, ağır bir metal kırbaç.', cd:80, chi:18, fn(f){
+      proj(f, { type:'cable', sp:22, r:16, dmg:10, kbx:9, kby:4, life:14, clash:false, reflectable:false }); sfx('swing');
+  }},
+  c:{ name:'Ruh Enerjisi Topu', desc:'Ruh asmalarının enerjisiyle yeşil, devasa bir ışın. Yönlendirilemez!', fn(f){
+      f.channel = 46; sfx('zap'); game.fx.push({ type:'charge', f, life:46, color:'#8f8' });
+      after(46, () => { beam(f, other(f), { dmg:30, stun:60, kbx:12, kby:7, color:'#9fffb0', noRedirect:true }); game.shake = 22; sfx('ult'); });
+  }},
+},
+{
+  id:'jet', name:'Jet', nation:'Özgürlük Savaşçıları', element:'none',
+  hp:95, speed:6.1, jump:15, jumps:2, chiImmune:true, chiRegen:.32,
+  look:{ skin:'#e8c49c', hair:'jet', hc:'#4a2a14', top:'#7a5a3a', bottom:'#4a3a2a', belt:'#2a1a10', shoe:'#2a1a10', straw:true },
+  bio:'Ailesi Ateş Ulusu askerlerince öldürülen yetim; ormanda yetimlerden oluşan "Özgürlük Savaşçıları"nı kurdu. Karizmatik ve cesur ama intikam hırsıyla bir kasabayı sel ile yok etmeye kalkıştı. İkiz kancalı kılıçlarıyla ustaca dövüşür, ağaçlarda inanılmaz çeviktir; ağzında hep bir saman çöpü vardır. Ba Sing Se\'de Dai Li tarafından beyni yıkandı.',
+  facts:['İkiz kancalı kılıçlar','Özgürlük Savaşçıları lideri (Smellerbee, Longshot)','Ağzındaki saman çöpü','Ağaçlarda çok çevik'],
+  passive:'Ormanın çocuğu: çok hızlı, çift zıplama; chi engellemeye bağışık.',
+  ai:{ pref:60, atk:90, sp:260, ult:2000 },
+  a:{ name:'Kancalı Kılıçlar', desc:'İkiz kılıçlarla hızlı çifte kesik.', cd:13, chi:4, fn(f){
+      proj(f, { type:'slash', follow:true, ox:40, oy:-70, r:32, dmg:4, kbx:2, kby:1, life:7, color:'#e8e8e8', clash:false, reflectable:false }); sfx('swing');
+      after(6, () => { if (f.stun <= 0) { proj(f, { type:'slash', follow:true, ox:44, oy:-62, r:32, dmg:3.5, kbx:4, kby:2, life:7, color:'#cfcfcf', clash:false, reflectable:false }); sfx('swing'); } });
+  }},
+  b:{ name:'Kanca Atılışı', desc:'Kancalarla öne atılıp rakibi havaya kaldırır.', cd:70, chi:15, fn(f){
+      f.dash = { vx:17 * f.facing, t:12 };
+      proj(f, { type:'slash', follow:true, ox:30, oy:-64, r:38, dmg:10, kbx:5, kby:9, life:12, color:'#e8e8e8', clash:false, reflectable:false }); sfx('swing');
+  }},
+  c:{ name:'Özgürlük Savaşçıları', desc:'Longshot ve arkadaşları ağaçlardan ok yağdırır.', fn(f, o){
+      sfx('ult'); floatText(f.x, f.y - 150, 'Özgürlük Savaşçıları!', '#cfa');
+      for (let i = 0; i < 22; i++) after(i * 3, () => {
+        const tx = clamp(o.x + rand(-170, 170), 30, W - 30);
+        game.projs.push(mkProj(f, { type:'arrow', x:tx - 60, y:-30, vx:3, vy:17, r:8, dmg:2.8, stun:12, kbx:1, kby:1, life:80, groundHit:true, clash:false, reflectable:false }));
+      });
+  }},
+},
+{
+  id:'combustion', name:'Patlama Adam', nation:'Ateş Ulusu (Suikastçı)', element:'fire',
+  hp:120, speed:4.2, jump:12.5, jumps:1, kbRes:.55,
+  look:{ skin:'#c8a080', hair:'combustion', hc:'#000', top:'#3a2a24', bottom:'#2a1e1a', belt:'#6a5a4a', shoe:'#151010', wide:true, armMetal:true },
+  bio:'Zuko\'nun Avatar\'ı yakalaması için tuttuğu dev cüsseli suikastçı; neredeyse hiç konuşmaz. Alnındaki üçüncü göz dövmesinden, ateş bükmenin nadir bir alt dalı olan yanma bükme ile patlama ışınları fırlatır. Metal kol ve bacak protezleri vardır. Sokka ona "Sparky Sparky Boom Man" lakabını taktı; sonunda Sokka\'nın bumerangı alnına isabet edince kendi patlamasına yakalandı.',
+  facts:['Yanma bükme: ateş bükmenin nadir alt dalı','Alnında üçüncü göz dövmesi','Metal kol ve bacak protezleri','Sokka\'nın lakabı: "Sparky Sparky Boom Man"'],
+  passive:'Dev cüsse: 120 can; patlamaları alan hasarı verir.',
+  ai:{ pref:400, atk:760, sp:900, ult:1500 },
+  a:{ name:'Patlama Işını', desc:'Üçüncü gözden ince bir ışın: çarptığı yerde patlar.', cd:34, chi:10, fn(f){
+      proj(f, { type:'blast', sp:14, r:8, dmg:9, kbx:8, kby:5, dy:-40, explode:{ r:70, dmg:6 }, groundHit:true, onHit(p, t){ explode(f, p.x, p.y, 60, 0); } }); sfx('fire');
+  }},
+  b:{ name:'Uzak Patlama', desc:'Rakibin olduğu yeri hedefler; kısa süre sonra orada patlama olur.', cd:110, chi:22, fn(f, o){
+      const tx = o.x, ty = o.onGround ? o.y - 40 : o.y - 60;
+      game.fx.push({ type:'target', x:tx, y:ty, life:36, r:80 });
+      after(36, () => explode(f, tx, ty, 80, 13));
+  }},
+  c:{ name:'Dev Patlama', desc:'Art arda üç dev patlama.', fn(f, o){
+      sfx('ult'); game.tint = { c:'rgba(255,120,30,', life:90 };
+      [-150, 0, 150].forEach((dx, i) => { const tx = clamp(o.x + dx, 40, W - 40); game.fx.push({ type:'target', x:tx, y:GROUND - 50, life:30 + i * 18, r:100 }); after(30 + i * 18, () => explode(f, tx, GROUND - 50, 105, 12)); });
+  }},
+},
+{
+  id:'hama', name:'Hama', nation:'Güney Su Kabilesi', element:'water',
+  hp:95, speed:4.6, jump:13.5, jumps:1,
+  look:{ skin:'#d8b090', hair:'hama', hc:'#ececec', top:'#5a2a4a', bottom:'#3a1e32', belt:'#2a1424', shoe:'#2a1a1a', dress:true },
+  bio:'Ateş Ulusu\'nca kaçırılan son Güney su bükücülerinden biri. Hapishanede sudan yoksun bırakılınca farelerin kanını bükmeyi öğrenerek kan bükmeyi keşfetti ve kaçtı. Ateş Ulusu\'nda bir köyde iyi kalpli bir hancı kılığında yaşarken dolunay gecelerinde köylüleri kaçırdı. Katara\'ya kan bükmeyi zorla öğretti ve sonunda yakalandı.',
+  facts:['Kan bükmeyi keşfeden kişi','Havadaki nemden ve bitkilerden su çeker','Katara\'nın karanlık öğretmeni','Dolunayda en güçlü'],
+  passive:'Nem bükücü: suyu her yerden çeker; dolunayda daha da güçlü.',
+  ai:{ pref:300, atk:560, sp:700, ult:2000 },
+  a:{ name:'Nem Hançerleri', desc:'Havadaki nemi buz hançerlerine çevirir.', cd:22, chi:7, fn(f){
+      for (const vy of [-1, 1]) proj(f, { type:'ice', sp:15, vy, r:10, dmg:4.5, slow:60, kbx:3 }); sfx('ice');
+  }},
+  b:{ name:'Bitki Özü', desc:'Çevredeki bitkilerin suyunu çeker: can yeniler ve bir su küresi fırlatır.', cd:160, chi:25, fn(f){
+      heal(f, 12); proj(f, { type:'water', sp:12, r:16, dmg:8, slow:60, kbx:6 }); sfx('water');
+      burst(f.x, f.y - 20, 16, ['#6c6','#3fa9f5'], 4);
+  }},
+  c:{ name:'Dolunay Kan Bükmesi', desc:'Rakibi kuklası gibi oynatır ve yere çarpar.', fn(f, o){
+      sfx('ult'); game.shake = 10; game.tint = { c:'rgba(120,0,40,', life:150 };
+      if (o.def.bloodImmune) { floatText(o.x, o.y - 130, 'ETKİSİZ!', '#ffd'); return; }
+      sfx('blood'); o.lifted = 140; o.stun = Math.max(o.stun, 155); o.dash = null; o.fly = 0;
+      game.fx.push({ type:'blood', a:f, b:o, life:140 });
+      after(135, () => { o.vy = 22; hit(f, o, 22, { unblockable:true, kbx:2, kby:0, stun:30 }); game.shake = 16; });
+  }},
+},
+{
+  id:'pakku', name:'Usta Pakku', nation:'Kuzey Su Kabilesi', element:'water',
+  hp:105, speed:4.6, jump:13.5, jumps:1,
+  look:{ skin:'#9a6a44', hair:'pakku', hc:'#ececec', top:'#2a4a7a', bottom:'#1a2e4e', belt:'#d8d8e8', shoe:'#1a1a2a', robe:true },
+  bio:'Kuzey Su Kabilesi\'nin katı ve gururlu su bükme ustası. Başta kadınlara savaş bükmesi öğretmeyi reddetti; ama Katara\'nın düellosundan sonra fikrini değiştirdi. Katara\'nın büyükannesi Kanna\'nın eski nişanlısıydı ve sonunda onunla evlendi. Beyaz Lotus üyesi olarak Ba Sing Se\'nin kurtarılmasına katıldı.',
+  facts:['Kuzey\'in en büyük su bükme ustası','Aynı anda birçok su kırbacı yönetir','Kanna ile evlendi','Beyaz Lotus üyesi'],
+  passive:'Usta: aynı anda üç kırbaç; Su Kalkanı mermileri yutar.',
+  ai:{ pref:250, atk:260, sp:0, ult:900, bOnThreat:true },
+  a:{ name:'Üçlü Kırbaç', desc:'Aynı anda üç su kırbacı.', cd:26, chi:8, fn(f){
+      [[15, -1.6], [14, 0], [13, 1.6]].forEach(([sp, vy]) => proj(f, { type:'whip', sp, vy, r:13, dmg:3.4, kbx:5, kby:2, life:16, clash:false, reflectable:false })); sfx('water');
+  }},
+  b:{ name:'Su Kalkanı', desc:'Dönen su duvarı: gelen mermileri yutar.', cd:150, chi:20, fn(f){
+      f.shield = 70; f.shieldKind = 'water'; sfx('water');
+  }},
+  c:{ name:'Buz Dalgası', desc:'Yerden yükselen buz dalgası: rakibi dondurur.', fn(f){
+      sfx('ult'); sfx('ice'); game.shake = 10;
+      game.projs.push(mkProj(f, { type:'icewave', x:f.x + f.facing * 50, y:GROUND - 40, vx:8 * f.facing, vy:0, r:48, dmg:14, stun:90, slow:200, kbx:3, kby:4, life:110, pierce:true, clash:false, reflectable:false, onHit(p, t){ floatText(t.x, t.y - 150, 'DONDU!', '#cff', 22); } }));
+  }},
+},
 ];
 const CHAR = Object.fromEntries(CHARS.map(c => [c.id, c]));
 
@@ -1009,7 +1280,7 @@ layoutPlatforms();
 // ====================================================================
 const PROFILE_KEY = 'dortulus_profile_v1';
 function loadProfile(){
-  const d = { xp:0, level:1, campaign:0, stars:{}, endlessBest:0, endlessChar:'', wins:0, matches:0, sound:true, music:true };
+  const d = { xp:0, level:1, campaign:0, stars:{}, endlessBest:0, endlessChar:'', wins:0, matches:0, sound:true, music:true, ach:{}, winChars:{}, winEl:{}, skins:{}, daily:null, hazards:true, trainDmg:0 };
   try { const s = JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null'); return Object.assign(d, s || {}); } catch (e) { return d; }
 }
 const profile = loadProfile();
@@ -1020,7 +1291,9 @@ function rankOf(lv){ let r = RANKS[0][1]; for (const [l, n] of RANKS) if (lv >= 
 function addXP(n){
   profile.xp += n; let ups = 0;
   while (profile.xp >= xpNeed(profile.level)) { profile.xp -= xpNeed(profile.level); profile.level++; ups++; }
-  saveProfile(); return ups;
+  saveProfile();
+  if (profile.level >= 5) unlock('lv5'); if (profile.level >= 10) unlock('lv10');
+  return ups;
 }
 
 // ====================================================================
@@ -1063,14 +1336,14 @@ function stream(f, frames, every, fn){
 //  DÖVÜŞÇÜ
 // ====================================================================
 class Fighter {
-  constructor(def, side, ctrl, o = {}){ this.def = def; this.side = side; this.ctrl = ctrl; this.hpMult = o.hpMult || 1; this.aiDiff = o.aiDiff; this.dealt = 0; this.reset(); }
+  constructor(def, side, ctrl, o = {}){ this.def = def; this.side = side; this.ctrl = ctrl; this.hpMult = o.hpMult || 1; this.aiDiff = o.aiDiff; this.dealt = 0; this.look = lookFor(def.id, o.skin || 'classic'); this.reset(); }
   reset(){
     const d = this.def;
     this.maxHp = Math.round(d.hp * this.hpMult); this.hp = this.maxHp; this.hpGhost = this.maxHp; this.chi = 100; this.ult = 0;
     this.x = this.side === 0 ? W / 2 - 360 : W / 2 + 360; this.y = GROUND; this.vx = 0; this.vy = 0;
     this.facing = this.side === 0 ? 1 : -1;
     this.onGround = true; this.onPlatform = false; this.jumpsLeft = d.jumps;
-    this.cd = { a:0, b:0, c:0 };
+    this.cd = { a:0, b:0, c:0, k:0 }; this.shield = 0; this.armor = 0; this.dive = false; this.comboN = 0; this.comboT = -999; this.nx = undefined;
     this.stun = 0; this.chiBlock = 0; this.burn = 0; this.slow = 0; this.flash = 0; this.atk = 0; this.atkType = '';
     this.blocking = false; this.avatar = 0; this.fly = 0; this.counter = 0; this.invuln = 0; this.dash = null; this.lifted = 0;
     this.walk = 0; this.lastHit = 999; this.speedBuff = 0; this.dot = null; this.glowT = 0; this.dropT = 0; this.channel = 0;
@@ -1103,7 +1376,7 @@ function useAbility(f, slot){
     return;
   }
   const ab = f.def[slot];
-  if (slot === 'c') { if (f.ult < 100) return; f.ult = 0; banner(f, ab.name); }
+  if (slot === 'c') { if (f.ult < 100) return; f.ult = 0; banner(f, ab.name); f.ultT = game.frame; if (isHuman(f)) quest('ult'); }
   else {
     if (f.cd[slot] > 0) return;
     if (f.chi < ab.chi) { if (slot === 'b') floatText(f.x, f.y - 145, 'Chi yetersiz', '#9cf'); return; }
@@ -1160,7 +1433,8 @@ function beam(f, o, opt, depth = 0){
   game.fx.push({ type:'bolt', x1:h.x, y1:h.y, x2:ex, y2:ey, life:20, color:opt.color || '#bfe9ff' });
   sfx('zap'); game.shake = Math.max(game.shake, 10);
   if (!hitT) return;
-  if (o.counter > 0 && depth < 3) {
+  if (o.counter > 0 && depth < 3 && !opt.noRedirect) {
+    if (isHuman(o)) unlock('redirect');
     floatText(o.x, o.y - 150, 'ŞİMŞEK YÖNLENDİRİLDİ!', '#bfe9ff', 22);
     o.counter = 0; o.ult = Math.min(100, o.ult + 25);
     game.fx.push({ type:'redirect', f:o, life:24 });
@@ -1181,6 +1455,18 @@ function hit(att, t, dmg, o = {}){
   if (t.avatar > 0) d *= .5;
   if (att && att.def.crit && Math.random() < att.def.crit && dmg >= 3) { d *= 2; floatText(t.x, t.y - 150, 'KRİTİK!', '#ff4'); }
   const blocked = t.blocking && !o.unblockable;
+  if (t.armor > 0) d *= .5;
+  if (game.moon > 0 && att && ['water','blood'].includes(att.def.element === 'avatar' ? att.def.bend : att.def.element)) d *= 1.3;
+  if (att && att !== t && !blocked && dmg >= 2.5) {
+    att.comboN = game.frame - att.comboT < 75 ? att.comboN + 1 : 1; att.comboT = game.frame;
+    const n = att.comboN;
+    if (n >= 3) { d *= 1 + Math.min(.4, (n - 2) * .07); game.comboShow = { side:att.side, n, life:80 }; }
+    if (isHuman(att)) { if (n === 4) quest('combo4'); if (n === 5) unlock('combo5'); if (n === 10) unlock('combo10'); }
+  }
+  if (game.mode === 'training' && att && att === game.p[0] && att !== t) {
+    const T = game.training; T.last = Math.round(d * 10) / 10; T.total += d; T.maxCombo = Math.max(T.maxCombo, att.comboN);
+    quest('train', d); profile.trainDmg = (profile.trainDmg || 0) + d; if (profile.trainDmg >= 500) unlock('trainer');
+  }
   if (blocked) {
     d *= .25; t.chi -= dmg * 1.4; sfx('block');
     burst(t.x + (att ? Math.sign(att.x - t.x) : 0) * 20, t.y - 60, 6, ['#fff','#ffd'], 4);
@@ -1193,7 +1479,7 @@ function hit(att, t, dmg, o = {}){
   if (att && att !== t) att.ult = Math.min(100, att.ult + d * 1.15);
   t.ult = Math.min(100, t.ult + d * .6);
   if (!blocked) {
-    const res = t.def.kbRes || 1;
+    const res = (t.def.kbRes || 1) * (t.armor > 0 ? .4 : 1);
     const dir = o.dir || (att ? (Math.sign(t.x - att.x) || 1) : 1);
     t.vx = (o.kbx ?? 4) * dir * res;
     const ky = (o.kby ?? 2) * res;
@@ -1216,6 +1502,7 @@ function hit(att, t, dmg, o = {}){
 // ====================================================================
 const GLOW = new Set(['#f80','#fc4','#f40','#4fb6ff','#bdf','#fff','#bfe9ff','#6af','#fe8','#f84','#ffd56a','#bff','#ffd','#ff9ac8','#eef','#cdf','#cff','#ffe27a']);
 function burst(x, y, n, cols, sp, o = {}){
+  if (n >= 6 && NET.role === 'host' && game.mode === 'online') netEv(['b', Math.round(x), Math.round(y), n, cols, sp]);
   const glow = o.glow ?? cols.some(c => GLOW.has(c));
   for (let i = 0; i < n && game.parts.length < 1200; i++) {
     const a = Math.random() * Math.PI * 2, s = Math.random() * sp;
@@ -1224,6 +1511,7 @@ function burst(x, y, n, cols, sp, o = {}){
   }
 }
 function floatText(x, y, txt, color = '#fff', size = 18){
+  if (NET.role === 'host' && game.mode === 'online') netEv(['t', Math.round(x), Math.round(y), String(txt), color, size]);
   game.texts.push({ x, y, txt:String(txt), color, size, life:60, max:60 });
 }
 
@@ -1234,16 +1522,23 @@ function randomOpp(not){ let id; do { id = pick(CHARS).id; } while (id === not);
 function startMatch(){
   const m = game.mode;
   let c1 = game.sel.chars[0], c2 = game.sel.chars[1], stageId = game.sel.stage, diff = game.diff, hp2 = 1;
+  let ctrl1 = m === 'demo' ? 'ai' : 'p1', ctrl2 = m === '2p' ? 'p2' : 'ai', sk1 = m === 'demo' ? 'classic' : mySkin(c1), sk2 = 'classic';
   game.rules = { toWin:2 };
   if (m === 'campaign') {
     const L = LEVELS[game.camp.level];
     c2 = L.opp; stageId = L.stage; diff = L.diff; hp2 = (L.hp || 1) * (1 + game.camp.level * .025);
     game.rules.toWin = game.camp.level < 5 ? 1 : 2;
   }
+  if (m === '2p') sk2 = mySkin(c2);
   if (m === 'endless') { game.endless = { wave:1, xp:0 }; c2 = randomOpp(c1); stageId = 'random'; diff = 0; game.rules.toWin = 1; }
-  const ctrl1 = m === 'demo' ? 'ai' : 'p1', ctrl2 = m === '2p' ? 'p2' : 'ai';
-  game.p = [new Fighter(CHAR[c1], 0, ctrl1, { aiDiff:1 }), new Fighter(CHAR[c2], 1, ctrl2, { hpMult:hp2, aiDiff:diff })];
-  game.stage = stageId === 'random' ? pick(STAGES) : STAGES.find(s => s.id === stageId);
+  if (m === 'training') {
+    c2 = c2 || 'sokka'; ctrl2 = 'dummy'; game.rules.toWin = 99;
+    const old = game.training || {};
+    game.training = { dummy:old.dummy || 'idle', infChi:old.infChi ?? true, last:0, total:0, maxCombo:0 };
+  }
+  if (m === 'online') { const M = NET.match; c1 = M.chars[0]; c2 = M.chars[1]; sk1 = M.skins[0]; sk2 = M.skins[1]; stageId = M.stage; ctrl2 = 'net'; }
+  game.p = [new Fighter(CHAR[c1], 0, ctrl1, { aiDiff:1, skin:sk1 }), new Fighter(CHAR[c2], 1, ctrl2, { hpMult:hp2, aiDiff:diff, skin:sk2 })];
+  game.stage = stageId === 'random' ? pick(STAGES) : STAGES.find(s => s.id === stageId) || STAGES[0];
   game.bg = buildBackground(game.stage);
   game.wins = [0, 0]; game.round = 1;
   newRound();
@@ -1257,9 +1552,12 @@ function newRound(){
   game.projs = []; game.parts = []; game.texts = []; game.fx = []; game.walls = []; game.timers = []; game.pickups = [];
   game.time = 99 * 60; game.intro = 110; game.roundOver = 0; game.banner = null; game.tint = null; game.pickT = 600; game.slowmo = 0; game.hitstop = 0;
   game.weather = []; game.cam = { x:W / 2, y:H / 2, z:1 };
+  game.hazards = []; game.hazT = 700; game.moon = 0; game.wind = null; game.eventMsg = null; game.comboShow = null;
 }
 function ko(att, t){
   if (game.roundOver > 0) return;
+  if (game.mode === 'training') { t.hp = t.maxHp; t.hpGhost = t.maxHp; floatText(t.x, t.y - 160, 'YENİLENDİ', '#7f7', 20); return; }
+  if (att && isHuman(att) && att !== t) { if (game.frame - (att.ultT ?? -9999) < 300) unlock('ult_ko'); if (att.hp >= att.maxHp) unlock('perfect'); }
   game.roundOver = 170; game.slowmo = 50; game.shake = 22; game.flashScr = 14; sfx('ko');
   const w = att && att !== t ? att.side : 1 - t.side;
   game.wins[w]++;
@@ -1277,6 +1575,7 @@ function endRound(){
     if (game.roundWinner !== 0) return finishMatch();
     const e = game.endless, p = game.p[0];
     e.xp += 40 + e.wave * 15; e.wave++;
+    quest('wave'); if (e.wave - 1 >= 5) unlock('endless5'); if (e.wave - 1 >= 10) unlock('endless10');
     const keep = { hp:p.hp, ult:p.ult };
     game.p[1] = new Fighter(CHAR[randomOpp(p.def.id)], 1, 'ai', { hpMult:1 + .07 * (e.wave - 1), aiDiff:Math.min(2, Math.floor((e.wave - 1) / 3)) });
     if (e.wave % 3 === 1) { game.stage = pick(STAGES); game.bg = buildBackground(game.stage); }
@@ -1312,9 +1611,10 @@ function finishMatch(){
       if (!(lv in profile.stars) ) xp += 100;
       profile.stars[lv] = Math.max(profile.stars[lv] || 0, stars);
       profile.campaign = Math.max(profile.campaign, lv + 1);
+      quest('camp'); if (lv >= 4) unlock('camp5'); if (lv >= LEVELS.length - 1) unlock('camp15'); if (LEVELS.every((_, i) => profile.stars[i] === 3)) unlock('stars');
       title = lv === LEVELS.length - 1 ? 'MACERA TAMAMLANDI!' : 'SEVİYE GEÇİLDİ!';
       sub = `Seviye ${lv + 1}: ${L.title}`;
-      if (lv < LEVELS.length - 1) btns.push(['next', 'Sonraki Seviye ▶']);
+      btns.push(lv < LEVELS.length - 1 ? ['next', 'Sonraki Seviye ▶'] : ['ending', 'Final Sahnesi ▶']);
       btns.push(['levels', 'Seviyeler'], ['menu', 'Ana Menü']);
     } else {
       title = 'YENİLDİN'; sub = `Seviye ${lv + 1}: ${L.title} — tekrar dene!`;
@@ -1326,9 +1626,12 @@ function finishMatch(){
     sub = (who ? who + ' · ' : '') + `Skor ${game.wins[0]} - ${game.wins[1]} · ` + pick(QUOTES);
     if (m === 'cpu') xp = 25 + Math.round(p0.dealt * .5) + (w === 0 ? 90 + game.diff * 40 : 0);
     else if (m === '2p') xp = 40 + Math.round((p0.dealt + game.p[1].dealt) * .25);
-    btns.push(['again', 'Rövanş'], ['toselect', 'Karakter Seçimi'], ['menu', 'Ana Menü']);
+    else if (m === 'online') xp = 40 + Math.round(p0.dealt * .4) + (w === 0 ? 120 : 0);
+    if (m === 'online') { btns.push(['netrematch', 'Rövanş'], ['onlinelobby', 'Lobiye Dön'], ['netquit', 'Ana Menü']); if (NET.named) NET.named.presence({ over:{ id:NET.matchId, w, wins:game.wins }, snap:buildSnap() }).catch(() => {}); }
+    else btns.push(['again', 'Rövanş'], ['toselect', 'Karakter Seçimi'], ['menu', 'Ana Menü']);
   }
   if (m !== 'demo') { profile.matches++; if (w === 0) profile.wins++; }
+  matchAchievements(w);
   const before = { lv:profile.level, xp:profile.xp };
   const ups = xp > 0 ? addXP(xp) : 0;
   saveProfile();
@@ -1365,7 +1668,8 @@ function updateFighter(f, inp){
         if (!f.onGround && f.jumpsLeft < d.jumps - 1) burst(f.x, f.y, 8, d.bend === 'air' || d.element === 'air' ? ['#eef','#cdf'] : ['#ddd'], 3);
       }
     }
-    if (inp.a) useAbility(f, 'a');
+    if (inp.aP && (inp.up || inp.down) && comboMove(f, inp)) {}
+    else if (inp.a && !(inp.down && f.onGround)) useAbility(f, 'a');
     if (inp.bP) useAbility(f, 'b');
     if (inp.cP) useAbility(f, 'c');
   }
@@ -1446,6 +1750,7 @@ function updateProjs(){
       p.life = 0; burst(p.x, GROUND, p.type === 'boulder' ? 40 : 12, p.type === 'comet' ? ['#f80','#fc4','#f40'] : ['#8a6a43','#6a4a2a','#a88a5a'], p.type === 'boulder' ? 9 : 5, { up:3 });
       if (p.type === 'boulder') { game.shake = 22; sfx('earth'); game.fx.push({ type:'ring', x:p.x, y:GROUND, life:24, color:'#a88a5a' }); }
       if (p.type === 'comet') { sfx('fire'); game.fx.push({ type:'ring', x:p.x, y:GROUND, life:18, color:'#f84' }); }
+      if (p.explode) explode(p.owner, p.x, GROUND - 16, p.explode.r, p.explode.dmg);
       // patlama alanı
       const t = other(p.owner);
       if (p.type === 'comet' && Math.abs(t.x - p.x) < 60 && t.y > GROUND - 40 && !p.hits.has(t)) hit(p.owner, t, p.dmg * .6, { kbx:3, kby:5, burn:60 });
@@ -1453,7 +1758,7 @@ function updateProjs(){
     }
     if (p.x < -300 || p.x > W + 300 || p.y > H + 100 || p.y < -400) { p.life = 0; continue; }
     // duvar
-    if (!p.follow && !['appa','kyoshi','tornado','boulder','comet','none'].includes(p.type)) {
+    if (!p.follow && !['appa','kyoshi','tornado','boulder','comet','none','car','lava','icewave','arrow'].includes(p.type)) {
       for (const w of game.walls) if (w.owner !== p.owner && circleRect(p.x, p.y, p.r, w)) {
         w.hp -= p.dmg; p.life = 0; burst(p.x, p.y, 10, ['#8a6a43','#6a4a2a'], 4); sfx('earth');
       }
@@ -1465,11 +1770,12 @@ function updateProjs(){
       const last = p.hits.get(t);
       const can = last === undefined || (p.multi && p.age - last >= p.multi);
       if (can) {
+        if (t.shield > 0 && !p.follow && !['appa','kyoshi','car','tornado','lava','icewave','wave','boulder','comet'].includes(p.type)) { p.life = 0; burst(p.x, p.y, 12, t.shieldKind === 'water' ? ['#3fa9f5','#bdf'] : ['#eef','#cdf','#fff'], 5); sfx(t.shieldKind === 'water' ? 'water' : 'air', t.x); continue; }
         if (t.counter > 0 && p.reflectable && !p.follow) {
           // Iroh yönlendirmesi
           p.owner = t; p.vx = -p.vx * 1.3; p.vy = -p.vy * .5; p.dmg *= 1.5; p.type = 'lightning'; p.hits = new Map(); p.life = 90; p.grav = 0; p.boomerang = 0; p.groundHit = false;
           t.counter = 0; t.ult = Math.min(100, t.ult + 15); game.fx.push({ type:'redirect', f:t, life:24 });
-          floatText(t.x, t.y - 150, 'YÖNLENDİRME!', '#bfe9ff', 22); sfx('zap');
+          floatText(t.x, t.y - 150, 'YÖNLENDİRME!', '#bfe9ff', 22); sfx('zap'); if (isHuman(t)) unlock('redirect');
           continue;
         }
         p.hits.set(t, p.age);
@@ -1543,7 +1849,7 @@ function aiInput(f){
 }
 
 function updatePickups(){
-  if (game.intro > 0 || game.roundOver > 0) return;
+  if (game.intro > 0 || game.roundOver > 0 || game.mode === 'training') return;
   if (--game.pickT <= 0 && game.pickups.length < 1) {
     game.pickT = rand(600, 900);
     const type = pick(['tea','tea','cabbage','momo']);
@@ -1558,7 +1864,7 @@ function updatePickups(){
       if (Math.abs(f.x - k.x) < 36 && Math.abs((f.y - 50) - (k.y - 20)) < 70) {
         k.life = 0; sfx('pick');
         if (k.type === 'tea') { heal(f, f.def.teaLover ? 30 : 15); floatText(f.x, f.y - 145, 'Yasemin Çayı', '#bfe'); }
-        else if (k.type === 'cabbage') { f.chi = 100; f.ult = Math.min(100, f.ult + 25); floatText(f.x, f.y - 145, 'LAHANALARIM!', '#9f6', 20); }
+        else if (k.type === 'cabbage') { f.chi = 100; f.ult = Math.min(100, f.ult + 25); floatText(f.x, f.y - 145, 'LAHANALARIM!', '#9f6', 20); if (isHuman(f)) unlock('cabbage'); }
         else { f.speedBuff = 360; floatText(f.x, f.y - 145, 'Momo yardıma geldi!', '#ddd'); }
         break;
       }
@@ -1585,19 +1891,26 @@ function step(){
   updatePads();
   if ((padEdge[0] && padEdge[0].start) || (padEdge[1] && padEdge[1].start)) { togglePause(); return; }
   if (game.hitstop > 0) { game.hitstop--; for (const f of game.p) if (f.flash > 0) f.flash--; return false; }
+  if (game.mode === 'training') { game.time = 99 * 60; const T = game.training, d = game.p[1]; if (T.infChi) game.p[0].chi = 100; if (d.lastHit > 100 && d.hp < d.maxHp) { d.hp = d.maxHp; d.hpGhost = d.maxHp; } }
   if (game.intro > 0) { game.intro--; if (game.intro === 45) sfx('gong'); }
   if (game.roundOver > 0) { game.roundOver--; if (game.roundOver === 0) { endRound(); return; } }
   else if (game.intro <= 0) { if (--game.time <= 0) { game.time = 0; timeUp(); } }
 
   for (const f of game.p) {
-    const inp = f.ctrl === 'ai' ? aiInput(f) : readInput(f.ctrl === 'p1' ? 0 : 1);
+    const inp = f.ctrl === 'ai' ? aiInput(f) : f.ctrl === 'dummy' ? dummyInput(f) : f.ctrl === 'net' ? netInput() : readInput(f.ctrl === 'p1' ? 0 : 1);
+    if (f.ctrl === 'ai' && inp.a && Math.random() < .05) { const o = other(f); if (o.y < f.y - 80 && Math.abs(o.x - f.x) < 160) { inp.up = true; inp.aP = true; } else if (Math.abs(o.x - f.x) < 90 && f.onGround) { inp.down = true; inp.aP = true; } }
+    if (f.cd.k > 0) f.cd.k--;
+    if (f.shield > 0) f.shield--; if (f.armor > 0) f.armor--;
     updateFighter(f, inp);
+    if (f.dive && (f.stun > 0 || f.hp <= 0)) f.dive = false;
+    if (f.dive && f.onGround) diveLand(f);
     if (f.hpGhost > f.hp) { if (f.lastHit > 28) f.hpGhost = Math.max(f.hp, f.hpGhost - f.maxHp * .008); } else f.hpGhost = f.hp;
   }
   const ts = game.timers; game.timers = [];
   for (const t of ts) { if (--t.t <= 0) t.fn(); else game.timers.push(t); }
   updateProjs();
-  updatePickups();
+  updatePickups(); updateHazards();
+  if (game.comboShow && --game.comboShow.life <= 0) game.comboShow = null;
   for (const w of game.walls) { w.life--; w.rise = Math.min(1, w.rise + .15); if (w.hp <= 0 && w.life > 0) { w.life = 0; burst(w.x + w.w / 2, w.y + 60, 20, ['#8a6a43','#6a4a2a'], 6); sfx('earth', w.x); } }
   game.walls = game.walls.filter(w => w.life > 0);
   for (const p of game.parts) { p.vy += p.grav; p.x += p.vx; p.y += p.vy; p.vx *= .97; p.life--; }
@@ -1667,7 +1980,7 @@ function drawChar(c, L, s){
   const armCol = L.bareArms ? L.skin : shade(L.top, -20);
   limb(c, -3, -42, lb, 21, lb + kb, 21, 9, legDark, legDark);
   footAt(c, -3, -42, lb, kb, shade(shoe, -20));
-  backHair(c, L);
+  backHair(c, L); backHair2(c, L);
   const bh = limb(c, -2, -74, ba1, 16, ba1 + ba2 * .5, 16, 7, armCol, shade(L.skin, -15));
   c.fillStyle = shade(L.skin, -15); c.beginPath(); c.arc(bh.x, bh.y, 4.5, 0, 7); c.fill();
 
@@ -1707,10 +2020,10 @@ function drawChar(c, L, s){
   // boyun
   c.fillStyle = shade(L.skin, -10); c.fillRect(-3, -82, 9, 4);
   face(c, L, hx, hy, s);
-  frontHair(c, L, hx, hy);
+  frontHair(c, L, hx, hy); frontHair2(c, L, hx, hy, s);
 
   // ön kol
-  const fh = limb(c, 4, -74, fa1, 16, fa1 + (fa2 - fa1) * 1, 16, 7.5, L.bareArms ? L.skin : L.top, L.skin);
+  const fh = limb(c, 4, -74, fa1, 16, fa1 + (fa2 - fa1) * 1, 16, 7.5, L.armMetal ? '#7a828c' : L.bareArms ? L.skin : L.top, L.armMetal ? '#a8b0ba' : L.skin);
   c.fillStyle = L.skin; c.beginPath(); c.arc(fh.x, fh.y, 5, 0, 7); c.fill();
   if (L.fans) { c.fillStyle = '#e8c050'; c.beginPath(); c.moveTo(fh.x, fh.y); c.arc(fh.x, fh.y, 16, -1.2, .4); c.closePath(); c.fill(); c.strokeStyle = '#9a7a20'; c.lineWidth = 1; c.stroke(); }
   c.restore();
@@ -1988,7 +2301,7 @@ function drawProj(p){
       break; }
     case 'slash': {
       const f = p.owner, prog = 1 - p.life / 12;
-      c.translate(f.x, f.y - 72); c.scale(f.facing, 1);
+      c.translate(f.x, f.y + (p.low ? -18 : -72)); c.scale(f.facing, 1);
       c.globalAlpha = clamp(p.life / 6, 0, 1);
       c.lineCap = 'round';
       for (let i = 0; i < 4; i++) {
@@ -2028,6 +2341,7 @@ function drawProj(p){
       }
       break; }
     case 'appa': drawAppa(c, p.x, p.y, Math.sign(p.vx), p.age); break;
+    default: drawProj2(c, p); break;
     case 'kyoshi':
       c.globalAlpha = .9;
       c.fillStyle = 'rgba(150,220,140,.25)'; c.fillRect(p.x - Math.sign(p.vx) * 110, p.y - 70, Math.sign(p.vx) * 60, 110);
@@ -2347,6 +2661,7 @@ function render(){
   for (const k of game.pickups) drawPickup(k);
   for (const f of game.p) drawFighter(f);
   for (const p of game.projs) drawProj(p);
+  for (const h of game.hazards || []) drawHazard(h);
   for (const e of game.fx) drawFx(e);
   // parçacıklar: önce normal, sonra parlayanlar (eklemeli)
   for (const p of game.parts) if (!p.glow) { c.globalAlpha = clamp(p.life / p.max, 0, 1); c.fillStyle = p.color; c.fillRect(p.x - p.size / 2, p.y - p.size / 2, p.size, p.size); }
@@ -2366,13 +2681,15 @@ function render(){
   drawHUD();
 }
 function drawFighter(f){
-  const c = ctx, L = f.def.look;
+  const c = ctx, L = f.look || f.def.look;
   let gy = GROUND; for (const p of PLATFORMS) if (f.x > p.x && f.x < p.x + p.w && f.y <= p.y + 1 && p.y < gy) gy = p.y;
   const sh = clamp(1 - (gy - f.y) / 400, .3, 1);
   c.fillStyle = `rgba(0,0,0,${.35 * sh})`; c.beginPath(); c.ellipse(f.x, gy + 2, 30 * sh, 7 * sh, 0, 0, 7); c.fill();
   c.save(); c.globalCompositeOperation = 'lighter';
   if (f.avatar > 0 || f.glowT > 0) { const g = c.createRadialGradient(f.x, f.y - 70, 10, f.x, f.y - 70, 110); g.addColorStop(0, 'rgba(160,255,255,.45)'); g.addColorStop(1, 'rgba(160,255,255,0)'); c.fillStyle = g; c.fillRect(f.x - 110, f.y - 180, 220, 220); }
   if (f.counter > 0) { c.strokeStyle = `rgba(160,220,255,${.5 + Math.sin(f.t * .5) * .3})`; c.lineWidth = 3; c.beginPath(); c.arc(f.x, f.y - 68, 58, 0, 7); c.stroke(); }
+  if (f.shield > 0) { c.strokeStyle = f.shieldKind === 'water' ? 'rgba(63,169,245,.75)' : 'rgba(230,248,255,.75)'; c.lineWidth = 4; for (let i = 0; i < 3; i++) { c.beginPath(); c.arc(f.x, f.y - 66, 64, f.t * .2 + i * 2.1, f.t * .2 + i * 2.1 + 1.4); c.stroke(); } }
+  if (f.armor > 0) { c.strokeStyle = 'rgba(200,210,220,.5)'; c.lineWidth = 2; rr(c, f.x - 30, f.y - 136, 60, 136, 14); c.stroke(); }
   if (f.burn > 0) { const g = c.createRadialGradient(f.x, f.y - 60, 5, f.x, f.y - 60, 70); g.addColorStop(0, 'rgba(255,120,30,.25)'); g.addColorStop(1, 'rgba(255,60,0,0)'); c.fillStyle = g; c.fillRect(f.x - 70, f.y - 130, 140, 140); }
   c.restore();
   if (f.chiBlock > 0 && f.bender && !f.def.chiImmune) { c.fillStyle = 'rgba(255,140,200,.9)'; for (let i = 0; i < 3; i++) { const a = f.t * .1 + i * 2.1; c.beginPath(); c.arc(f.x + Math.cos(a) * 28, f.y - 146 + Math.sin(a) * 6, 4, 0, 7); c.fill(); } }
@@ -2402,7 +2719,7 @@ function drawFx(e){
   const c = ctx;
   switch (e.type) {
     case 'bolt': {
-      c.save(); c.globalCompositeOperation = 'lighter'; c.strokeStyle = e.color; c.shadowColor = '#6cf'; c.shadowBlur = 24; c.globalAlpha = clamp(e.life / 10, 0, 1);
+      c.save(); c.globalCompositeOperation = 'lighter'; c.strokeStyle = e.color; c.shadowColor = e.color === '#9fffb0' ? '#3f8' : '#6cf'; c.shadowBlur = 24; c.globalAlpha = clamp(e.life / 10, 0, 1);
       for (let k = 0; k < 3; k++) {
         c.lineWidth = [7, 3, 1.5][k]; c.beginPath(); c.moveTo(e.x1, e.y1);
         const n = 16; for (let i = 1; i < n; i++) { const t = i / n; c.lineTo(e.x1 + (e.x2 - e.x1) * t + rand(-13, 13), e.y1 + (e.y2 - e.y1) * t + rand(-15, 15)); }
@@ -2411,7 +2728,7 @@ function drawFx(e){
       c.restore(); break; }
     case 'charge': {
       const f = e.f, h = f.hand();
-      c.save(); c.globalCompositeOperation = 'lighter'; c.strokeStyle = '#bfe9ff'; c.lineWidth = 2;
+      c.save(); c.globalCompositeOperation = 'lighter'; c.strokeStyle = e.color || '#bfe9ff'; c.lineWidth = 2;
       for (let i = 0; i < 5; i++) { const a = rand(0, 7); c.beginPath(); c.moveTo(h.x, h.y); c.lineTo(h.x + Math.cos(a) * rand(10, 34), h.y + Math.sin(a) * rand(10, 34)); c.stroke(); }
       c.restore(); break; }
     case 'redirect': {
@@ -2441,6 +2758,7 @@ function drawFx(e){
       c.fillStyle = g; c.fillRect(e.x - 36, e.y - h, 72, h); c.fillStyle = '#c4a070'; c.fillRect(e.x - 36, e.y - h, 72, 9);
       c.strokeStyle = '#2e2014'; c.lineWidth = 2.5; c.strokeRect(e.x - 36, e.y - h, 72, h);
       break; }
+    default: drawFx2(e); break;
     case 'ring': {
       const k = 1 - e.life / 24; c.strokeStyle = e.color; c.globalAlpha = 1 - k; c.lineWidth = 6;
       c.beginPath(); c.ellipse(e.x, e.y, 40 + k * 170, 10 + k * 32, 0, 0, 7); c.stroke(); c.globalAlpha = 1;
@@ -2475,7 +2793,7 @@ function pill(c, x, y, w, h, v, cols, back, rtl, ghost){
 }
 function drawHUD(){
   const c = ctx;
-  if (isTouch && game.p[0]) { TB[0].c.classList.toggle('ready', game.p[0].ult >= 100); if (game.p[1]) TB[1].c.classList.toggle('ready', game.p[1].ult >= 100); }
+  if (isTouch && game.p[0]) { const me = game.p.find(f => f.ctrl === 'p1') || game.p[0]; TB[0].c.classList.toggle('ready', me.ult >= 100); if (game.p[1]) TB[1].c.classList.toggle('ready', game.p[1].ult >= 100); }
   const top = 12 + hudIns.t;
   for (const f of game.p) {
     const left = f.side === 0, pw = 70;
@@ -2492,11 +2810,11 @@ function drawHUD(){
     const bx = left ? px + pw + 12 : px - 12 - bw;
     // isim plakası
     c.font = 'bold 19px Trebuchet MS, sans-serif'; c.textAlign = left ? 'left' : 'right'; c.lineJoin = 'round';
-    const nm = f.def.name + (f.ctrl === 'ai' ? ' (CPU)' : f.ctrl === 'p2' ? ' (2P)' : '');
+    const nm = f.def.name + (f.ctrl === 'ai' ? ' (CPU)' : f.ctrl === 'p2' ? ' (2P)' : f.ctrl === 'net' ? ' (Rakip)' : f.ctrl === 'dummy' ? ' (Kukla)' : game.mode === 'online' ? ' (Sen)' : '');
     c.lineWidth = 4; c.strokeStyle = '#000'; c.strokeText(nm, left ? bx + 2 : bx + bw - 2, top + 15); c.fillStyle = '#fff'; c.fillText(nm, left ? bx + 2 : bx + bw - 2, top + 15);
     // raund taşları
     const need = game.rules.toWin;
-    if (game.mode !== 'endless') for (let i = 0; i < need; i++) {
+    if (game.mode !== 'endless' && game.mode !== 'training') for (let i = 0; i < need; i++) {
       const cx = left ? bx + bw - 10 - i * 22 : bx + 10 + i * 22, on = game.wins[f.side] > i;
       c.save(); c.translate(cx, top + 9); c.rotate(Math.PI / 4);
       c.fillStyle = on ? '#ffd56a' : 'rgba(255,255,255,.18)'; c.fillRect(-6, -6, 12, 12); c.strokeStyle = '#000'; c.lineWidth = 2; c.strokeRect(-6, -6, 12, 12); c.restore();
@@ -2523,7 +2841,8 @@ function drawHUD(){
     const st = [];
     if (f.burn > 0) st.push('🔥'); if (f.slow > 0) st.push('❄'); if (f.chiBlock > 0 && f.bender && !f.def.chiImmune) st.push('⛔'); if (f.speedBuff > 0) st.push('🐒'); if (f.avatar > 0) st.push('☯'); if (f.stun > 30) st.push('💫');
     c.font = '17px sans-serif';
-    st.forEach((s, i) => c.fillText(s, left ? bx + bw - i * 22 : bx + i * 22, top + 92));
+    const iw = (c.font = '13px Trebuchet MS', c.measureText(info).width) + 14; c.font = '17px sans-serif';
+    st.forEach((s, i) => c.fillText(s, left ? ix + iw + i * 22 : ix - iw - i * 22, top + 91));
   }
   // süre madalyonu
   const cx = W / 2, cy = top + 34;
@@ -2532,13 +2851,29 @@ function drawHUD(){
   c.fillStyle = mg; c.beginPath(); c.arc(cx, cy, 36, 0, 7); c.fill();
   c.strokeStyle = '#d9a637'; c.lineWidth = 3; c.stroke(); c.strokeStyle = 'rgba(217,166,55,.4)'; c.lineWidth = 1; c.beginPath(); c.arc(cx, cy, 31, 0, 7); c.stroke();
   c.textAlign = 'center'; c.font = 'bold 36px Georgia, serif'; c.fillStyle = game.time < 600 ? '#ff6a4a' : '#fff4dc';
-  c.fillText(Math.ceil(game.time / 60), cx, cy + 12);
+  c.fillText(game.mode === 'training' ? '∞' : Math.ceil(game.time / 60), cx, cy + 12);
   c.font = '13px Trebuchet MS'; c.fillStyle = '#e8d8b8'; c.lineWidth = 3; c.strokeStyle = 'rgba(0,0,0,.7)';
   let sub = game.stage.name;
   if (game.mode === 'endless') sub = '♾ DALGA ' + game.endless.wave + ' · ' + game.stage.name;
   if (game.mode === 'campaign') sub = 'Seviye ' + (game.camp.level + 1) + ': ' + LEVELS[game.camp.level].title;
+  if (game.mode === 'training') sub = '🥋 Antrenman · ' + game.stage.name;
+  if (game.mode === 'online') sub = '🌐 Çevrimiçi · ' + game.stage.name;
   c.strokeText(sub, cx, cy + 56); c.fillText(sub, cx, cy + 56);
   c.restore();
+  if (game.eventMsg) { const em = game.eventMsg, a = clamp(em.life / 20, 0, 1); c.save(); c.globalAlpha = a; c.font = 'bold 24px Trebuchet MS'; c.textAlign = 'center'; const tw = c.measureText(em.text).width + 40; c.fillStyle = 'rgba(120,20,10,.85)'; rr(c, W / 2 - tw / 2, top + 108, tw, 38, 19); c.fill(); c.strokeStyle = '#ffd56a'; c.lineWidth = 2; c.stroke(); c.fillStyle = '#fff'; c.fillText(em.text, W / 2, top + 135); c.restore(); }
+  if (game.moon > 0) { c.font = '15px Trebuchet MS'; c.textAlign = 'center'; c.fillStyle = '#bfe0ff'; c.fillText('🌕 Dolunay: su bükücüler +%30 hasar', W / 2, top + 166); }
+  if (game.comboShow) {
+    const cs = game.comboShow, a = clamp(cs.life / 20, 0, 1), x = cs.side === 0 ? 150 + hudIns.l : W - 150 - hudIns.r;
+    c.save(); c.globalAlpha = a; c.textAlign = 'center'; c.font = 'bold 44px Georgia, serif'; c.lineWidth = 6; c.strokeStyle = '#000'; c.lineJoin = 'round';
+    c.strokeText(cs.n + ' VURUŞ', x, 230); const g = c.createLinearGradient(0, 190, 0, 235); g.addColorStop(0, '#fff'); g.addColorStop(1, '#ffb030'); c.fillStyle = g; c.fillText(cs.n + ' VURUŞ', x, 230);
+    c.font = 'bold 18px Trebuchet MS'; c.fillStyle = '#ffe27a'; c.strokeText('KOMBO +%' + Math.round(Math.min(.4, (cs.n - 2) * .07) * 100), x, 256); c.fillText('KOMBO +%' + Math.round(Math.min(.4, (cs.n - 2) * .07) * 100), x, 256); c.restore();
+  }
+  if (game.mode === 'training' && game.training) {
+    const T = game.training, x0 = 16 + hudIns.l; c.save(); c.fillStyle = 'rgba(0,0,0,.55)'; rr(c, x0, 140, 300, 108, 12); c.fill();
+    c.fillStyle = '#ffe9b0'; c.font = 'bold 16px Trebuchet MS'; c.textAlign = 'left'; c.fillText('🥋 Antrenman', x0 + 14, 164);
+    c.font = '15px Trebuchet MS'; c.fillStyle = '#fff'; c.fillText('Son vuruş: ' + T.last + '   Toplam: ' + Math.round(T.total), x0 + 14, 188);
+    c.fillText('En iyi kombo: ' + T.maxCombo + ' vuruş', x0 + 14, 210); c.fillText('Kukla: ' + DUMMY_MODES.find(m => m[0] === T.dummy)[1] + '  (❚❚ ile ayarla)', x0 + 14, 232); c.restore();
+  }
   // giriş / KO yazıları
   if (game.intro > 0) {
     const first = game.intro > 45;
@@ -2592,17 +2927,23 @@ function loop(now){
   requestAnimationFrame(loop);
   const dt = Math.min(100, now - last); last = now;
   musicTick();
-  if (game.state === 'fight') {
+  if (NET.named) netPoll();
+  const live = () => game.state === 'fight' || (game.state === 'pause' && game.mode === 'online');
+  if (live()) {
     acc += dt;
     while (acc >= STEP) {
       acc -= STEP;
+      if (NET.role === 'guest' && game.mode === 'online') { guestStep(); clearPresses(); if (!live()) break; continue; }
       if (game.slowmo > 0) { game.slowmo--; if (game.slowmo % 2) continue; }
       if (step() !== false) clearPresses();
-      if (game.state !== 'fight') break;
+      if (game.mode === 'online' && NET.role === 'host' && game.frame % 2 === 0) netSend();
+      if (!live()) break;
     }
-    if (game.state === 'fight') render();
+    if (game.state === 'fight' || game.state === 'pause') render();
   } else if (game.state === 'pause') {
     updatePads(); if (padEdge[0].start || padEdge[1].start) togglePause();
+  } else if (game.state === 'scene') {
+    sceneRender(now);
   } else if (game.state !== 'result') {
     menuBg(now); clearPresses();
   }
@@ -2625,22 +2966,784 @@ function menuBg(now){
 }
 
 // ====================================================================
+//  SİSTEMLER — patlama, kıyafetler, kombolar, başarımlar, görevler,
+//  ara sahneler, arena olayları, antrenman, çevrimiçi
+// ====================================================================
+const isHuman = f => !!f && (f.ctrl === 'p1' || f.ctrl === 'p2');
+
+// --- yanma bükme patlaması ---
+function explode(owner, x, y, r, dmg){
+  game.fx.push({ type:'ring', x, y, life:24, color:'#ffb050' });
+  burst(x, y, 30, ['#fff','#fe8','#f84','#f80'], 9, { up:1 });
+  burst(x, y, 14, ['#555','#333','#777'], 4, { grav:-.03, life:40, glow:false });
+  sfx('boom', x); game.shake = Math.max(game.shake, 12);
+  if (dmg > 0) for (const t of game.p) {
+    if (t === owner || t.hp <= 0) continue;
+    const b = t.box(), cx = clamp(x, b.x, b.x + b.w), cy = clamp(y, b.y, b.y + b.h);
+    if ((x - cx) ** 2 + (y - cy) ** 2 < r * r) hit(owner, t, dmg, { kbx:9, kby:9, burn:60, dir:Math.sign(t.x - x) || 1 });
+  }
+}
+
+// --- kıyafetler ---
+const SKIN_SPECIAL = {
+  aang:[{ id:'school', name:'Ateş Ulusu Okulu', lv:2, look:{ top:'#8a1c14', bottom:'#3a1512', belt:'#d9a637', cape:null, headband:'#b81c12' } }, { id:'monk', name:'Hava Rahibi', lv:5, look:{ robe:true, top:'#e8a030', bottom:'#c8641e', cape:'#c8641e' } }],
+  katara:[{ id:'winter', name:'Kış Parkası', lv:2, look:{ top:'#1d4f86', belt:'#e8e8f0', bottom:'#14365c' } }, { id:'fire', name:'Ateş Ulusu Kılığı', lv:4, look:{ top:'#a3231c', bottom:'#3a1512', belt:'#d9a637', dress:false } }],
+  sokka:[{ id:'warpaint', name:'Savaş Boyası', lv:2, look:{ warpaint:true } }, { id:'fire', name:'Ateş Ulusu Kılığı', lv:4, look:{ top:'#a3231c', bottom:'#3a1512', belt:'#d9a637' } }],
+  zuko:[{ id:'bluespirit', name:'Mavi Ruh', lv:2, look:{ mask:'blue', top:'#141824', bottom:'#0e1018', belt:'#2a2a3a', armor:false } }, { id:'firelord', name:'Ateş Lordu Zuko', lv:6, look:{ robe:true, top:'#8a1712', belt:'#d9a637', crown:true } }],
+  toph:[{ id:'rumble', name:'Kör Haydut', lv:2, look:{ top:'#3a3a3a', bottom:'#5a4a3a', belt:'#c9302a' } }, { id:'chief', name:'Metal Polis Şefi', lv:5, look:{ top:'#6a7078', bottom:'#3a3f44', belt:'#c9a24a', shoe:'#222' } }],
+  iroh:[{ id:'lotus', name:'Beyaz Lotus', lv:3, look:{ top:'#e8e4d8', bottom:'#4a6a4a', belt:'#2a4a2a' } }, { id:'tea', name:'Çaycı Amca', lv:5, look:{ top:'#4a6a3a', bottom:'#3a4a2a', belt:'#c9a24a' } }],
+  azula:[{ id:'kyoshi', name:'Kyoshi Kılığı', lv:3, look:{ top:'#3f7a3a', bottom:'#2c5a2a', paint:true, skin:'#f4efe6' } }, { id:'bluearmor', name:'Mavi Alev Zırhı', lv:6, look:{ top:'#1a2a5a', bottom:'#0e1430', belt:'#4fb6ff' } }],
+  korra:[{ id:'parka', name:'Kış Parkası', lv:2, look:{ top:'#1e4a7a', bareArms:false, belt:'#e8e8f0' } }, { id:'ferret', name:'Fire Ferrets Forması', lv:4, look:{ top:'#c84a1a', bottom:'#3a2a2a', belt:'#e8b030' } }],
+  suki:[{ id:'prison', name:'Kaynayan Kaya', lv:3, look:{ top:'#7a6a4a', bottom:'#5a4a3a', paint:false, skin:'#e8c8a8', belt:'#3a2a1a' } }],
+  mako:[{ id:'detective', name:'Dedektif', lv:3, look:{ top:'#3a3a44', bottom:'#2a2a30' } }],
+  bolin:[{ id:'nuktuk', name:'Nuktuk', lv:3, look:{ top:'#3a6ea8', bottom:'#2a4f7a', belt:'#e8e2d0' } }],
+  ozai:[{ id:'phoenix', name:'Phoenix Kral', lv:6, look:{ top:'#2a0a0a', bottom:'#140404', belt:'#ffb030' } }],
+};
+function skinsFor(id){ return [{ id:'classic', name:'Klasik', lv:1 }, ...(SKIN_SPECIAL[id] || []), { id:'shadow', name:'Gölge', lv:7, shadow:true }, { id:'gold', name:'Altın Usta', lv:10, gold:true }]; }
+const skinUnlocked = s => profile.level >= s.lv;
+function mySkin(id){ const sid = (profile.skins || {})[id] || 'classic'; const s = skinsFor(id).find(k => k.id === sid); return s && skinUnlocked(s) ? sid : 'classic'; }
+function lookFor(id, sid){
+  const d = CHAR[id], s = skinsFor(id).find(k => k.id === sid) || { id:'classic' };
+  const L = Object.assign({}, d.look, s.look || {});
+  if (s.shadow) Object.assign(L, { top:'#221c30', bottom:'#121018', belt:'#8a4ac8', shoe:'#0a0a10', cape:L.cape ? '#3a2a5a' : null });
+  if (s.gold) Object.assign(L, { top:'#c9a030', bottom:'#6a4a10', belt:'#fff0b0', shoe:'#3a2a08', cape:L.cape ? '#e8c050' : null });
+  return L;
+}
+
+// --- kombolar: yön + saldırı ---
+function comboMove(f, inp){
+  if (f.cd.k > 0 || f.chi < 10) return false;
+  if (f.bender && f.chiBlock > 0 && !f.def.chiImmune) return false;
+  let E = AVATAR_ORDER[f.def.id] ? AVATAR_ORDER[f.def.id][f.combo % 4] : (f.def.element === 'avatar' ? f.def.bend : f.def.element);
+  if (E === 'blood') E = 'water';
+  const col = (ELEM[E] || ELEM.none).color;
+  f.chi -= 10; f.cd.k = 42; f.atk = 14; f.atkType = 'a'; sndX = f.x;
+  if (isHuman(f)) quest('move');
+  if (inp.up) {
+    if (E === 'none') proj(f, { type:'slash', follow:true, ox:30, oy:-100, r:42, dmg:8, kbx:2, kby:13, life:10, color:'#fff', clash:false, reflectable:false });
+    else proj(f, { type:{ fire:'fire', water:'water', earth:'rock', air:'air' }[E], sp:3, vy:-13, r:16, dmg:8, kbx:2, kby:12, life:40, dy:-12, burn:E === 'fire' ? 40 : 0 });
+    floatText(f.x, f.y - 160, 'Yükselen Darbe', '#ffe9b0', 15); sfx(E === 'none' ? 'swing' : E); return true;
+  }
+  if (!f.onGround) {
+    f.dive = true; f.vy = 20; f.vx = f.facing * 4;
+    floatText(f.x, f.y - 160, 'Dalış!', '#ffe9b0', 15); sfx('swing'); return true;
+  }
+  proj(f, { type:'slash', low:true, follow:true, ox:42, oy:-16, r:36, dmg:7, kbx:3, kby:8, stun:40, life:12, color:col, clash:false, reflectable:false });
+  floatText(f.x, f.y - 160, 'Süpürme', '#ffe9b0', 15); sfx(E === 'none' ? 'swing' : E === 'earth' ? 'earth' : 'swing');
+  return true;
+}
+function diveLand(f){
+  f.dive = false; game.shake = Math.max(game.shake, 8);
+  game.fx.push({ type:'ring', x:f.x, y:f.y, life:20, color:'#e8d8b8' });
+  burst(f.x, f.y, 14, ['#ccb','#998'], 5, { up:2 }); sfx('earth', f.x);
+  const o = other(f);
+  if (Math.abs(o.x - f.x) < 130 && Math.abs(o.y - f.y) < 40) hit(f, o, 9, { kbx:6, kby:9, stun:30 });
+}
+
+// --- başarımlar ---
+const ACH = [
+  ['first_win','İlk Zafer','Bir maç kazan.'],
+  ['four_nations','Dört Ulus','Su, toprak, ateş ve hava bükücüleriyle birer maç kazan.'],
+  ['avatar_win','Avatar\'ın Yolu','Aang veya Korra ile kazan.'],
+  ['nonbender','Bükmeye Gerek Yok','Bükücü olmayan bir karakterle kazan.'],
+  ['roster10','Herkesi Tanı','10 farklı karakterle maç kazan.'],
+  ['combo5','Kombo Ustası','5\'li kombo yap.'],
+  ['combo10','Durdurulamaz','10\'lu kombo yap.'],
+  ['redirect','Batı\'nın Ejderhası','Bir mermiyi veya şimşeği yönlendir.'],
+  ['ult_ko','Son Darbe','Ultinle K.O. et.'],
+  ['perfect','Kusursuz','Hiç hasar almadan bir raund kazan.'],
+  ['hazard','Doğa Ana','Rakibini bir arena olayına yakalat.'],
+  ['camp5','Kitap 1 Tamam','Macera\'da 5. seviyeyi geç.'],
+  ['camp15','Efsane','Macera Modu\'nu bitir.'],
+  ['stars','Yıldız Avcısı','15 macera seviyesinin hepsinde 3 yıldız al.'],
+  ['endless5','Dayanıklı','Sonsuz Mod\'da 5 dalga atlat.'],
+  ['endless10','Sarsılmaz','Sonsuz Mod\'da 10 dalga atlat.'],
+  ['online_win','Çevrimiçi Şampiyon','İnternetten bir maç kazan.'],
+  ['cabbage','Benim Lahanalarım!','Arenada bir lahana topla.'],
+  ['trainer','Çalışkan Öğrenci','Antrenmanda toplam 500 hasar ver.'],
+  ['matches25','Gazi','25 maç oyna.'],
+  ['lv5','Usta Yolunda','5. seviyeye ulaş.'],
+  ['lv10','Büyük Usta','10. seviyeye ulaş.'],
+];
+function unlock(id){
+  if (!profile.ach || profile.ach[id]) return;
+  const a = ACH.find(x => x[0] === id); if (!a) return;
+  profile.ach[id] = Date.now(); saveProfile();
+  toast('🏆 Başarım: ' + a[1], a[2] + ' (+50 XP)'); sfx('levelup');
+  addXP(50);
+}
+// --- günlük görevler ---
+const DAILY_POOL = [
+  { id:'win2', text:'2 maç kazan', goal:2, ev:'win' },
+  { id:'win_fire', text:'Bir ateş bükücüyle kazan', goal:1, ev:'win_fire' },
+  { id:'win_water', text:'Bir su bükücüyle kazan', goal:1, ev:'win_water' },
+  { id:'win_earth', text:'Bir toprak bükücüyle kazan', goal:1, ev:'win_earth' },
+  { id:'win_air', text:'Bir hava bükücüyle kazan', goal:1, ev:'win_air' },
+  { id:'dmg600', text:'Maçlarda toplam 600 hasar ver', goal:600, ev:'dmg' },
+  { id:'combo4', text:'4\'lü kombo yap', goal:1, ev:'combo4' },
+  { id:'ult3', text:'3 kez ulti kullan', goal:3, ev:'ult' },
+  { id:'wave3', text:'Sonsuz Mod\'da 3 dalga geç', goal:3, ev:'wave' },
+  { id:'camp1', text:'Bir macera seviyesi geç', goal:1, ev:'camp' },
+  { id:'online1', text:'Çevrimiçi bir maç oyna', goal:1, ev:'online' },
+  { id:'train300', text:'Antrenmanda 300 hasar ver', goal:300, ev:'train' },
+  { id:'moves5', text:'5 kez kombo hareketi kullan (yön + saldırı)', goal:5, ev:'move' },
+];
+function dayKey(){ const d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+function daily(){
+  const k = dayKey();
+  if (!profile.daily || profile.daily.date !== k) {
+    let h = 7; for (const ch of k) h = (h * 31 + ch.charCodeAt(0)) % 233280;
+    const R = seeded(h), pool = DAILY_POOL.map(q => q.id), ids = [];
+    while (ids.length < 3) { const id = pool[Math.floor(R() * pool.length)]; if (!ids.includes(id)) ids.push(id); }
+    profile.daily = { date:k, q:ids.map(id => ({ id, prog:0, done:false })) }; saveProfile();
+  }
+  return profile.daily;
+}
+function quest(ev, n = 1){
+  if (game.mode === 'demo' || n <= 0) return;
+  const D = daily(); let ch = false;
+  for (const q of D.q) {
+    const P = DAILY_POOL.find(x => x.id === q.id);
+    if (!P || q.done || P.ev !== ev) continue;
+    q.prog = Math.min(P.goal, q.prog + n); ch = true;
+    if (q.prog >= P.goal) { q.done = true; toast('📜 Günlük görev tamamlandı!', P.text + ' (+120 XP)'); sfx('levelup'); addXP(120); }
+  }
+  if (ch) saveProfile();
+}
+function matchAchievements(w){
+  if (game.mode === 'demo' || game.mode === 'training') return;
+  if (profile.matches >= 25) unlock('matches25');
+  quest('dmg', Math.round(game.p.filter(isHuman).reduce((a, f) => a + f.dealt, 0)));
+  if (game.mode === 'online') quest('online');
+  const winner = w >= 0 ? game.p[w] : null;
+  if (!winner || !isHuman(winner)) return;
+  winRewards(winner.def);
+}
+function winRewards(d){
+  unlock('first_win'); quest('win');
+  const e = d.element === 'avatar' ? d.bend : d.element === 'blood' ? 'water' : d.element;
+  if (d.element === 'avatar') unlock('avatar_win');
+  if (e !== 'none') { profile.winEl[e] = 1; quest('win_' + e); }
+  if (['fire','water','earth','air'].every(x => profile.winEl[x])) unlock('four_nations');
+  if (d.element === 'none') unlock('nonbender');
+  profile.winChars[d.id] = 1; if (Object.keys(profile.winChars).length >= 10) unlock('roster10');
+  if (game.mode === 'online') unlock('online_win');
+  saveProfile();
+}
+// --- bildirimler ---
+const toastQ = []; let toastBusy = false;
+function toast(title, body){ toastQ.push([title, body]); if (!toastBusy) nextToast(); }
+function nextToast(){
+  const el = document.getElementById('toast'); const t = toastQ.shift();
+  if (!t) { toastBusy = false; return; }
+  toastBusy = true; el.innerHTML = `<b></b><span></span>`; el.firstChild.textContent = t[0]; el.lastChild.textContent = t[1];
+  el.classList.add('on'); setTimeout(() => { el.classList.remove('on'); setTimeout(nextToast, 350); }, 2600);
+}
+
+// ====================================================================
+//  ARA SAHNELER (Macera Modu)
+// ====================================================================
+const SCENES = [
+  [['o','Dur orada! Güney Su Kabilesi\'ne giren her yabancı önce benim bumerangımla tanışır!'],['p','Sakin ol, savaşmak için değil yardım etmek için buradayım.'],['o','Hepsi öyle der. Bumerang!']],
+  [['o','Kyoshi Adası\'na izinsiz girdin. Ateş Ulusu casusu musun?'],['p','Hayır! Ama kanıtlamam gerekiyorsa...'],['o','O zaman yelpazelerimle tanış.']],
+  [['o','Hahaha! Sınavlarımın sonuncusu: benimle dövüş! Ama hangi kuralla dövüşeceğimizi ben seçeceğim!'],['p','Bu kral deli mi, yoksa dahi mi?'],['o','İkisi de! Hahaha!']],
+  [['o','Avatar\'ı yakalayacağım ve onurumu geri kazanacağım!'],['p','Onur, birini zincire vurarak kazanılmaz, Zuko.'],['o','Senin vaazına ihtiyacım yok!']],
+  [['o','Usta Pakku kadınların savaşamayacağını söylüyor. Bunun yanlış olduğunu herkese göstereceğim.'],['p','O zaman bana göster!'],['o','Hazır ol!']],
+  [['o','Kör Haydut\'a meydan okuyan yeni bir kurban mı? Kalbinin hızlandığını ayaklarımdan hissediyorum.'],['p','Bu turnuvayı ben kazanacağım!'],['o','Komik. Hadi bakalım.']],
+  [['o','Sıkıldım. Bunu çabuk bitirelim.'],['p','Bıçaklarını görmeden önce hareket etmeliyim...'],['o','Çoktan geç.']],
+  [['o','Auran ne kadar güzel! Ama biraz gergin... hadi onu biraz rahatlatalım!'],['p','Chi noktalarıma dokunmasına izin vermemeliyim.'],['o','Tak tak tak!']],
+  [['o','Bir fincan yasemin çayı? Hayır mı? Peki... önce bir düello, sonra çay.'],['p','Batı\'nın Ejderhası ile dövüşmek bir onur.'],['o','Gurur değil, onur. Güzel söyledin.']],
+  [['o','Ba Sing Se benim. Dai Li benim. Ve şimdi sıra sende.'],['p','Bu şehri sana bırakmayacağım!'],['o','Neredeyse kusursuz bir cevap. Ama "neredeyse" yetmez.']],
+  [['o','Sozin\'in Kuyrukluyıldızı yaklaşıyor. Hazır olup olmadığımı görmeliyim.'],['p','Birlikte hazırlanalım, Avatar.'],['o','Yip yip! Başlayalım!']],
+  [['o','Ben Phoenix Kral\'ım! Kuyrukluyıldızın gücüyle yeni dünya küllerden doğacak!'],['p','Bugün değil, Ozai. Bugün savaş bitiyor.'],['o','Küstah! Yanacaksın!']],
+  [['o','Bükme, dünyadaki tüm eşitsizliğin kaynağı. Ben onu temizleyeceğim.'],['p','Maskenin ardında ne sakladığını biliyorum, Amon.'],['o','O zaman bükmeni de kaybedeceksin.']],
+  [['o','Düzen bir yanılsamadır. Gerçek özgürlük kaostur.'],['p','Senin özgürlüğün başkalarının acısı demek.'],['o','Dünyevi bağlarımdan kurtuldum ve uçtum. Ya sen?']],
+  [['o','Ben Avatar\'ım, ister beğen ister beğenme!'],['p','Bu son sınav. Tüm öğrendiklerimi göstereceğim.'],['o','Avatar Durumu! Hazır mısın?']],
+];
+const ENDING = [['o','Harikaydın. Dört ulusun dengesi artık senin de omuzlarında.'],['p','Yolculuk burada bitmiyor. Her ulustan öğrenecek daha çok şey var.'],['o','O zaman bir dahaki maça kadar... dengede kal!']];
+function startScene(lines, pid, oid, stageId, done){
+  game.scene = { lines, i:0, shown:0, pid, oid, bg:buildBackground(STAGES.find(s => s.id === stageId) || STAGES[0]), done };
+  game.state = 'scene'; showScreen('scene'); showTouch(0); sceneText();
+}
+function sceneText(){
+  const S = game.scene, [who] = S.lines[S.i];
+  document.getElementById('dlgName').textContent = CHAR[who === 'p' ? S.pid : S.oid].name;
+  document.getElementById('dlgName').style.color = ELEM[CHAR[who === 'p' ? S.pid : S.oid].element].color;
+  S.shown = 0;
+}
+function sceneAdvance(){
+  const S = game.scene; if (!S) return;
+  const txt = S.lines[S.i][1];
+  if (S.shown < txt.length) { S.shown = txt.length; return; }
+  S.i++; sfx('select');
+  if (S.i >= S.lines.length) { const d = S.done; game.scene = null; d(); return; }
+  sceneText();
+}
+function sceneRender(now){
+  const S = game.scene, c = ctx; if (!S) return;
+  const [who, txt] = S.lines[S.i];
+  S.shown = Math.min(txt.length, S.shown + .9);
+  document.getElementById('dlgText').textContent = txt.slice(0, Math.floor(S.shown));
+  c.setTransform(1, 0, 0, 1, 0, 0);
+  c.drawImage(S.bg.far, 0, 0); c.drawImage(S.bg.near, 0, 0);
+  const g = c.createLinearGradient(0, H * .35, 0, H); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.7)');
+  c.fillStyle = g; c.fillRect(0, 0, W, H);
+  const t = now / 1000;
+  [['p', S.pid, W * .27, 1], ['o', S.oid, W * .73, -1]].forEach(([k, id, x, fc]) => {
+    const on = k === who;
+    const L = k === 'p' ? lookFor(id, mySkin(id)) : CHAR[id].look;
+    if (!S.layer || S.layer.width !== W) S.layer = mkCanvas(W, H);
+    const lc = S.layer.getContext('2d'); lc.clearRect(0, 0, W, H);
+    drawChar(lc, L, { x, y:GROUND + 40 + (on ? Math.sin(t * 6) * 2 : 0), facing:fc, sc:2.6, t:t * 60, breathe:true, attack:on && S.shown < txt.length && Math.floor(t * 8) % 2 === 0 });
+    if (!on) { lc.globalCompositeOperation = 'source-atop'; lc.fillStyle = 'rgba(10,6,4,.55)'; lc.fillRect(0, 0, W, H); lc.globalCompositeOperation = 'source-over'; }
+    c.drawImage(S.layer, 0, 0);
+  });
+  c.drawImage(getVignette(), 0, 0);
+}
+
+// ====================================================================
+//  ARENA OLAYLARI
+// ====================================================================
+const HAZ_INFO = {
+  airtemple:['wind', 'RÜZGAR AKIMI!'], water:['moon', 'DOLUNAY! Su bükücüler güçlendi'], basingse:['train', 'TOPRAK TRENİ GELİYOR!'],
+  fire:['meteor', 'KUYRUKLUYILDIZ YAĞMURU!'], republic:['net', 'EŞİTLİKÇİ ZEPLİNİ: ELEKTRİK AĞLARI!'],
+};
+function startHazard(){
+  const [kind, msg] = HAZ_INFO[game.stage.id];
+  game.eventMsg = { text:msg, life:150 }; sfx('gong');
+  if (kind === 'wind') game.wind = { dir:pick([-1, 1]), t:360 };
+  if (kind === 'moon') { game.moon = 600; game.tint = { c:'rgba(120,160,255,', life:120 }; }
+  if (kind === 'train') { const dir = pick([-1, 1]); game.hazards.push({ k:'train', dir, warn:100, x:dir > 0 ? -340 : W + 40, w:300, hits:[] }); }
+  if (kind === 'meteor') for (let i = 0; i < 8; i++) after(20 + i * 20, () => {
+    const tx = rand(60, W - 60), y = -60, vx = rand(-2, 2), vy = 13;
+    game.hazards.push({ k:'meteor', x:tx - vx * (GROUND - y) / vy, y, vx, vy, r:24 });
+    game.fx.push({ type:'shadow', x:tx, life:44 });
+  });
+  if (kind === 'net') for (let i = 0; i < 5; i++) after(i * 30, () => game.hazards.push({ k:'net', x:rand(80, W - 80), y:-40, vy:6, r:34, age:0 }));
+}
+function hazardHit(t, dmg, o){
+  if (t.hp <= 0) return;
+  const ok = hit(null, t, dmg, Object.assign({ unblockable:true }, o));
+  if (ok && !isHuman(t) && game.p.some(isHuman)) unlock('hazard');
+}
+function updateHazards(){
+  if (game.mode === 'training' || !profile.hazards) return;
+  if (game.moon > 0) game.moon--;
+  if (game.eventMsg && --game.eventMsg.life <= 0) game.eventMsg = null;
+  if (game.wind) {
+    if (--game.wind.t <= 0) game.wind = null;
+    else { for (const f of game.p) if (f.lifted <= 0 && f.hp > 0) f.vx += game.wind.dir * .3; if (game.frame % 2 === 0) game.parts.push({ x:game.wind.dir > 0 ? -10 : W + 10, y:rand(150, GROUND), vx:game.wind.dir * rand(14, 22), vy:0, life:60, max:60, size:2, color:'rgba(255,255,255,.7)', grav:0, glow:false }); }
+  }
+  if (game.intro <= 0 && game.roundOver <= 0 && --game.hazT <= 0) { game.hazT = Math.round(rand(950, 1350)); startHazard(); }
+  for (const h of game.hazards) {
+    if (h.k === 'meteor') {
+      h.x += h.vx; h.y += h.vy;
+      if (game.frame % 2 === 0) burst(h.x, h.y, 1, ['#f80','#fc4','#f40'], 1.2, { grav:-.04, life:16 });
+      if (h.y >= GROUND - 14) {
+        h.dead = true; game.fx.push({ type:'ring', x:h.x, y:GROUND, life:22, color:'#f84' });
+        burst(h.x, GROUND - 10, 26, ['#fff','#fe8','#f84','#f80'], 8, { up:2 }); sfx('boom', h.x); game.shake = Math.max(game.shake, 10);
+        for (const t of game.p) if (Math.abs(t.x - h.x) < 80 && t.y > GROUND - 120) hazardHit(t, 10, { kbx:7, kby:9, burn:60, dir:Math.sign(t.x - h.x) || 1 });
+      }
+    } else if (h.k === 'train') {
+      if (h.warn > 0) { h.warn--; if (h.warn % 20 === 0) sfx('select'); continue; }
+      h.x += h.dir * 18;
+      if (game.frame % 3 === 0) sfx('earth', clamp(h.x, 0, W));
+      for (const t of game.p) if (!h.hits.includes(t.side) && t.y > GROUND - 70 && t.x > h.x && t.x < h.x + h.w) { h.hits.push(t.side); hazardHit(t, 14, { kbx:14, kby:11, stun:40, dir:h.dir }); }
+      if ((h.dir > 0 && h.x > W + 40) || (h.dir < 0 && h.x < -h.w - 40)) h.dead = true;
+    } else if (h.k === 'net') {
+      h.y += h.vy; h.age++;
+      for (const t of game.p) if (circleRect(h.x, h.y, h.r, t.box())) { h.dead = true; hazardHit(t, 4, { kbx:0, kby:0, stun:70 }); floatText(t.x, t.y - 150, 'Elektrik ağı!', '#9ff'); sfx('zap', t.x); burst(h.x, h.y, 14, ['#bff','#fff'], 5); break; }
+      if (h.y > GROUND - 10) { h.dead = true; burst(h.x, GROUND - 6, 10, ['#bff','#fff'], 4); }
+    }
+  }
+  game.hazards = game.hazards.filter(h => !h.dead);
+}
+function drawHazard(h){
+  const c = ctx;
+  if (h.k === 'meteor') { flame(c, h.x, h.y, h.r, h.vx, h.vy, game.frame, FIRE_PAL, 4); drawRock(c, { x:h.x, y:h.y, age:game.frame, vx:h.vx }, h.r * .55); }
+  else if (h.k === 'train') {
+    if (h.warn > 0) {
+      if (h.warn % 20 < 12) { const x = h.dir > 0 ? 70 : W - 70; c.save(); c.translate(x, GROUND - 60); c.scale(h.dir, 1); c.fillStyle = '#ff4a2a'; c.beginPath(); c.moveTo(-30, -26); c.lineTo(20, 0); c.lineTo(-30, 26); c.closePath(); c.fill(); c.strokeStyle = '#000'; c.lineWidth = 3; c.stroke(); c.restore(); }
+      return;
+    }
+    c.save(); c.translate(h.x, GROUND);
+    for (let i = 0; i < 3; i++) {
+      const x = i * 102, g = c.createLinearGradient(0, -70, 0, 0); g.addColorStop(0, '#9a8a5a'); g.addColorStop(1, '#5a4a2a');
+      c.fillStyle = g; rr(c, x, -70, 96, 62, 8); c.fill(); c.strokeStyle = '#2e2014'; c.lineWidth = 2.5; c.stroke();
+      c.fillStyle = '#3a6a3a'; c.fillRect(x + 4, -76, 88, 8);
+      c.fillStyle = '#e8d8a0'; for (let k = 0; k < 3; k++) c.fillRect(x + 12 + k * 26, -58, 16, 16);
+      c.fillStyle = '#2a2a2a'; c.beginPath(); c.arc(x + 20, -6, 9, 0, 7); c.arc(x + 76, -6, 9, 0, 7); c.fill();
+    }
+    c.restore();
+  } else if (h.k === 'net') {
+    c.save(); c.translate(h.x, h.y); c.rotate(Math.sin(h.age * .1) * .2);
+    c.strokeStyle = '#2a2a2a'; c.lineWidth = 2;
+    for (let i = -2; i <= 2; i++) { c.beginPath(); c.moveTo(i * 13, -h.r); c.lineTo(i * 13, h.r); c.stroke(); c.beginPath(); c.moveTo(-h.r, i * 13); c.lineTo(h.r, i * 13); c.stroke(); }
+    c.globalCompositeOperation = 'lighter'; c.strokeStyle = 'rgba(150,240,255,.85)'; c.lineWidth = 1.5;
+    c.beginPath(); for (let i = 0; i < 6; i++) c.lineTo(rand(-h.r, h.r), rand(-h.r, h.r)); c.stroke();
+    c.restore();
+  }
+}
+
+// ====================================================================
+//  ANTRENMAN
+// ====================================================================
+const DUMMY_MODES = [['idle','Durgun'],['block','Blok yapar'],['jump','Zıplar'],['cpu','Karşılık verir']];
+function dummyInput(f){
+  const mode = game.training.dummy, inp = { left:false, right:false, up:false, down:false, a:false, b:false, c:false, upP:false, aP:false, bP:false, cP:false };
+  if (mode === 'block') inp.down = true;
+  if (mode === 'jump' && game.frame % 70 === 0) inp.upP = inp.up = true;
+  if (mode === 'cpu') return aiInput(f);
+  return inp;
+}
+function moveListHTML(id){
+  const d = CHAR[id];
+  return `<b>${d.name} — Hareketler</b><br>⚔ ${d.a.name} · ★ ${d.b.name} · ✦ ${d.c.name}<br>
+    <span>Kombolar: ↑+⚔ Yükselen Darbe · ↓+⚔ Süpürme (yerde) · havada ↓+⚔ Dalış · art arda vuruşlar kombo bonusu verir (3+ vuruş = ekstra hasar)</span>`;
+}
+
+// ====================================================================
+//  ÇEVRİMİÇİ — room capability (aynı anda sayfayı açan kişiler)
+//  Kurucu (host) simülasyonu yürütür; misafir girdisini gönderir ve
+//  kurucunun anlık görüntüsünü çizer. Sadece "presence" kullanılır.
+// ====================================================================
+const NET = { named:null, role:null, code:null, matchId:0, lastSeq:0, evSeq:0, events:[], lastSnapObj:null, cnt:{ a:0, b:0, c:0, u:0 }, lastCnt:null, lostT:0, status:'', avail:null, myChar:null, lastIn:'' };
+let roomP = null;
+function getRoom(){
+  if (!roomP) roomP = (window.claude && typeof window.claude.use === 'function') ? Promise.resolve(window.claude.use('room')).catch(() => null) : Promise.resolve(null);
+  return roomP;
+}
+const PT = ['air','airball','blade','fire','bluefire','comet','crescent','water','whip','ice','rock','boulder','wave','boomerang','knife','slash','melee','lightning','tornado','appa','kyoshi','none','lava','bola','car','cable','strip','arrow','blast','icewave'];
+const PKT = ['tea','cabbage','momo'];
+function netEv(e){ if (NET.role !== 'host' || game.mode !== 'online') return; NET.evSeq++; NET.events.push([NET.evSeq, ...e]); if (NET.events.length > 30) NET.events.shift(); }
+function genCode(){ const A = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'; let s = ''; for (let i = 0; i < 4; i++) s += A[Math.floor(Math.random() * A.length)]; return s; }
+function netOpp(){
+  if (!NET.named) return null;
+  try { return NET.named.peers().find(p => !p.sameTab && p.presence && p.presence.v === 1 && p.presence.role && p.presence.role !== NET.role) || null; } catch (e) { return null; }
+}
+function netMe(){ return { v:1, role:NET.role, char:NET.myChar, skin:mySkin(NET.myChar), lv:profile.level }; }
+async function netOpen(code, role){
+  const room = await getRoom();
+  if (!room) { NET.avail = false; netUI(); return; }
+  try {
+    NET.named = await room.join('dortulus-' + code.toLowerCase());
+    NET.role = role; NET.code = code; NET.matchId = 0; NET.lastSnapObj = null;
+    await NET.named.presence(netMe());
+    NET.named.onPeers(() => { if (game.state === 'online') netUI(); }, () => {});
+    NET.status = role === 'host' ? 'Rakip bekleniyor…' : 'Kurucuya bağlanılıyor…';
+  } catch (e) { NET.status = 'Bağlanılamadı (' + (e && e.code || 'hata') + ')'; NET.named = null; NET.role = null; }
+  netUI();
+}
+function netLeave(){
+  if (NET.named) { try { NET.named.leave(); } catch (e) {} }
+  Object.assign(NET, { named:null, role:null, code:null, matchId:0, lastSnapObj:null, status:'' });
+}
+function netHostStart(){
+  const o = netOpp(); if (!o || NET.role !== 'host') return;
+  NET.matchId++; NET.events = [];
+  const stage = game.sel.stage === 'random' ? pick(STAGES).id : game.sel.stage;
+  const chars = [NET.myChar, CHAR[o.presence.char] ? o.presence.char : 'aang'];
+  const skins = [mySkin(NET.myChar), String(o.presence.skin || 'classic')];
+  NET.match = { id:NET.matchId, chars, skins, stage };
+  const inp = o.presence.in; NET.lastCnt = inp ? { a:inp[1], b:inp[2], c:inp[3], u:inp[4] } : { a:0, b:0, c:0, u:0 };
+  game.mode = 'online';
+  startMatch();
+  NET.named.presence({ match:NET.match, over:null, snap:null });
+}
+function netInput(){
+  const g = netOpp(), inp = { left:false, right:false, up:false, down:false, a:false, b:false, c:false, upP:false, aP:false, bP:false, cP:false };
+  if (!g || !Array.isArray(g.presence.in)) return inp;
+  const [bits, ca, cb, cc, cu] = g.presence.in.map(Number);
+  inp.left = !!(bits & 1); inp.right = !!(bits & 2); inp.up = !!(bits & 4); inp.down = !!(bits & 8); inp.a = !!(bits & 16); inp.b = !!(bits & 32); inp.c = !!(bits & 64);
+  const L = NET.lastCnt || { a:ca, b:cb, c:cc, u:cu };
+  inp.aP = ca > L.a; inp.bP = cb > L.b; inp.cP = cc > L.c; inp.upP = cu > L.u;
+  NET.lastCnt = { a:ca, b:cb, c:cc, u:cu };
+  return inp;
+}
+const R1 = v => Math.round(v * 10) / 10, R0 = Math.round;
+function packFighter(f){
+  const b = (f.onGround ? 1 : 0) | (f.fly > 0 ? 2 : 0) | (f.lifted > 0 ? 4 : 0) | (f.channel > 0 ? 8 : 0) | (f.blocking ? 16 : 0) | (f.counter > 0 ? 32 : 0) | (f.avatar > 0 ? 64 : 0) | (f.glowT > 0 ? 128 : 0) | (f.dash ? 256 : 0) | (f.burn > 0 ? 512 : 0) | (f.slow > 0 ? 1024 : 0) | (f.chiBlock > 0 ? 2048 : 0) | (f.speedBuff > 0 ? 4096 : 0) | (f.shield > 0 ? 8192 : 0) | (f.armor > 0 ? 16384 : 0);
+  return [R0(f.x), R0(f.y), f.facing, R1(f.hp), R0(f.hpGhost), R0(f.chi), R0(f.ult), b, f.atk, ['', 'a', 'b', 'c'].indexOf(f.atkType), f.stun, f.flip, f.flash, f.combo, f.invuln, f.maxHp];
+}
+function buildSnap(){
+  const side = f => game.p.indexOf(f);
+  const fx = game.fx.slice(-12).map(e => {
+    const o = {};
+    for (const k in e) { const v = e[k]; if (v && typeof v === 'object' && v.def) o[k] = side(v); else if (typeof v === 'number') o[k] = R0(v); else if (typeof v === 'string') o[k] = v; }
+    return o;
+  });
+  const s = {
+    i:NET.matchId, t:game.time, w:game.wins, rd:game.round, in:game.intro, ro:game.roundOver, rm:game.roundMsg || '', rw:game.roundWinner ?? -1,
+    sh:R0(game.shake), fl:game.flashScr, tn:game.tint ? [game.tint.c, game.tint.life] : 0, bn:game.banner ? [game.banner.text, game.banner.side, game.banner.life, game.banner.color] : 0,
+    mo:game.moon | 0, wd:game.wind ? [game.wind.dir, game.wind.t] : 0, em:game.eventMsg ? [game.eventMsg.text, game.eventMsg.life] : 0,
+    p:game.p.map(packFighter),
+    pr:game.projs.filter(p => p.type !== 'none').slice(0, 60).map(p => [PT.indexOf(p.type), R0(p.x), R0(p.y), R0(p.vx * 10), R0(p.vy * 10), R0(p.r), p.age, p.life, side(p.owner), p.ox || 0, p.oy || 0, (p.follow ? 1 : 0) | (p.burn ? 2 : 0) | (p.big ? 4 : 0) | (p.low ? 8 : 0), p.color || 0]),
+    fx, wl:game.walls.map(w => [R0(w.x), R0(w.y), w.w, w.h, R0(w.rise * 100), R0(w.hp)]),
+    pk:game.pickups.map(k => [PKT.indexOf(k.type), R0(k.x), R0(k.y), k.t, k.life]),
+    hz:game.hazards.map(h => ({ k:h.k, x:R0(h.x), y:R0(h.y ?? 0), vx:R1(h.vx || 0), vy:R1(h.vy || 0), r:h.r || 0, dir:h.dir || 0, warn:h.warn || 0, w:h.w || 0, age:h.age || 0 })),
+    ev:NET.events.slice(-14),
+  };
+  let js = JSON.stringify(s);
+  while (js.length > 3900 && (s.ev.length > 4 || s.pr.length > 10)) { if (s.ev.length > 4) s.ev = s.ev.slice(-4); else s.pr = s.pr.slice(0, Math.floor(s.pr.length * .7)); js = JSON.stringify(s); }
+  return s;
+}
+function netSend(){ if (NET.named) NET.named.presence({ snap:buildSnap() }).catch(() => {}); }
+// --- misafir tarafı ---
+function guestStartMatch(m){
+  NET.matchId = m.id; NET.lastSeq = 0; NET.lastSnapObj = null;
+  game.mode = 'online';
+  game.p = [new Fighter(CHAR[m.chars[0]] || CHAR.aang, 0, 'net', { skin:m.skins && m.skins[0] }), new Fighter(CHAR[m.chars[1]] || CHAR.aang, 1, 'p1', { skin:m.skins && m.skins[1] })];
+  game.stage = STAGES.find(s => s.id === m.stage) || STAGES[0]; game.bg = buildBackground(game.stage);
+  game.rules = { toWin:2 }; game.wins = [0, 0]; game.round = 1;
+  newRound(); game.intro = 0;
+  showScreen(null); game.state = 'fight'; showTouch(isTouch ? 1 : 0); sfx('gong');
+}
+function guestApply(s){
+  if (s.i !== NET.matchId) return;
+  Object.assign(game, { time:s.t, wins:s.w, round:s.rd, intro:s.in, roundOver:s.ro, roundMsg:s.rm, roundWinner:s.rw, flashScr:Math.max(game.flashScr, s.fl), moon:s.mo });
+  game.shake = Math.max(game.shake, s.sh);
+  game.tint = s.tn ? { c:s.tn[0], life:s.tn[1] } : null;
+  game.banner = s.bn ? { text:s.bn[0], side:s.bn[1], life:s.bn[2], color:s.bn[3], sub:game.p[s.bn[1]].def.name } : null;
+  game.wind = s.wd ? { dir:s.wd[0], t:s.wd[1] } : null;
+  game.eventMsg = s.em ? { text:s.em[0], life:s.em[1] } : null;
+  s.p.forEach((a, i) => {
+    const f = game.p[i]; if (!f) return;
+    if (Math.abs(a[0] - f.x) > 220 || f.nx === undefined) { f.x = a[0]; f.y = a[1]; }
+    f.nx = a[0]; f.ny = a[1]; f.facing = a[2]; f.hp = a[3]; f.hpGhost = a[4]; f.chi = a[5]; f.ult = a[6];
+    const b = a[7];
+    f.onGround = !!(b & 1); f.fly = b & 2 ? 1 : 0; f.lifted = b & 4 ? 1 : 0; f.channel = b & 8 ? 1 : 0; f.blocking = !!(b & 16); f.counter = b & 32 ? 1 : 0; f.avatar = b & 64 ? 1 : 0; f.glowT = b & 128 ? 1 : 0;
+    f.dash = b & 256 ? {} : null; f.burn = b & 512 ? 1 : 0; f.slow = b & 1024 ? 1 : 0; f.chiBlock = b & 2048 ? 1 : 0; f.speedBuff = b & 4096 ? 1 : 0; f.shield = b & 8192 ? 1 : 0; f.armor = b & 16384 ? 1 : 0;
+    f.atk = a[8]; f.atkType = ['', 'a', 'b', 'c'][a[9]] || ''; f.stun = a[10]; f.flip = a[11]; f.flash = a[12]; f.combo = a[13]; f.invuln = a[14]; f.maxHp = a[15] || f.maxHp;
+  });
+  game.projs = s.pr.map(a => ({ type:PT[a[0]] || 'none', x:a[1], y:a[2], vx:a[3] / 10, vy:a[4] / 10, r:a[5], age:a[6], life:a[7], owner:game.p[a[8]] || game.p[0], ox:a[9], oy:a[10], follow:!!(a[11] & 1), burn:a[11] & 2 ? 1 : 0, big:!!(a[11] & 4), low:!!(a[11] & 8), color:a[12] || undefined, hits:new Map() }));
+  game.fx = s.fx.map(o => { const e = Object.assign({}, o); for (const k of ['f','a','b']) if (typeof e[k] === 'number') e[k] = game.p[e[k]]; return e; }).filter(e => !['charge','redirect','blood','suffocate','wrap'].includes(e.type) || (e.f || e.b));
+  game.walls = s.wl.map(a => ({ x:a[0], y:a[1], w:a[2], h:a[3], rise:a[4] / 100, hp:a[5], life:1 }));
+  game.pickups = s.pk.map(a => ({ type:PKT[a[0]], x:a[1], y:a[2], t:a[3], life:a[4] }));
+  game.hazards = s.hz.map(h => Object.assign({}, h, { hits:[] }));
+  for (const e of s.ev) {
+    if (e[0] <= NET.lastSeq) continue;
+    NET.lastSeq = e[0];
+    if (e[1] === 's') sfx(e[2], e[3]);
+    else if (e[1] === 't') floatText(e[2], e[3], e[4], e[5], e[6]);
+    else if (e[1] === 'b') burst(e[2], e[3], e[4], e[5], e[6]);
+  }
+}
+function guestStep(){
+  game.frame++; updatePads();
+  const host = netOpp();
+  if (!host) { if (++NET.lostT > 240) netLost('Kurucunun bağlantısı koptu.'); }
+  else {
+    NET.lostT = 0;
+    const s = host.presence.snap;
+    if (s && s !== NET.lastSnapObj) { NET.lastSnapObj = s; guestApply(s); }
+    const ov = host.presence.over;
+    if (ov && ov.id === NET.matchId) { guestOver(ov); return; }
+  }
+  for (const f of game.p) {
+    if (f.nx === undefined) continue;
+    const ox = f.x; f.x += (f.nx - f.x) * .45; f.y += (f.ny - f.y) * .45; f.t++;
+    if (f.onGround && Math.abs(f.x - ox) > .3) f.walk += Math.abs(f.x - ox) * .07; else f.walk *= .9;
+  }
+  for (const p of game.projs) {
+    p.age++;
+    if (p.follow) { p.x = p.owner.x + p.owner.facing * p.ox; p.y = p.owner.y + p.oy; } else { p.x += p.vx; p.y += p.vy; }
+    if (game.frame % 2 === 0) {
+      if (p.type === 'fire' || p.type === 'comet') burst(p.x, p.y, 1, ['#f80','#fc4','#f40'], 1.2, { grav:-.04, life:16 });
+      else if (p.type === 'bluefire') burst(p.x, p.y, 1, ['#4fb6ff','#bdf','#fff'], 1.2, { grav:-.04, life:16 });
+      else if (p.type === 'water' || p.type === 'whip') burst(p.x, p.y, 1, ['#3fa9f5','#bdf'], 1.2, { life:16 });
+      else if (p.type === 'air' || p.type === 'blade') burst(p.x, p.y, 1, ['#eef','#cdf'], 1, { grav:0, life:14 });
+    }
+  }
+  for (const p of game.parts) { p.vy += p.grav; p.x += p.vx; p.y += p.vy; p.vx *= .97; p.life--; }
+  game.parts = game.parts.filter(p => p.life > 0);
+  for (const t of game.texts) { t.y -= .8; t.life--; }
+  game.texts = game.texts.filter(t => t.life > 0);
+  if (game.shake > 0) game.shake *= .88; if (game.shake < .5) game.shake = 0;
+  if (game.flashScr > 0) game.flashScr--;
+  updateWeather(); updateCamera();
+  // girdiyi gönder
+  const inp = readInput(0), C = NET.cnt;
+  if (inp.aP) C.a++; if (inp.bP) C.b++; if (inp.cP) C.c++; if (inp.upP) C.u++;
+  const bits = (inp.left ? 1 : 0) | (inp.right ? 2 : 0) | (inp.up ? 4 : 0) | (inp.down ? 8 : 0) | (inp.a ? 16 : 0) | (inp.b ? 32 : 0) | (inp.c ? 64 : 0);
+  const arr = [bits, C.a, C.b, C.c, C.u], key = arr.join(',');
+  if (key !== NET.lastIn) { NET.lastIn = key; NET.named.presence({ in:arr }).catch(() => {}); }
+}
+function guestOver(ov){
+  game.state = 'result';
+  const won = ov.w === 1, me = game.p[1];
+  const xp = 40 + (won ? 120 : 0);
+  profile.matches++; if (won) profile.wins++;
+  quest('online'); if (won) winRewards(me.def);
+  const before = { lv:profile.level, xp:profile.xp }, ups = addXP(xp);
+  saveProfile();
+  showResult(ov.w < 0 ? 'BERABERE' : won ? 'KAZANDIN!' : 'KAYBETTİN', `Çevrimiçi · Skor ${ov.wins[1]} - ${ov.wins[0]} · Rövanş için kurucu yeni maçı başlatabilir`, -1, xp, before, ups, [['onlinelobby', 'Lobiye Dön'], ['netquit', 'Ana Menü']]);
+  showTouch(0);
+}
+function netLost(msg){
+  if (game.state === 'fight' || game.state === 'pause') {
+    game.state = 'result';
+    showResult('BAĞLANTI KOPTU', msg, -1, 0, { lv:profile.level, xp:profile.xp }, 0, [['onlinelobby', 'Lobiye Dön'], ['netquit', 'Ana Menü']]);
+    showTouch(0);
+  }
+}
+// her karede: misafir yeni maçı otomatik başlatır, kopma kontrolü
+function netPoll(){
+  const o = netOpp();
+  if (NET.role === 'guest' && o && o.presence.match && o.presence.match.id !== NET.matchId && game.state !== 'fight' && game.state !== 'pause') guestStartMatch(o.presence.match);
+  if (NET.role === 'host' && game.mode === 'online' && (game.state === 'fight' || game.state === 'pause')) {
+    if (!o) { if (++NET.lostT > 240) netLost('Rakibin bağlantısı koptu.'); } else NET.lostT = 0;
+  }
+  if (game.state === 'online' && (NET.uiT = (NET.uiT || 0) + 1) % 30 === 0) netUI();
+}
+function netUI(){
+  const box = document.getElementById('olMain'); if (!box) return;
+  const meEl = document.getElementById('olMe');
+  if (!NET.myChar) NET.myChar = game.sel.chars[0] || 'aang';
+  meEl.innerHTML = ''; const pc = mkCanvas(200, 200); drawPortraitLook(pc.getContext('2d'), NET.myChar, lookFor(NET.myChar, mySkin(NET.myChar)), 200);
+  const info = document.createElement('div'); info.innerHTML = `<small>Senin bükücün</small><b>${CHAR[NET.myChar].name}</b><button class="btn small" data-act="netchar">Değiştir</button>`;
+  meEl.append(pc, info);
+  if (NET.avail === false) { box.innerHTML = `<p class="olWarn">Çevrimiçi oyun bu görünümde kullanılamıyor.<br>Oyunu <b>claude.ai</b>'deki linkinden, giriş yapmış olarak açman gerekiyor.</p>`; return; }
+  if (!NET.named) {
+    box.innerHTML = `<button class="btn go" data-act="nethost">🏠 Oda Kur</button>
+      <div class="olOr">— veya arkadaşının odasına katıl —</div>
+      <div class="olJoin"><input id="olCode" maxlength="4" placeholder="KOD" autocomplete="off" autocapitalize="characters" spellcheck="false"><button class="btn" data-act="netjoin">Katıl</button></div>
+      <p class="olStatus">${NET.status || ''}</p>`;
+    return;
+  }
+  const o = netOpp();
+  const oppTxt = o ? `${CHAR[o.presence.char] ? CHAR[o.presence.char].name : '?'} <small>(Lv ${Number(o.presence.lv) || 1})</small>` : 'bekleniyor…';
+  if (NET.role === 'host') {
+    box.innerHTML = `<div class="olCodeBig">${NET.code}</div><p>Arkadaşın bu oyunun linkini kendi telefonunda açsın, <b>Çevrimiçi → Katıl</b> kısmına bu kodu yazsın.</p>
+      <p class="olStatus">Rakip: <b>${oppTxt}</b></p>
+      <button class="btn go" data-act="netstart" ${o ? '' : 'disabled style="opacity:.45"'}>Maçı Başlat</button> <button class="btn small" data-act="netleave">Odadan Çık</button>`;
+  } else {
+    box.innerHTML = `<div class="olCodeBig">${NET.code}</div><p class="olStatus">Kurucu: <b>${oppTxt}</b></p>
+      <p>${o ? 'Kurucunun maçı başlatması bekleniyor…' : 'Kurucu bulunamadı — kod doğru mu? Kurucu odayı açık tutuyor mu?'}</p>
+      <button class="btn small" data-act="netleave">Odadan Çık</button>`;
+  }
+}
+
+// ====================================================================
+//  ÇİZİM — yeni karakterlerin saç stilleri, maskeler, aksesuarlar
+// ====================================================================
+function backHair2(c, L){
+  const hx = 2, hy = -96, col = L.hc;
+  c.fillStyle = col; c.strokeStyle = col;
+  switch (L.hair) {
+    case 'asami': c.beginPath(); c.moveTo(hx - 14, hy - 10); c.bezierCurveTo(hx - 34, hy + 10, hx - 18, hy + 30, hx - 26, hy + 52); c.lineTo(hx - 6, hy + 40); c.quadraticCurveTo(hx - 2, hy + 14, hx + 2, hy + 4); c.closePath(); c.fill(); break;
+    case 'kuvira': c.lineWidth = 6; c.lineCap = 'round'; c.beginPath(); c.moveTo(hx - 12, hy + 2); c.quadraticCurveTo(hx - 20, hy + 18, hx - 16, hy + 30); c.stroke(); break;
+    case 'pakku': c.lineWidth = 6; c.lineCap = 'round'; c.beginPath(); c.moveTo(hx - 10, hy - 14); c.quadraticCurveTo(hx - 24, hy - 2, hx - 22, hy + 22); c.stroke(); break;
+    case 'hama': c.beginPath(); c.arc(hx - 12, hy - 10, 8, 0, 7); c.fill(); break;
+  }
+  if (L.scarf) { c.strokeStyle = L.scarf; c.lineWidth = 7; c.lineCap = 'round'; c.beginPath(); c.moveTo(-6, -82); c.quadraticCurveTo(-22, -72, -26, -58); c.stroke(); }
+}
+function frontHair2(c, L, hx, hy, s){
+  const col = L.hc;
+  switch (L.hair) {
+    case 'mako':
+      cap(c, hx, hy, col, -6);
+      c.fillStyle = col; for (let i = 0; i < 4; i++) { c.beginPath(); c.moveTo(hx - 2 + i * 5, hy - 16); c.lineTo(hx + 2 + i * 5, hy - 2); c.lineTo(hx + 5 + i * 5, hy - 15); c.fill(); }
+      break;
+    case 'bolin':
+      cap(c, hx, hy, col);
+      c.strokeStyle = col; c.lineWidth = 3; c.beginPath(); c.arc(hx + 9, hy - 20, 4, 3.6, 8.5); c.stroke();
+      break;
+    case 'asami': cap(c, hx, hy, col); c.fillStyle = col; c.beginPath(); c.moveTo(hx + 4, hy - 16); c.quadraticCurveTo(hx + 22, hy - 10, hx + 18, hy + 4); c.lineTo(hx + 12, hy - 6); c.closePath(); c.fill(); break;
+    case 'tenzin':
+      c.strokeStyle = '#2f86d6'; c.lineWidth = 5; c.lineCap = 'butt';
+      c.beginPath(); c.arc(hx, hy + 2, 15, Math.PI * 1.02, Math.PI * 1.72); c.stroke();
+      c.fillStyle = '#2f86d6'; c.beginPath(); c.moveTo(hx + 3, hy - 16); c.lineTo(hx + 14, hy - 13); c.lineTo(hx + 8, hy - 4); c.closePath(); c.fill();
+      c.fillStyle = col; c.beginPath(); c.moveTo(hx + 2, hy + 6); c.quadraticCurveTo(hx + 8, hy + 22, hx + 15, hy + 8); c.lineTo(hx + 14, hy + 5); c.lineTo(hx + 4, hy + 5); c.closePath(); c.fill();
+      c.fillRect(hx + 5, hy + 4, 10, 3);
+      break;
+    case 'lin':
+      cap(c, hx, hy, col, -5);
+      c.strokeStyle = 'rgba(255,255,255,.7)'; c.lineWidth = 1.3; c.beginPath(); c.moveTo(hx + 13, hy - 1); c.lineTo(hx + 6, hy + 7); c.moveTo(hx + 15, hy + 2); c.lineTo(hx + 9, hy + 10); c.stroke();
+      break;
+    case 'kuvira':
+      cap(c, hx, hy, col, -7);
+      c.strokeStyle = shade(col, 30); c.lineWidth = 1; c.beginPath(); c.moveTo(hx + 4, hy - 17); c.lineTo(hx + 6, hy - 8); c.stroke();
+      c.fillStyle = 'rgba(160,40,40,.45)'; c.beginPath(); c.arc(hx + 3, hy - 3, 2, 0, 7); c.fill();
+      break;
+    case 'jet':
+      cap(c, hx, hy, col, -6);
+      c.fillStyle = col; for (let i = 0; i < 5; i++) { c.beginPath(); c.moveTo(hx - 10 + i * 6, hy - 14); c.lineTo(hx - 12 + i * 7, hy - 26); c.lineTo(hx - 4 + i * 6, hy - 15); c.fill(); }
+      break;
+    case 'combustion':
+      c.strokeStyle = '#2a1a1a'; c.lineWidth = 1.6; c.beginPath(); c.ellipse(hx + 6, hy - 10, 5, 3, 0, 0, 7); c.stroke();
+      c.fillStyle = '#2a1a1a'; c.beginPath(); c.arc(hx + 6, hy - 10, 1.6, 0, 7); c.fill();
+      c.beginPath(); c.moveTo(hx + 6, hy - 13); c.lineTo(hx + 6, hy - 19); c.stroke();
+      break;
+    case 'hama':
+      cap(c, hx, hy, col, -5);
+      c.strokeStyle = col; c.lineWidth = 2.5; c.beginPath(); c.arc(hx + 15, hy + 2, 4, -1.5, 2.6); c.stroke();
+      break;
+    case 'pakku':
+      cap(c, hx, hy, col, -6);
+      c.fillStyle = col; c.beginPath(); c.moveTo(hx + 3, hy + 6); c.quadraticCurveTo(hx + 8, hy + 30, hx + 13, hy + 8); c.closePath(); c.fill();
+      c.fillRect(hx + 4, hy + 4, 11, 3);
+      break;
+  }
+  if (L.lips) { c.fillStyle = '#b81c2a'; c.beginPath(); c.ellipse(hx + 9, hy + 8, 3, 1.6, 0, 0, 7); c.fill(); }
+  if (L.straw) { c.strokeStyle = '#d8c070'; c.lineWidth = 1.6; c.beginPath(); c.moveTo(hx + 11, hy + 8); c.lineTo(hx + 27, hy + 3); c.stroke(); }
+  if (L.headband) { c.fillStyle = L.headband; c.fillRect(hx - 15, hy - 12, 32, 5); }
+  if (L.crown) { c.fillStyle = '#e8b830'; c.beginPath(); c.moveTo(hx - 6, hy - 18); c.lineTo(hx - 2, hy - 32); c.lineTo(hx + 2, hy - 18); c.closePath(); c.fill(); }
+  if (L.warpaint) { c.fillStyle = 'rgba(30,30,40,.85)'; c.fillRect(hx - 4, hy - 6, 20, 5); c.fillStyle = 'rgba(240,240,240,.85)'; c.fillRect(hx + 2, hy - 1, 3, 9); c.fillRect(hx + 10, hy - 1, 3, 9); }
+  if (L.scarf) { c.fillStyle = L.scarf; rr(c, -12, -84, 24, 8, 4); c.fill(); }
+  if (L.mask === 'blue') {
+    c.fillStyle = '#2a5ab8'; c.beginPath(); c.arc(hx, hy, 17.5, 0, 7); c.fill();
+    c.strokeStyle = '#0e1a3a'; c.lineWidth = 2; c.stroke();
+    c.fillStyle = '#fff'; c.beginPath(); c.moveTo(hx - 3, hy + 6); c.lineTo(hx + 16, hy + 6); c.lineTo(hx + 14, hy + 12); c.lineTo(hx - 1, hy + 12); c.closePath(); c.fill();
+    c.strokeStyle = '#0e1a3a'; c.lineWidth = 1; for (let i = 0; i < 5; i++) { c.beginPath(); c.moveTo(hx + i * 3.5, hy + 6); c.lineTo(hx + i * 3.5, hy + 12); c.stroke(); }
+    c.fillStyle = '#0a0a14'; c.beginPath(); c.ellipse(hx + 3, hy - 4, 3.5, 2.6, -.3, 0, 7); c.ellipse(hx + 12, hy - 4, 3.5, 2.6, .3, 0, 7); c.fill();
+    c.fillStyle = '#e8e8f0'; c.beginPath(); c.moveTo(hx - 8, hy - 12); c.lineTo(hx + 18, hy - 14); c.lineTo(hx + 16, hy - 10); c.lineTo(hx - 6, hy - 9); c.fill();
+  }
+}
+
+// --- yeni mermi türleri ---
+function drawProj2(c, p){
+  switch (p.type) {
+    case 'lava': {
+      const R = p.r, big = p.big;
+      c.globalCompositeOperation = 'lighter';
+      const gl = c.createRadialGradient(p.x, GROUND, 4, p.x, GROUND, R * 1.6); gl.addColorStop(0, 'rgba(255,140,40,.5)'); gl.addColorStop(1, 'rgba(255,60,0,0)');
+      c.fillStyle = gl; c.fillRect(p.x - R * 1.6, GROUND - R * 1.6, R * 3.2, R * 1.6);
+      c.globalCompositeOperation = 'source-over';
+      const g = c.createLinearGradient(0, GROUND - R * (big ? 1.4 : .7), 0, GROUND); g.addColorStop(0, '#ffd060'); g.addColorStop(.4, '#ff6a14'); g.addColorStop(1, '#8a1a06');
+      c.fillStyle = g; c.beginPath(); c.moveTo(p.x - R * 1.3, GROUND);
+      for (let i = 0; i <= 8; i++) { const t = i / 8, x = p.x - R * 1.3 + t * R * 2.6; c.lineTo(x, GROUND - Math.sin(t * Math.PI) * R * (big ? 1.4 : .7) - Math.sin(p.age * .3 + i) * 4); }
+      c.lineTo(p.x + R * 1.3, GROUND); c.closePath(); c.fill();
+      c.fillStyle = 'rgba(60,10,0,.55)'; for (let i = 0; i < 4; i++) { c.beginPath(); c.ellipse(p.x - R * .8 + i * R * .5, GROUND - 6 - (i % 2) * 6, 5, 2.5, 0, 0, 7); c.fill(); }
+      break; }
+    case 'bola': {
+      c.translate(p.x, p.y); c.rotate(p.age * .5);
+      c.strokeStyle = '#8a6a43'; c.lineWidth = 2; c.beginPath(); c.moveTo(-14, 0); c.lineTo(14, 0); c.moveTo(0, 0); c.lineTo(0, -14); c.stroke();
+      c.fillStyle = '#4a4a52'; for (const [x, y] of [[-14, 0], [14, 0], [0, -14]]) { c.beginPath(); c.arc(x, y, 5, 0, 7); c.fill(); }
+      break; }
+    case 'car': {
+      c.translate(p.x, p.y); c.scale(Math.sign(p.vx) || 1, 1);
+      const g = c.createLinearGradient(0, -46, 0, 10); g.addColorStop(0, '#d8303a'); g.addColorStop(1, '#7a1018');
+      c.fillStyle = 'rgba(0,0,0,.3)'; c.beginPath(); c.ellipse(0, 30, 90, 8, 0, 0, 7); c.fill();
+      c.fillStyle = g; rr(c, -80, -24, 160, 40, 12); c.fill(); c.strokeStyle = '#2a0808'; c.lineWidth = 2.5; c.stroke();
+      c.beginPath(); c.moveTo(-40, -24); c.quadraticCurveTo(-30, -52, 0, -52); c.lineTo(30, -52); c.quadraticCurveTo(48, -50, 52, -24); c.closePath(); c.fill(); c.stroke();
+      c.fillStyle = '#bfe0f0'; c.beginPath(); c.moveTo(-28, -26); c.quadraticCurveTo(-22, -46, 0, -46); c.lineTo(10, -46); c.lineTo(10, -26); c.closePath(); c.fill();
+      c.beginPath(); c.moveTo(16, -26); c.lineTo(16, -46); c.lineTo(28, -46); c.quadraticCurveTo(40, -44, 44, -26); c.closePath(); c.fill();
+      c.fillStyle = '#d9a637'; c.fillRect(-80, -4, 160, 4);
+      c.fillStyle = '#ffe9a0'; c.beginPath(); c.arc(76, -10, 6, 0, 7); c.fill();
+      c.fillStyle = '#1a1a1a'; for (const x of [-50, 50]) { c.beginPath(); c.arc(x, 18, 15, 0, 7); c.fill(); c.fillStyle = '#888'; c.beginPath(); c.arc(x, 18, 6, 0, 7); c.fill(); c.fillStyle = '#1a1a1a'; }
+      c.strokeStyle = 'rgba(255,255,255,.35)'; c.lineWidth = 3; for (let i = 0; i < 3; i++) { c.beginPath(); c.moveTo(-100 - i * 30, -10 + i * 10); c.lineTo(-140 - i * 30, -10 + i * 10); c.stroke(); }
+      break; }
+    case 'cable': {
+      const f = p.owner, h = f.hand();
+      c.strokeStyle = '#3a3f46'; c.lineWidth = 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(h.x, h.y); c.lineTo(p.x, p.y); c.stroke();
+      c.strokeStyle = '#c8d0d8'; c.lineWidth = 2; c.stroke();
+      c.fillStyle = '#9aa2aa'; c.beginPath(); c.arc(p.x, p.y, 6, 0, 7); c.fill();
+      break; }
+    case 'strip': {
+      c.translate(p.x, p.y); c.rotate(Math.atan2(p.vy, p.vx));
+      const g = c.createLinearGradient(-20, 0, 14, 0); g.addColorStop(0, 'rgba(200,210,220,0)'); g.addColorStop(1, '#e8eef4');
+      c.strokeStyle = g; c.lineWidth = 4; c.beginPath(); c.moveTo(-24, 4); c.quadraticCurveTo(-4, -6, 14, 0); c.stroke();
+      break; }
+    case 'arrow': {
+      c.translate(p.x, p.y); c.rotate(Math.atan2(p.vy, p.vx));
+      c.strokeStyle = '#7a5a3a'; c.lineWidth = 2.5; c.beginPath(); c.moveTo(-22, 0); c.lineTo(12, 0); c.stroke();
+      c.fillStyle = '#ccc'; c.beginPath(); c.moveTo(18, 0); c.lineTo(10, -4); c.lineTo(10, 4); c.closePath(); c.fill();
+      c.fillStyle = '#e8e8e8'; c.beginPath(); c.moveTo(-22, 0); c.lineTo(-28, -5); c.lineTo(-18, 0); c.lineTo(-28, 5); c.closePath(); c.fill();
+      break; }
+    case 'blast': {
+      c.globalCompositeOperation = 'lighter';
+      const ang = Math.atan2(p.vy, p.vx), L = 46;
+      c.translate(p.x, p.y); c.rotate(ang);
+      const g = c.createLinearGradient(-L, 0, 6, 0); g.addColorStop(0, 'rgba(255,120,30,0)'); g.addColorStop(1, 'rgba(255,240,200,1)');
+      c.strokeStyle = g; c.lineWidth = 6; c.lineCap = 'round'; c.beginPath(); c.moveTo(-L, 0); c.lineTo(6, 0); c.stroke();
+      c.strokeStyle = 'rgba(255,170,60,.4)'; c.lineWidth = 14; c.stroke();
+      break; }
+    case 'icewave': {
+      for (let i = -2; i <= 2; i++) {
+        const x = p.x + i * 20, h = 70 - Math.abs(i) * 16 + Math.sin(p.age * .4 + i) * 4;
+        const g = c.createLinearGradient(x - 12, 0, x + 12, 0); g.addColorStop(0, '#8ccbef'); g.addColorStop(.5, '#f2fbff'); g.addColorStop(1, '#6ab0e0');
+        c.fillStyle = g; c.beginPath(); c.moveTo(x - 13, GROUND); c.lineTo(x, GROUND - h); c.lineTo(x + 13, GROUND); c.closePath(); c.fill();
+        c.strokeStyle = 'rgba(255,255,255,.8)'; c.lineWidth = 1.2; c.stroke();
+      }
+      break; }
+  }
+}
+function drawFx2(e){
+  const c = ctx;
+  switch (e.type) {
+    case 'target': {
+      const k = e.life % 10 < 5;
+      c.save(); c.strokeStyle = k ? '#ff6a2a' : '#ffd060'; c.lineWidth = 3; c.setLineDash([10, 8]);
+      c.beginPath(); c.arc(e.x, e.y, (e.r || 80) * (.6 + e.life / 100), 0, 7); c.stroke(); c.setLineDash([]);
+      c.beginPath(); c.moveTo(e.x - 14, e.y); c.lineTo(e.x + 14, e.y); c.moveTo(e.x, e.y - 14); c.lineTo(e.x, e.y + 14); c.stroke(); c.restore();
+      break; }
+    case 'wrap': {
+      const a = e.a, b = e.b; if (!a || !b) break;
+      c.strokeStyle = '#3a3f46'; c.lineWidth = 4;
+      for (let i = 0; i < 2; i++) { c.beginPath(); c.moveTo(a.x + a.facing * 30, a.y - 80 + i * 20); c.quadraticCurveTo((a.x + b.x) / 2, a.y - 120, b.x, b.y - 70 + i * 20); c.stroke(); }
+      c.strokeStyle = '#c8d0d8'; c.lineWidth = 3;
+      for (let i = 0; i < 4; i++) { c.beginPath(); c.ellipse(b.x, b.y - 30 - i * 24, 28, 8, 0, 0, 7); c.stroke(); }
+      break; }
+    case 'wind': {
+      c.save(); c.globalAlpha = Math.min(1, e.life / 20) * .5; c.strokeStyle = '#eef'; c.lineWidth = 3;
+      for (let i = 0; i < 12; i++) { const y = 160 + i * 40, x = ((game.frame * 26 * e.dir + i * 173) % (W + 200) + W + 200) % (W + 200) - 100; c.beginPath(); c.moveTo(x, y); c.lineTo(x - e.dir * 120, y + 4); c.stroke(); }
+      c.restore(); break; }
+  }
+}
+function drawPortraitLook(c, id, L, size){
+  const d = CHAR[id], e = ELEM[d.element];
+  const g = c.createRadialGradient(size / 2, size * .4, 5, size / 2, size / 2, size * .75);
+  g.addColorStop(0, shade(e.color, -20)); g.addColorStop(1, '#140c06');
+  c.fillStyle = g; c.fillRect(0, 0, size, size);
+  const s = size / 120 * 1.75;
+  drawChar(c, L, { x:size * .5 - 4 * s, y:size * .42 + 96 * s, facing:1, sc:s, t:30 });
+}
+
+// ====================================================================
 //  MENÜLER (DOM)
 // ====================================================================
-const screens = ['title','campaign','select','guide','controls','pause','result'];
+const screens = ['title','campaign','select','guide','controls','pause','result','online','ach','scene'];
 function showScreen(id){ for (const s of screens) document.getElementById(s).classList.toggle('on', s === id); }
 function goto(state){
   game.state = state; showScreen(state); showTouch(0);
   if (state === 'title') { refreshProfile(); menuStage++; menuBgCache = null; }
   if (state === 'campaign') buildLevels();
   if (state === 'select') { refreshSelect(); showInfo(game.sel.chars[0] || 'aang'); }
+  if (state === 'online') netUI();
+  if (state === 'ach') buildAch();
 }
 function togglePause(){
-  if (game.state === 'fight') { game.state = 'pause'; showScreen('pause'); showTouch(0); }
+  if (game.state === 'fight') { game.state = 'pause'; showScreen('pause'); showTouch(0); buildPause(); }
   else if (game.state === 'pause') {
     if (game.mode === 'demo') { goto('title'); return; }
     game.state = 'fight'; showScreen(null); showTouch(isTouch ? (game.mode === '2p' ? 2 : 1) : 0); last = performance.now(); acc = 0;
   }
+}
+function buildPause(){
+  const ex = document.getElementById('pauseExtra'); ex.innerHTML = '';
+  const on = game.mode === 'online', pm = document.getElementById('pMenu');
+  document.getElementById('pSel').style.display = on ? 'none' : '';
+  pm.dataset.act = on ? 'netquit' : 'menu'; pm.textContent = on ? 'Maçtan Çık' : 'Ana Menü';
+  if (game.mode === 'training') {
+    const T = game.training;
+    const add = (act, label) => { const b = document.createElement('button'); b.className = 'btn small'; b.dataset.act = act; b.textContent = label; ex.append(b); };
+    add('tdummy', 'Kukla: ' + DUMMY_MODES.find(m => m[0] === T.dummy)[1]);
+    add('tchi', 'Sınırsız Chi: ' + (T.infChi ? 'Açık' : 'Kapalı'));
+    add('tult', 'Ultiyi Doldur'); add('treset', 'İstatistikleri Sıfırla');
+  }
+  if (on) ex.innerHTML = '<p style="color:var(--muted);margin:0">Çevrimiçi maç arka planda devam ediyor.</p>';
+  const me = game.p.find(f => f.ctrl === 'p1') || game.p[0];
+  document.getElementById('moveList').innerHTML = moveListHTML(me.def.id);
+}
+function buildAch(){
+  const D = daily(), body = document.getElementById('achBody');
+  const now = new Date(), mid = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1), hrs = Math.max(1, Math.ceil((mid - now) / 3600000));
+  let h = `<div class="secT">📜 Günlük Görevler <small style="font-size:14px;color:var(--muted)">(${hrs} saat sonra yenilenir · her biri +120 XP)</small></div><div class="qrow">`;
+  for (const q of D.q) { const P = DAILY_POOL.find(x => x.id === q.id); h += `<div class="quest${q.done ? ' done' : ''}"><b>${q.done ? '✅ ' : ''}${P.text}</b><div class="xpbar"><i style="width:${q.prog / P.goal * 100}%"></i></div><small>${Math.floor(q.prog)}/${P.goal}</small></div>`; }
+  const n = ACH.filter(a => profile.ach[a[0]]).length;
+  h += `</div><div class="secT">🏆 Başarımlar (${n}/${ACH.length}) <small style="font-size:14px;color:var(--muted)">her biri +50 XP</small></div><div class="achGrid">`;
+  for (const [id, name, desc] of ACH) h += `<div class="ach${profile.ach[id] ? ' on' : ''}"><b>${profile.ach[id] ? '🏆' : '🔒'} ${name}</b>${desc}</div>`;
+  body.innerHTML = h + '</div>';
 }
 function refreshProfile(){
   const need = xpNeed(profile.level);
@@ -2648,6 +3751,8 @@ function refreshProfile(){
     <div class="xpbar"><i style="width:${profile.xp / need * 100}%"></i></div><span>${profile.xp}/${need} XP</span>
     <span class="sep">·</span><span>⛰ ${profile.campaign}/${LEVELS.length}</span><span class="sep">·</span><span>♾ Rekor: ${profile.endlessBest} dalga</span>`;
   refreshSoundUI();
+  const D = daily(); document.getElementById('dailyBadge').textContent = '📜 ' + D.q.filter(q => q.done).length + '/3';
+  document.getElementById('hazBtn').textContent = '⚡ Arena Olayları: ' + (profile.hazards ? 'Açık' : 'Kapalı');
 }
 
 // --- seçim ekranı ---
@@ -2675,32 +3780,46 @@ function showInfo(id){
   document.getElementById('info').innerHTML = `<h4>${d.name}</h4>
     <span class="badge" style="background:${e.color}">${e.icon} ${e.label}</span><span class="badge" style="background:#d8c39a">${d.nation}</span>
     <div class="stats"><span>❤ Can ${d.hp}</span><span>🏃 Hız ${d.speed}</span><span>⤒ Zıplama ×${d.jumps}</span></div>
+    <div class="skins" id="skinRow"></div>
     <div style="margin:6px 0;color:#e8dcc0">${d.bio.split('. ').slice(0, 3).join('. ')}.</div>
     <div class="ab" style="border-color:#9cf"><b>Pasif:</b> ${d.passive}</div>
     ${abilityHTML(d)}`;
+  const row = document.getElementById('skinRow');
+  const pv = mkCanvas(128, 128); drawPortraitLook(pv.getContext('2d'), id, lookFor(id, mySkin(id)), 128); row.append(pv);
+  const lb = document.createElement('b'); lb.style.cssText = 'color:var(--muted);font-size:13px'; lb.textContent = 'Kıyafet:'; row.append(lb);
+  for (const sk of skinsFor(id)) {
+    const b = document.createElement('button'), un = skinUnlocked(sk);
+    b.className = 'sk' + (mySkin(id) === sk.id ? ' on' : '') + (un ? '' : ' lock');
+    b.textContent = un ? sk.name : '🔒 ' + sk.name + ' (Lv ' + sk.lv + ')';
+    if (un) b.onclick = e => { e.stopPropagation(); profile.skins[id] = sk.id; saveProfile(); sfx('select'); showInfo(id); };
+    row.append(b);
+  }
 }
-const soloMode = () => game.mode === 'campaign' || game.mode === 'endless';
+const soloMode = () => game.mode === 'campaign' || game.mode === 'endless' || game.mode === 'onlinesel';
 function refreshSelect(){
   const m = game.mode;
   if (soloMode()) game.sel.slot = 0;
   const title = document.getElementById('selTitle');
   if (m === 'campaign') { const L = LEVELS[game.camp.level]; title.innerHTML = `Seviye ${game.camp.level + 1}: ${L.title}<small>${L.story}</small>`; game.sel.chars[1] = L.opp; }
   else if (m === 'endless') title.innerHTML = 'Sonsuz Mod<small>Her dalgada daha güçlü bir rakip. Kaç dalga dayanabilirsin?</small>';
+  else if (m === 'training') title.innerHTML = 'Antrenman<small>Karakterini ve kuklanı seç. Süre ve can sınırsız — kombolarını dene.</small>';
+  else if (m === 'onlinesel') title.innerHTML = 'Çevrimiçi<small>Maçta kullanacağın bükücüyü ve kıyafetini seç</small>';
   else if (m === '2p') title.innerHTML = 'Çok Oyunculu<small>' + (isTouch ? 'Telefonu ikiniz tutun: sol yarı 1P, sağ yarı 2P' : '1P: WASD+FGH · 2P: oklar+KL; · oyun kolları da çalışır') + '</small>';
   else title.innerHTML = 'Bükücünü Seç';
   for (let i = 0; i < 2; i++) {
     let id = game.sel.chars[i];
-    if (i === 1 && m === 'endless') id = null;
+    if (i === 1 && (m === 'endless' || m === 'onlinesel')) id = null;
     const slot = document.getElementById('slot' + i);
     slot.classList.toggle('active', game.sel.slot === i);
     slot.classList.toggle('locked', i === 1 && soloMode());
     const cc = slot.querySelector('canvas').getContext('2d');
     cc.clearRect(0, 0, 116, 116);
     if (id) drawPortrait(cc, id, 116); else { cc.fillStyle = '#2a1a10'; cc.fillRect(0, 0, 116, 116); cc.fillStyle = '#8a7a5a'; cc.font = 'bold 60px Georgia'; cc.textAlign = 'center'; cc.fillText(m === 'endless' && i === 1 ? '∞' : '?', 58, 78); }
-    document.getElementById('slot' + i + 'name').textContent = id ? CHAR[id].name : (m === 'endless' && i === 1 ? 'Rastgele rakipler' : '—');
+    document.getElementById('slot' + i + 'name').textContent = id ? CHAR[id].name : (m === 'endless' && i === 1 ? 'Rastgele rakipler' : m === 'onlinesel' && i === 1 ? 'Çevrimiçi rakip' : '—');
   }
   document.getElementById('slot0who').textContent = m === 'demo' ? 'Bilgisayar 1' : '1. Oyuncu';
-  document.getElementById('slot1who').textContent = m === '2p' ? '2. Oyuncu' : m === 'demo' ? 'Bilgisayar 2' : m === 'campaign' ? 'Rakip' : 'Bilgisayar';
+  document.getElementById('slot1who').textContent = m === '2p' ? '2. Oyuncu' : m === 'demo' ? 'Bilgisayar 2' : m === 'campaign' ? 'Rakip' : m === 'training' ? 'Kukla' : 'Bilgisayar';
+  document.querySelector('#select [data-act="fight"]').textContent = m === 'onlinesel' ? 'SEÇ ✓' : 'SAVAŞ!';
   grid.querySelectorAll('.card').forEach(cd => { cd.classList.toggle('p1', cd.dataset.id === game.sel.chars[0]); cd.classList.toggle('p2', !soloMode() && cd.dataset.id === game.sel.chars[1]); });
   document.getElementById('diffGroup').style.visibility = m === 'cpu' ? 'visible' : 'hidden';
   document.getElementById('stageGroup').style.visibility = soloMode() ? 'hidden' : 'visible';
@@ -2805,6 +3924,28 @@ document.addEventListener('click', e => {
       if (game.sel.chars[1] && game.sel.chars[1] === game.sel.chars[0]) game.sel.chars[1] = null;
       goto('select'); break;
     case 'campaign': goto('campaign'); break;
+    case 'online': NET.myChar = NET.myChar || game.sel.chars[0] || 'aang'; goto('online'); break;
+    case 'training': game.mode = 'training'; game.sel.slot = 0; if (!game.sel.chars[1] || game.sel.chars[1] === game.sel.chars[0]) game.sel.chars[1] = 'sokka'; goto('select'); break;
+    case 'ach': goto('ach'); break;
+    case 'hazards': profile.hazards = !profile.hazards; saveProfile(); refreshProfile(); break;
+    case 'netback': netLeave(); goto('title'); break;
+    case 'netchar': game.mode = 'onlinesel'; game.sel.chars[0] = NET.myChar; goto('select'); break;
+    case 'nethost': netOpen(genCode(), 'host'); break;
+    case 'netjoin': {
+      const code = ((document.getElementById('olCode') || {}).value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+      if (code.length !== 4) { NET.status = 'Kod 4 karakter olmalı.'; netUI(); return; }
+      netOpen(code, 'guest'); break; }
+    case 'netstart': netHostStart(); break;
+    case 'netleave': netLeave(); netUI(); break;
+    case 'netrematch': if (netOpp()) netHostStart(); else goto('online'); break;
+    case 'onlinelobby': goto('online'); break;
+    case 'netquit': netLeave(); goto('title'); break;
+    case 'skip': if (game.scene) { const d = game.scene.done; game.scene = null; d(); } break;
+    case 'ending': startScene(ENDING, game.p[0].def.id, 'korra', 'republic', () => goto('campaign')); break;
+    case 'tdummy': { const T = game.training, i = DUMMY_MODES.findIndex(m => m[0] === T.dummy); T.dummy = DUMMY_MODES[(i + 1) % DUMMY_MODES.length][0]; game.p[1].aiS = null; buildPause(); break; }
+    case 'tchi': game.training.infChi = !game.training.infChi; buildPause(); break;
+    case 'tult': game.p[0].ult = 100; break;
+    case 'treset': Object.assign(game.training, { last:0, total:0, maxCombo:0 }); break;
     case 'levels': goto('campaign'); break;
     case 'guide': goto('guide'); break;
     case 'controls': goto('controls'); break;
@@ -2813,24 +3954,29 @@ document.addEventListener('click', e => {
       else if (profile.sound) profile.sound = false;
       else { profile.sound = true; profile.music = true; }
       saveProfile(); refreshSoundUI(); break;
-    case 'back': goto(game.state === 'select' && game.mode === 'campaign' ? 'campaign' : 'title'); break;
+    case 'back': goto(game.state === 'select' && game.mode === 'campaign' ? 'campaign' : game.state === 'select' && game.mode === 'onlinesel' ? 'online' : 'title'); break;
     case 'random': {
       game.sel.chars[0] = pick(CHARS).id;
       if (!soloMode()) game.sel.chars[1] = randomOpp(game.sel.chars[0]);
       refreshSelect(); showInfo(game.sel.chars[0]); break; }
     case 'fight':
       if (!game.sel.chars[0]) { game.sel.slot = 0; refreshSelect(); return; }
+      if (game.mode === 'onlinesel') { NET.myChar = game.sel.chars[0]; if (NET.named) NET.named.presence(netMe()).catch(() => {}); goto('online'); return; }
+      if (game.mode === 'campaign') { const lv = game.camp.level, L = LEVELS[lv]; startScene(SCENES[lv], game.sel.chars[0], L.opp, L.stage, startMatch); return; }
       if (!soloMode() && !game.sel.chars[1]) game.sel.chars[1] = randomOpp(game.sel.chars[0]);
       startMatch(); break;
     case 'resume': togglePause(); break;
     case 'again': startMatch(); break;
-    case 'next': game.camp.level = Math.min(LEVELS.length - 1, game.camp.level + 1); startMatch(); break;
+    case 'next': { game.camp.level = Math.min(LEVELS.length - 1, game.camp.level + 1); const L = LEVELS[game.camp.level]; startScene(SCENES[game.camp.level], game.sel.chars[0], L.opp, L.stage, startMatch); break; }
     case 'toselect': goto('select'); break;
-    case 'menu': goto('title'); break;
+    case 'menu': if (NET.named) netLeave(); goto('title'); break;
   }
   b.blur();
 });
+document.getElementById('scene').addEventListener('click', e => { if (e.target.closest('[data-act]')) return; sceneAdvance(); });
 addEventListener('keydown', e => {
+  if (game.state === 'scene' && (e.code === 'Enter' || e.code === 'Space')) { e.preventDefault(); sceneAdvance(); return; }
+  if (e.code === 'Enter' && game.state === 'online' && document.activeElement && document.activeElement.id === 'olCode') { document.querySelector('[data-act="netjoin"]').click(); return; }
   if (e.code !== 'Enter') return;
   if (game.state === 'select') document.querySelector('#select [data-act="fight"]').click();
   else if (game.state === 'title') document.querySelector('[data-act="cpu"]').click();
