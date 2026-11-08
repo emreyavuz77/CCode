@@ -45,8 +45,15 @@ Her maçta XP kazanılır (hasar, galibiyet, seviye/dalga). Oyuncu seviyesi ve r
 | Ulti | `H` | `;` | RB / RT | ✦ |
 | Duraklat | `Esc` / `P` | | Start | ❚❚ |
 
-### iPhone (16 / 17 Pro dahil)
-Telefonu yan çevirince oyun dünyası ekranın en-boy oranına göre genişler ve **tüm ekranı doldurur** (Dynamic Island / çentik bölgesine de taşar, arayüz güvenli alanda kalır). Safari'de **Paylaş → Ana Ekrana Ekle** ile açarsanız tarayıcı çubukları da gizlenir.
+### iPhone 16 / 17 Pro'da tam ekran
+iPhone'da Safari, web sayfalarının adres çubuğunu gizlemesine izin vermez; gerçek tam ekran için oyun **ana ekrana eklenmiş uygulama** olarak açılmalıdır:
+
+1. (Bir kez) GitHub'da **Settings → Pages → Build and deployment → Source: Deploy from a branch**, Branch: `claude/intelligent-bohr-ta36oi`, klasör `/ (root)` → **Save**. Birkaç dakika sonra oyun şu adreste yayında olur: <https://emreyavuz77.github.io/CCode/>
+2. iPhone'da bu adresi **Safari** ile aç → **Paylaş ⬆ → Ana Ekrana Ekle → Ekle**.
+3. Ana ekrandaki **Dört Ulus** simgesinden aç, telefonu yan çevir: Safari çubukları olmadan, Dynamic Island'a kadar tam ekran.
+
+Oyundaki sağ üst **⛶** düğmesi bu adımları gösterir; tam ekran desteği olan tarayıcılarda (Android, iPad, bilgisayar) doğrudan tam ekrana geçer. Yatayda oyun dünyası ekran oranına göre genişler (siyah kenar kalmaz), arayüz çentik/Dynamic Island güvenli alanında kalır.
+Not: **Çevrimiçi maç** yalnızca claude.ai linkinde çalışır; ana ekran sürümünde diğer tüm modlar çalışır.
 
 ### Mekanikler
 - **Dört element doğru dağılımla:** Su (Katara; Amon kan bükme), Toprak (Toph, Bumi), Ateş (Zuko, Iroh, Azula – mavi ateş, Ozai), Hava (Zaheer). **Avatarlar (Aang, Korra) dört elementin hepsini büker** — temel saldırı her atışta sıradaki elemente geçer.

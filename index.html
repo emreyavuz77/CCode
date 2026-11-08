@@ -9,6 +9,9 @@
 <meta name="apple-mobile-web-app-title" content="Dört Ulus">
 <meta name="theme-color" content="#000000">
 <title>Dört Ulus: Bükücüler Arenası</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icon-192.png">
 <style>
 :root{--gold:#e8b44a;--text:#f6ead2;--muted:#c2ae8c;--panel:rgba(22,15,10,.88);--line:rgba(232,180,74,.35)}
 *{box-sizing:border-box}
@@ -122,6 +125,16 @@ kbd{background:#3a2a1a;border:1px solid #8a6a3a;border-bottom-width:3px;border-r
 #rotate .ph{font-size:70px;animation:rot 1.8s ease-in-out infinite}
 #rotate .btn{min-width:0;font-size:17px;padding:10px 20px;margin-top:16px}
 @keyframes rot{0%,25%{transform:rotate(0)}55%,100%{transform:rotate(-90deg)}}
+#fsBtn{position:absolute;top:8px;right:calc(62px + var(--insR));z-index:6;background:rgba(0,0,0,.4);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:18px}
+body.standalone #fsBtn{display:none}
+#fsHelp{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;background:rgba(6,4,2,.88);padding:16px;color:var(--text)}
+#fsHelp.on{display:flex}
+#fsHelp .box{background:#1e140c;border:2px solid var(--gold);border-radius:16px;padding:12px 20px;max-width:640px;width:100%;max-height:100%;overflow:auto;font-size:15px;line-height:1.4;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+#fsHelp h3{margin:0 0 4px;color:var(--gold);font-family:Georgia,serif;font-size:22px}
+#fsHelp p{margin:4px 0}#fsHelp ol{margin:4px 0 6px;padding-left:22px}#fsHelp li{margin:2px 0}
+#fsHelp a{color:#ffd56a;word-break:break-all}
+#fsHelp .btn{min-width:0;font-size:16px;padding:8px 18px;margin:6px 6px 0 0}
+#fsHelp .note{color:var(--muted);font-size:14px}
 #muteBtn{position:absolute;top:8px;right:calc(10px + var(--insR));z-index:6;background:rgba(0,0,0,.4);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:18px}
 .tonly{display:none}
 body.touch .tonly{display:revert}
@@ -196,6 +209,7 @@ body.touch #moveList{font-size:20px}body.touch .olHelp{font-size:18px}body.touch
 <div id="wrap"><div id="game">
 <canvas id="c"></canvas>
 <button id="muteBtn" title="Ses (M)">🔊</button>
+<button id="fsBtn" title="Tam ekran">⛶</button>
 <div id="toast"></div>
 
 <div id="title" class="screen on">
@@ -316,6 +330,7 @@ body.touch #moveList{font-size:20px}body.touch .olHelp{font-size:18px}body.touch
   <p>Dört Ulus yatay ekranda tam ekran oynanır.</p>
   <button class="btn" id="rotateOk">Yine de dikey devam et</button>
 </div>
+<div id="fsHelp"><div class="box" id="fsBox"></div></div>
 <div id="safeProbe" style="position:fixed;left:0;top:0;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)"></div>
 
 <script>
@@ -367,6 +382,49 @@ if (window.visualViewport) visualViewport.addEventListener('resize', fit);
 document.addEventListener('gesturestart', e => e.preventDefault());
 document.addEventListener('dblclick', e => e.preventDefault());
 document.getElementById('rotateOk').onclick = () => { rotateDismissed = true; fit(); };
+
+// --- tam ekran ---
+// iPhone Safari, sayfaların tarayıcı çubuklarını gizlemesine izin vermez; gerçek tam ekran
+// oyunu kendi adresinden açıp "Ana Ekrana Ekle" ile başlatınca olur (manifest + apple meta).
+const PAGES_URL = 'https://emreyavuz77.github.io/CCode/';
+const ARTIFACT_URL = 'https://claude.ai/artifact/85KvgXAP49jBDUNNDdbT9i';
+const STANDALONE = navigator.standalone === true || (window.matchMedia && (matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: fullscreen)').matches));
+let IN_FRAME = false; try { IN_FRAME = window.top !== window.self; } catch (e) { IN_FRAME = true; }
+const IS_IOS = /iPhone|iPod/.test(navigator.userAgent) || (/Mac/.test(navigator.platform) && navigator.maxTouchPoints > 1 && !/iPad/.test(navigator.userAgent) && screen.width < 600);
+if (STANDALONE) document.body.classList.add('standalone');
+const isFS = () => !!(document.fullscreenElement || document.webkitFullscreenElement);
+async function goFullscreen(){
+  if (isFS()) { try { await (document.exitFullscreen || document.webkitExitFullscreen).call(document); } catch (e) {} return; }
+  const el = document.documentElement, req = el.requestFullscreen || el.webkitRequestFullscreen;
+  if (req && !IS_IOS) {
+    try { await req.call(el, { navigationUI:'hide' }); try { await screen.orientation.lock('landscape'); } catch (e) {} return; } catch (e) {}
+  }
+  showFsHelp();
+}
+function showFsHelp(){
+  const box = document.getElementById('fsBox');
+  const steps = `<ol>
+      <li>Oyunu <b>Safari</b>'de kendi adresinden aç:<br><a href="${PAGES_URL}" target="_blank" rel="noopener">${PAGES_URL}</a></li>
+      <li>Alttaki <b>Paylaş</b> düğmesine (kare + yukarı ok ⬆) dokun.</li>
+      <li><b>Ana Ekrana Ekle</b>'yi seç, sonra <b>Ekle</b>'ye dokun.</li>
+      <li>Ana ekrandaki <b>Dört Ulus</b> simgesinden aç ve telefonu yan çevir: Safari çubukları olmadan, Dynamic Island'a kadar tam ekran açılır.</li>
+    </ol>`;
+  box.innerHTML = `<h3>⛶ iPhone'da tam ekran</h3>
+    <p>iPhone'da Safari, web sayfalarının adres çubuğunu kendiliğinden gizlemesine izin vermiyor${IN_FRAME ? ' ve claude.ai sayfasının içindeyken oyun tüm ekranı kaplayamıyor' : ''}. Tam ekran için oyunu bir uygulama gibi ana ekrana ekle:</p>
+    ${steps}
+    <button class="btn" id="fsCopy">🔗 Adresi Kopyala</button><button class="btn" id="fsClose">Kapat</button>
+    <p class="note">Not: Çevrimiçi maç sadece <a href="${ARTIFACT_URL}" target="_blank" rel="noopener">claude.ai linkinde</a> çalışır. Ana ekrandaki sürümde diğer tüm modlar çalışır; ilerlemen orada ayrıca kaydedilir.</p>`;
+  document.getElementById('fsHelp').classList.add('on');
+  document.getElementById('fsClose').onclick = () => document.getElementById('fsHelp').classList.remove('on');
+  document.getElementById('fsCopy').onclick = async e => {
+    try { await navigator.clipboard.writeText(PAGES_URL); e.target.textContent = '✓ Kopyalandı'; }
+    catch (err) { e.target.textContent = PAGES_URL; }
+  };
+}
+document.getElementById('fsHelp').addEventListener('click', e => { if (e.target.id === 'fsHelp') e.currentTarget.classList.remove('on'); });
+document.getElementById('fsBtn').onclick = e => { e.stopPropagation(); goFullscreen(); e.currentTarget.blur(); };
+document.addEventListener('fullscreenchange', () => setTimeout(fit, 100));
+document.addEventListener('webkitfullscreenchange', () => setTimeout(fit, 100));
 
 // ====================================================================
 //  SES — WebAudio ile sentezlenmiş element sesleri + müzik
@@ -3502,7 +3560,7 @@ function netUI(){
   meEl.innerHTML = ''; const pc = mkCanvas(200, 200); drawPortraitLook(pc.getContext('2d'), NET.myChar, lookFor(NET.myChar, mySkin(NET.myChar)), 200);
   const info = document.createElement('div'); info.innerHTML = `<small>Senin bükücün</small><b>${CHAR[NET.myChar].name}</b><button class="btn small" data-act="netchar">Değiştir</button>`;
   meEl.append(pc, info);
-  if (NET.avail === false) { box.innerHTML = `<p class="olWarn">Çevrimiçi oyun bu görünümde kullanılamıyor.<br>Oyunu <b>claude.ai</b>'deki linkinden, giriş yapmış olarak açman gerekiyor.</p>`; return; }
+  if (NET.avail === false) { box.innerHTML = `<p class="olWarn">Çevrimiçi maç bu sürümde kullanılamıyor.<br>Çevrimiçi oynamak için oyunu <b>claude.ai</b> linkinden, giriş yapmış olarak aç:<br><a href="${ARTIFACT_URL}" target="_blank" rel="noopener" style="color:#ffd56a">${ARTIFACT_URL}</a></p>`; return; }
   if (!NET.named) {
     box.innerHTML = `<button class="btn go" data-act="nethost">🏠 Oda Kur</button>
       <div class="olOr">— veya arkadaşının odasına katıl —</div>
@@ -3984,6 +4042,7 @@ addEventListener('keydown', e => {
 });
 
 // --- başlat ---
+if (IS_IOS && !STANDALONE) { try { if (!localStorage.getItem('dortulus_fs_hint')) { localStorage.setItem('dortulus_fs_hint', '1'); setTimeout(() => toast('⛶ Tam ekran oyna', 'Sağ üstteki ⛶ düğmesine dokun'), 1800); } } catch (e) {} }
 touchReady = true;
 fit();
 refreshProfile();
