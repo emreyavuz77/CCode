@@ -2,14 +2,18 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0b0705">
 <title>Dört Ulus: Bükücüler Arenası</title>
 <style>
 :root{--gold:#e8b44a;--text:#f6ead2;--muted:#c2ae8c;--panel:rgba(22,15,10,.94);--line:rgba(232,180,74,.35)}
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;background:#0b0705;color:var(--text);font-family:'Trebuchet MS','Segoe UI',system-ui,sans-serif;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
-#wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
-#game{position:relative;width:1280px;height:720px;flex:none;transform-origin:center center;background:#000;box-shadow:0 0 60px #000}
+html,body{margin:0;height:100%;background:#0b0705;color:var(--text);font-family:'Trebuchet MS','Segoe UI',system-ui,sans-serif;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+body{position:fixed;inset:0}
+#wrap{position:fixed;inset:0;overflow:hidden}
+#game{position:absolute;left:0;top:0;width:1280px;height:720px;transform-origin:0 0;background:#000;box-shadow:0 0 60px #000}
 #c{width:100%;height:100%;display:block}
 .screen{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;background:radial-gradient(ellipse at 50% 30%,#3a2414 0%,#170e08 60%,#0a0604 100%);z-index:5}
 .screen.on{display:flex}
@@ -20,7 +24,8 @@ h2{margin:4px 0 6px;font-size:30px;letter-spacing:6px;color:#f3dcae;font-weight:
 .elems{display:flex;gap:26px;margin:10px 0 30px}
 .elems span{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;border:2px solid var(--line);background:rgba(255,255,255,.04)}
 .btn{background:linear-gradient(#5a3618,#3a210d);color:var(--text);border:2px solid var(--gold);border-radius:10px;padding:13px 28px;font-size:21px;cursor:pointer;min-width:340px;margin:7px;font-family:inherit;letter-spacing:1px;transition:transform .08s,background .15s}
-.btn:hover{background:linear-gradient(#7a4a20,#4f2d12);transform:scale(1.03)}
+@media (hover:hover){.btn:hover{background:linear-gradient(#7a4a20,#4f2d12);transform:scale(1.03)}.card:hover{transform:translateY(-3px);border-color:var(--gold)}}
+.btn:active{background:linear-gradient(#7a4a20,#4f2d12)}
 .btn.small{min-width:0;padding:8px 16px;font-size:16px;margin:3px}
 .btn.sel{background:linear-gradient(#c88a2a,#8a5a15);color:#fff}
 .btn.go{background:linear-gradient(#b8361c,#7a1d0c);font-size:26px;min-width:220px}
@@ -37,13 +42,12 @@ h2{margin:4px 0 6px;font-size:30px;letter-spacing:6px;color:#f3dcae;font-weight:
 .selBody{display:flex;gap:18px;padding:6px 22px;width:100%;flex:1;min-height:0}
 #grid{display:grid;grid-template-columns:repeat(5,128px);grid-auto-rows:146px;gap:10px;align-content:start}
 .card{border:2px solid var(--line);border-radius:10px;background:linear-gradient(#2c1c10,#1a1009);cursor:pointer;display:flex;flex-direction:column;align-items:center;overflow:hidden;position:relative;transition:transform .08s}
-.card:hover{transform:translateY(-3px);border-color:var(--gold)}
 .card canvas{width:124px;height:110px}
 .card .nm{font-size:15px;font-weight:bold;margin-top:2px}
 .card .tag{position:absolute;top:4px;right:6px;font-size:16px}
 .card.p1{box-shadow:inset 0 0 0 3px #3fa9f5}.card.p2{box-shadow:inset 0 0 0 3px #ff5a3a}
 .card.p1.p2{box-shadow:inset 0 0 0 3px #3fa9f5,0 0 0 3px #ff5a3a}
-#info{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;overflow:auto;font-size:14.5px;line-height:1.42}
+#info{flex:1;touch-action:pan-y;-webkit-overflow-scrolling:touch;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;overflow:auto;font-size:14.5px;line-height:1.42}
 #info h4{margin:0;font-size:26px;color:var(--gold);font-family:Georgia,serif}
 .badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:13px;margin:4px 6px 6px 0;color:#111;font-weight:bold}
 .ab{margin:6px 0;padding:6px 10px;border-left:3px solid var(--gold);background:rgba(255,255,255,.04);border-radius:0 6px 6px 0}
@@ -53,7 +57,7 @@ h2{margin:4px 0 6px;font-size:30px;letter-spacing:6px;color:#f3dcae;font-weight:
 .group{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
 .group label{color:var(--muted);margin-right:6px;font-size:15px}
 /* guide */
-#guideList{width:100%;flex:1;overflow:auto;padding:8px 30px 30px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+#guideList{width:100%;flex:1;overflow:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;padding:8px 30px 30px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
 .gcard{display:flex;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:14px;line-height:1.45}
 .gcard canvas{width:120px;height:120px;flex:none;border-radius:10px;background:#2a1a10}
 .gcard h4{margin:0 0 2px;font-size:22px;color:var(--gold);font-family:Georgia,serif}
@@ -63,27 +67,57 @@ h2{margin:4px 0 6px;font-size:30px;letter-spacing:6px;color:#f3dcae;font-weight:
 kbd{background:#3a2a1a;border:1px solid #8a6a3a;border-bottom-width:3px;border-radius:5px;padding:1px 7px;font-family:monospace;font-size:16px}
 /* result */
 #result h1{font-size:72px;margin-top:150px}
-/* touch */
-#touch{position:absolute;inset:0;pointer-events:none;display:none;z-index:4}
+/* dokunmatik kontroller (ekranın tamamını kaplar, oyun alanının dışına taşabilir) */
+#touch{position:fixed;inset:0;z-index:20;display:none;touch-action:none}
 #touch.on{display:block}
-.tb{position:absolute;width:118px;height:118px;border-radius:50%;background:rgba(255,255,255,.13);border:3px solid rgba(255,255,255,.35);color:#fff;font-size:34px;display:flex;align-items:center;justify-content:center;pointer-events:auto;font-weight:bold}
-.tb.on{background:rgba(255,200,120,.4)}
+.tb{position:absolute;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.42);color:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-weight:bold;text-shadow:0 1px 3px #000;transition:transform .05s}
+.tb small{position:absolute;bottom:12%;font-size:30%;font-weight:normal;opacity:.8}
+.tb.on{background:rgba(255,200,120,.45);transform:scale(.93)}
+.tb.ult{background:rgba(232,180,74,.18);border-color:rgba(255,215,120,.6)}
+.tb.ult.ready{background:rgba(255,190,70,.55);border-color:#ffe27a;box-shadow:0 0 18px #ffb030}
+.tb.pause{border-radius:10px;background:rgba(0,0,0,.35)}
+#stick{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:rgba(255,255,255,.07);opacity:.5}
+#stick.active{opacity:1}
+#knob{position:absolute;left:50%;top:50%;width:46%;height:46%;margin:-23% 0 0 -23%;border-radius:50%;background:rgba(255,255,255,.35);border:2px solid rgba(255,255,255,.65)}
+#rotate{position:fixed;inset:0;z-index:50;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#120a06;text-align:center;padding:24px;font-size:18px;color:var(--text)}
+#rotate.on{display:flex}
+#rotate b{font-size:24px;color:var(--gold)}
+#rotate p{margin:0;color:var(--muted)}
+#rotate .ph{font-size:70px;animation:rot 1.8s ease-in-out infinite}
+#rotate .btn{min-width:0;font-size:17px;padding:10px 20px;margin-top:16px}
+@keyframes rot{0%,25%{transform:rotate(0)}55%,100%{transform:rotate(-90deg)}}
+.tonly{display:none}
+body.touch .tonly{display:revert}
+body.touch .desk{display:none!important}
+body.touch h1{font-size:112px;margin-top:22px}
+body.touch h2{font-size:36px}
+body.touch .sub{font-size:22px;margin-bottom:14px}
+body.touch .elems,body.touch .hint{display:none}
+body.touch .btn{font-size:30px;padding:12px 30px;min-width:480px;margin:6px}
+body.touch .btn.small{font-size:25px;padding:10px 18px;min-width:0;margin:3px}
+body.touch .btn.go{font-size:34px;min-width:230px}
+body.touch .topbar h3{font-size:34px}
+body.touch .slot b{font-size:24px}body.touch .slot small{font-size:17px}
+body.touch .card .nm{font-size:17px;letter-spacing:-.3px}
+.card .nm{white-space:nowrap;max-width:122px;overflow:hidden;text-overflow:ellipsis}
+body.touch #info{font-size:20px}
+body.touch #info h4{font-size:34px}
+body.touch .badge{font-size:17px}
+body.touch .stats{font-size:17px}
+body.touch #stageSel{display:block}
+body.touch .lbl{display:none}
+body.touch #guideList{grid-template-columns:1fr;font-size:20px}
+body.touch .gcard{font-size:20px}
+body.touch .gcard h4{font-size:32px}
+body.touch .gcard canvas{width:170px;height:170px}
+body.touch .ctrl{font-size:24px}
+#stageSel{display:none;font-size:25px;padding:10px 14px;border-radius:10px;background:#3a210d;color:var(--text);border:2px solid var(--gold);font-family:inherit}
 #muteBtn{position:absolute;top:8px;right:10px;z-index:6;background:rgba(0,0,0,.4);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:18px}
 </style>
 </head>
 <body>
 <div id="wrap"><div id="game">
 <canvas id="c"></canvas>
-
-<div id="touch">
-  <div class="tb" data-k="left" style="left:30px;bottom:150px">◀</div>
-  <div class="tb" data-k="right" style="left:270px;bottom:150px">▶</div>
-  <div class="tb" data-k="up" style="left:150px;bottom:260px">▲</div>
-  <div class="tb" data-k="down" style="left:150px;bottom:40px">🛡</div>
-  <div class="tb" data-k="a" style="right:270px;bottom:50px">⚔</div>
-  <div class="tb" data-k="b" style="right:150px;bottom:170px">★</div>
-  <div class="tb" data-k="c" style="right:30px;bottom:290px;background:rgba(232,180,74,.3)">✦</div>
-</div>
 
 <button id="muteBtn" title="Ses (M)">🔊</button>
 
@@ -93,7 +127,7 @@ kbd{background:#3a2a1a;border:1px solid #8a6a3a;border-bottom-width:3px;border-r
   <div class="sub">Su · Toprak · Ateş · Hava — Avatar evreninden esinlenen 2D hayran dövüş oyunu</div>
   <div class="elems"><span style="color:#3fa9f5">💧</span><span style="color:#6ab04c">⛰</span><span style="color:#ff5a1f">🔥</span><span style="color:#dff">🌀</span></div>
   <button class="btn" data-act="1p">Tek Oyunculu (Bilgisayara Karşı)</button>
-  <button class="btn" data-act="2p">İki Oyunculu (Aynı Klavye)</button>
+  <button class="btn" data-act="2p">İki Oyunculu<span class="desk"> (Aynı Klavye)</span><span class="tonly"> (klavye gerekir)</span></button>
   <button class="btn" data-act="demo">İzle (Bilgisayar vs Bilgisayar)</button>
   <button class="btn" data-act="guide">Karakter Rehberi</button>
   <button class="btn" data-act="controls">Kontroller</button>
@@ -115,8 +149,8 @@ kbd{background:#3a2a1a;border:1px solid #8a6a3a;border-bottom-width:3px;border-r
   </div>
   <div class="bottombar">
     <div class="group"><button class="btn small" data-act="back">← Geri</button><button class="btn small" data-act="random">🎲 Rastgele</button></div>
-    <div class="group" id="stageGroup"><label>Arena:</label></div>
-    <div class="group" id="diffGroup"><label>Zorluk:</label>
+    <div class="group" id="stageGroup"><label class="lbl">Arena:</label></div>
+    <div class="group" id="diffGroup"><label class="lbl">Zorluk:</label>
       <button class="btn small" data-diff="0">Kolay</button><button class="btn small sel" data-diff="1">Normal</button><button class="btn small" data-diff="2">Zor</button></div>
     <button class="btn go" data-act="fight">SAVAŞ!</button>
   </div>
@@ -130,7 +164,13 @@ kbd{background:#3a2a1a;border:1px solid #8a6a3a;border-bottom-width:3px;border-r
 <div id="controls" class="screen">
   <div class="topbar"><h3>Kontroller</h3><button class="btn small" data-act="back">← Geri</button></div>
   <div class="ctrl">
-    <table>
+    <div class="tonly" style="max-width:1000px">
+      <p><b style="color:var(--gold)">Dokunmatik kontroller (telefon/tablet)</b></p>
+      <p>🕹 <b>Sol yarı:</b> parmağını koyup kaydır — sağa/sola yürü, yukarı = zıpla (basılı tut: süzül), aşağı = blok.<br>
+      ⚔ <b>Saldırı</b> (basılı tutulabilir) · ★ <b>Özel</b> · ✦ <b>Ulti</b> (dolunca parlar) · ▲ <b>Zıpla</b> · ❚❚ <b>Duraklat</b><br>
+      Parmağını butonlar arasında kaydırabilir, aynı anda yürüyüp saldırabilirsin.</p>
+    </div>
+    <table class="desk">
       <tr><th></th><th>1. Oyuncu</th><th>2. Oyuncu</th></tr>
       <tr><td>Hareket</td><td><kbd>A</kbd> <kbd>D</kbd></td><td><kbd>←</kbd> <kbd>→</kbd></td></tr>
       <tr><td>Zıpla (havada tekrar: çift zıplama / süzülme)</td><td><kbd>W</kbd></td><td><kbd>↑</kbd></td></tr>
@@ -162,6 +202,22 @@ kbd{background:#3a2a1a;border:1px solid #8a6a3a;border-bottom-width:3px;border-r
 
 </div></div>
 
+<div id="touch">
+  <div id="stick"><div id="knob"></div></div>
+  <div class="tb" data-k="a">⚔<small>Saldırı</small></div>
+  <div class="tb" data-k="b">★<small>Özel</small></div>
+  <div class="tb ult" data-k="c">✦<small>Ulti</small></div>
+  <div class="tb" data-k="up">▲<small>Zıpla</small></div>
+  <div class="tb pause" data-k="pause">❚❚</div>
+</div>
+<div id="rotate">
+  <div class="ph">📱</div>
+  <b>Telefonu yatay çevir</b>
+  <p>Dört Ulus yatay ekranda oynanır.</p>
+  <button class="btn" id="rotateOk">Yine de dikey devam et</button>
+</div>
+<div id="safeProbe" style="position:fixed;left:0;top:0;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)"></div>
+
 <script>
 'use strict';
 // ====================================================================
@@ -171,8 +227,33 @@ const W = 1280, H = 720, GROUND = 640, GRAV = 0.75;
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
 cv.width = W; cv.height = H;
 const gameEl = document.getElementById('game');
-function fit(){ const s = Math.min(innerWidth / W, innerHeight / H); gameEl.style.transform = `scale(${s})`; }
-addEventListener('resize', fit); fit();
+const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+if (isTouch) document.body.classList.add('touch');
+const CAN_FILTER = 'filter' in CanvasRenderingContext2D.prototype;
+let touchReady = false, viewScale = 1, gameRect = { x:0, y:0, w:W, h:H }, rotateDismissed = false;
+function safeInsets(){
+  const cs = getComputedStyle(document.getElementById('safeProbe'));
+  return { top:parseFloat(cs.paddingTop) || 0, right:parseFloat(cs.paddingRight) || 0, bottom:parseFloat(cs.paddingBottom) || 0, left:parseFloat(cs.paddingLeft) || 0 };
+}
+function fit(){
+  const vw = innerWidth, vh = innerHeight, portrait = vh > vw;
+  const sa = safeInsets();
+  const s = Math.min((vw - sa.left - sa.right) / W, (vh - sa.top) / H);
+  const gw = W * s, gh = H * s;
+  const left = sa.left + (vw - sa.left - sa.right - gw) / 2;
+  const top = isTouch && portrait ? sa.top + 10 : sa.top + (vh - sa.top - gh) / 2;
+  viewScale = s; gameRect = { x:left, y:top, w:gw, h:gh };
+  gameEl.style.transform = `scale(${s})`; gameEl.style.left = left + 'px'; gameEl.style.top = top + 'px';
+  document.getElementById('rotate').classList.toggle('on', isTouch && portrait && !rotateDismissed);
+  if (touchReady) layoutTouch();
+}
+addEventListener('resize', fit);
+addEventListener('orientationchange', () => { setTimeout(fit, 150); setTimeout(fit, 600); });
+if (window.visualViewport) visualViewport.addEventListener('resize', fit);
+document.addEventListener('gesturestart', e => e.preventDefault());
+document.addEventListener('dblclick', e => e.preventDefault());
+document.getElementById('rotateOk').onclick = () => { rotateDismissed = true; fit(); };
+fit();
 
 const rand = (a, b) => a + Math.random() * (b - a);
 const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
@@ -260,16 +341,89 @@ function readInput(idx, both){
   }
   return inp;
 }
-// dokunmatik
+// dokunmatik: sol yarıda yüzen joystick, sağda aksiyon butonları (çoklu dokunuş, butonlar arası kaydırma)
 const touchEl = document.getElementById('touch');
-if ('ontouchstart' in window || (window.matchMedia && matchMedia('(pointer:coarse)').matches)) touchEl.dataset.ok = '1';
-touchEl.querySelectorAll('.tb').forEach(b => {
-  const k = b.dataset.k;
-  const on = e => { e.preventDefault(); if (!touchState[k]) touchPressed[k] = true; touchState[k] = true; b.classList.add('on'); audio(); };
-  const off = e => { e.preventDefault(); touchState[k] = false; b.classList.remove('on'); };
-  b.addEventListener('pointerdown', on); b.addEventListener('pointerup', off);
-  b.addEventListener('pointerleave', off); b.addEventListener('pointercancel', off);
-});
+if (isTouch) touchEl.dataset.ok = '1';
+const tbs = {}; touchEl.querySelectorAll('.tb').forEach(el => tbs[el.dataset.k] = el);
+const stickEl = document.getElementById('stick'), knobEl = document.getElementById('knob');
+let stickTouch = null, stickR = 60, stickHome = { x:90, y:300 };
+const activeT = new Map();
+function layoutTouch(){
+  const vw = innerWidth, vh = innerHeight, sa = safeInsets();
+  const b = clamp(Math.min(vw, vh) * .17, 50, 104);
+  const R = sa.right + 12, B = sa.bottom + 10;
+  const place = (k, cx, cy, size) => {
+    const el = tbs[k]; el.style.width = el.style.height = size + 'px';
+    el.style.left = (vw - R - cx * b - size / 2) + 'px'; el.style.top = (vh - B - cy * b - size / 2) + 'px';
+    el.style.fontSize = size * .42 + 'px';
+  };
+  place('a', .75, .72, b * 1.3);
+  place('up', 2.15, .5, b);
+  place('b', .62, 2.08, b);
+  place('c', 1.9, 1.62, b);
+  const p = tbs.pause, ps = Math.max(34, b * .55);
+  p.style.width = p.style.height = ps + 'px'; p.style.fontSize = ps * .38 + 'px';
+  p.style.left = (gameRect.x + gameRect.w / 2 - ps / 2) + 'px';
+  p.style.top = (gameRect.y + 100 * viewScale + 4) + 'px';
+  stickR = b * .9;
+  stickHome = { x:sa.left + 22 + stickR * 1.15, y:vh - B - stickR * 1.15 };
+  if (stickTouch === null) placeStick(stickHome.x, stickHome.y, 0, 0, false);
+}
+function placeStick(x, y, dx, dy, active){
+  stickEl.style.width = stickEl.style.height = stickR * 2 + 'px';
+  stickEl.style.left = (x - stickR) + 'px'; stickEl.style.top = (y - stickR) + 'px';
+  knobEl.style.transform = `translate(${dx}px,${dy}px)`;
+  stickEl.classList.toggle('active', active);
+}
+function btnAt(x, y){
+  for (const k in tbs) {
+    const r = tbs[k].getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2, rad = r.width / 2 + 10;
+    if ((x - cx) ** 2 + (y - cy) ** 2 < rad * rad) return k;
+  }
+  return null;
+}
+function onTouch(e){
+  e.preventDefault();
+  if (e.type === 'touchstart') audio();
+  for (const t of e.changedTouches) {
+    const id = t.identifier, x = t.clientX, y = t.clientY;
+    if (e.type === 'touchstart') {
+      const k = btnAt(x, y);
+      if (k === 'pause') { togglePause(); continue; }
+      if (k) activeT.set(id, { kind:'btn', k });
+      else if (x < innerWidth * .55 && stickTouch === null) { stickTouch = id; activeT.set(id, { kind:'stick', ox:x, oy:y, dx:0, dy:0 }); }
+    } else if (e.type === 'touchmove') {
+      const a = activeT.get(id); if (!a) continue;
+      if (a.kind === 'btn') { const k = btnAt(x, y); if (k && k !== 'pause') a.k = k; }
+      else {
+        let dx = x - a.ox, dy = y - a.oy; const d = Math.hypot(dx, dy);
+        if (d > stickR) { a.ox = x - dx / d * stickR; a.oy = y - dy / d * stickR; dx = x - a.ox; dy = y - a.oy; }
+        a.dx = dx; a.dy = dy;
+      }
+    } else { activeT.delete(id); if (id === stickTouch) stickTouch = null; }
+  }
+  syncTouch();
+}
+function syncTouch(){
+  const st = {}; let stick = null;
+  for (const a of activeT.values()) { if (a.kind === 'btn') st[a.k] = true; else stick = a; }
+  if (stick) {
+    if (stick.dx > stickR * .3) st.right = true;
+    if (stick.dx < -stickR * .3) st.left = true;
+    if (stick.dy < -stickR * .55) st.up = true;
+    if (stick.dy > stickR * .55) st.down = true;
+    placeStick(stick.ox, stick.oy, stick.dx, stick.dy, true);
+  } else placeStick(stickHome.x, stickHome.y, 0, 0, false);
+  for (const k of ['left','right','up','down','a','b','c']) { if (st[k] && !touchState[k]) touchPressed[k] = true; touchState[k] = !!st[k]; }
+  for (const k in tbs) tbs[k].classList.toggle('on', !!st[k]);
+}
+function showTouch(on){
+  touchEl.classList.toggle('on', !!on);
+  activeT.clear(); stickTouch = null; syncTouch();
+  if (on) layoutTouch();
+}
+['touchstart','touchmove','touchend','touchcancel'].forEach(ev => touchEl.addEventListener(ev, onTouch, { passive:false }));
+touchReady = true; layoutTouch();
 
 // ====================================================================
 //  ELEMENTLER
@@ -830,7 +984,7 @@ function startMatch(){
   game.wins = [0, 0]; game.round = 1;
   newRound();
   showScreen(null); game.state = 'fight';
-  touchEl.classList.toggle('on', !!touchEl.dataset.ok && game.mode !== 'demo');
+  showTouch(!!touchEl.dataset.ok && game.mode !== 'demo');
 }
 function newRound(){
   for (const f of game.p) f.reset();
@@ -859,7 +1013,7 @@ function endRound(){
     document.getElementById('resTitle').textContent = w < 0 ? 'BERABERE' : game.p[w].def.name.toUpperCase() + ' KAZANDI!';
     const who = w < 0 ? '' : (game.p[w].ctrl === 'ai' ? 'Bilgisayar' : (w === 0 ? '1. Oyuncu' : '2. Oyuncu'));
     document.getElementById('resSub').textContent = (who ? who + ' · ' : '') + `Skor ${game.wins[0]} - ${game.wins[1]} · ` + pick(QUOTES);
-    showScreen('result'); touchEl.classList.remove('on');
+    showScreen('result'); showTouch(false);
   } else { game.round++; newRound(); }
 }
 const QUOTES = ['"Gurur, onur değildir." — Iroh','"Bumerang!" — Sokka','"Ben toprağın kendisiyim!" — Toph','"Benim lahanalarım!"','"Yip yip!" — Aang','"Hata yapmak, öğrenmenin ilk adımıdır." — Iroh','"Dengeyi bulmalısın." — Aang','"Ben Avatar\'ım, ister beğen ister beğenme!" — Korra'];
@@ -1669,7 +1823,7 @@ function drawFighter(f){
   if (f.blocking) { c.strokeStyle = 'rgba(255,255,255,.55)'; c.lineWidth = 4; c.beginPath(); c.arc(f.x + f.facing * 6, f.y - 58, 50, f.facing > 0 ? -1.1 : Math.PI - 1.1 + 0, f.facing > 0 ? 1.1 : Math.PI + 1.1); c.stroke(); }
   if (f.slow > 0) { c.fillStyle = 'rgba(180,230,255,.25)'; c.fillRect(f.x - 24, f.y - 112, 48, 112); }
   c.save();
-  if (f.flash > 0 && f.flash % 4 < 2) c.filter = 'brightness(2.2)';
+  if (f.flash > 0 && f.flash % 4 < 2) { if (CAN_FILTER) c.filter = 'brightness(2.2)'; else c.globalAlpha = .55; }
   if (f.invuln > 0 && f.dash) c.globalAlpha = .75;
   if (f.hp <= 0) c.globalAlpha = .9;
   drawChar(c, L, {
@@ -1755,6 +1909,7 @@ function drawPortrait(c, id, size){
 }
 function drawHUD(){
   const c = ctx;
+  if (isTouch && game.p[0]) tbs.c.classList.toggle('ready', game.p[0].ult >= 100);
   const [a, b] = game.p;
   for (const f of [a, b]) {
     const left = f.side === 0, x0 = left ? 20 : W - 20;
@@ -1875,10 +2030,10 @@ function showScreen(id){
   for (const s of screens) document.getElementById(s).classList.toggle('on', s === id);
   // menü arka planı canvas'ta, bu yüzden seçim ekranları yarı saydam değil
 }
-function goto(state){ game.state = state; showScreen(state); touchEl.classList.remove('on'); }
+function goto(state){ game.state = state; showScreen(state); showTouch(false); }
 function togglePause(){
-  if (game.state === 'fight') { game.state = 'pause'; showScreen('pause'); touchEl.classList.remove('on'); }
-  else if (game.state === 'pause') { if (game.mode === 'demo') { goto('title'); return; } game.state = 'fight'; showScreen(null); touchEl.classList.toggle('on', !!touchEl.dataset.ok); last = performance.now(); acc = 0; }
+  if (game.state === 'fight') { game.state = 'pause'; showScreen('pause'); showTouch(false); }
+  else if (game.state === 'pause') { if (game.mode === 'demo') { goto('title'); return; } game.state = 'fight'; showScreen(null); showTouch(!!touchEl.dataset.ok); last = performance.now(); acc = 0; }
 }
 
 // seçim ekranı
@@ -1893,7 +2048,7 @@ for (const d of CHARS) {
   card.append(cvs);
   const nm = document.createElement('div'); nm.className = 'nm'; nm.textContent = d.name; card.append(nm);
   const tg = document.createElement('div'); tg.className = 'tag'; tg.textContent = ELEM[d.element].icon; card.append(tg);
-  card.onmouseenter = () => showInfo(d.id);
+  if (!isTouch) card.onmouseenter = () => showInfo(d.id);
   card.onclick = () => chooseChar(d.id);
   grid.append(card);
 }
@@ -1941,6 +2096,13 @@ for (const s of [{ id:'random', name:'🎲 Rastgele' }, ...STAGES]) {
   const b = document.createElement('button'); b.className = 'btn small' + (s.id === 'random' ? ' sel' : ''); b.textContent = s.name; b.dataset.stage = s.id;
   b.onclick = () => { game.sel.stage = s.id; stageGroup.querySelectorAll('button').forEach(x => x.classList.toggle('sel', x === b)); sfx('select'); };
   stageGroup.append(b);
+}
+{
+  const sel = document.createElement('select'); sel.id = 'stageSel';
+  for (const s of [{ id:'random', name:'🎲 Rastgele Arena' }, ...STAGES]) { const o = document.createElement('option'); o.value = s.id; o.textContent = s.name; sel.append(o); }
+  sel.onchange = () => { game.sel.stage = sel.value; stageGroup.querySelectorAll('button').forEach(x => x.classList.toggle('sel', x.dataset.stage === sel.value)); };
+  stageGroup.append(sel);
+  stageGroup.querySelectorAll('button').forEach(x => x.classList.add('desk'));
 }
 document.querySelectorAll('[data-diff]').forEach(b => b.onclick = () => { game.diff = +b.dataset.diff; document.querySelectorAll('[data-diff]').forEach(x => x.classList.toggle('sel', x === b)); sfx('select'); });
 
